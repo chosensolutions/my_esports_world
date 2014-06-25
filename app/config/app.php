@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Cartalyst\Sentry\SentryServiceProvider'
+		'Cartalyst\Sentry\SentryServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider'
 	),
 
 	/*
@@ -190,7 +191,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry' 		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Carbon'		  => 'Carbon\Carbon'
+		'Carbon'		  => 'Carbon\Carbon',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
 );

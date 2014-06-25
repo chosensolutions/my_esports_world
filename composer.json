@@ -6,7 +6,9 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"way/generators": "2.*",
-		"cartalyst/sentry": "2.*"
+		"cartalyst/sentry": "2.*",
+		"lusitanian/oauth": "~0.3",
+		"artdarek/oauth-4-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
