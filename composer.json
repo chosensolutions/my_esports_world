@@ -4,12 +4,28 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"way/generators": "2.*",
-		"cartalyst/sentry": "2.*",
-		"lusitanian/oauth": "~0.3",
-		"artdarek/oauth-4-laravel": "dev-master"
+		"laravel/framework": "4.2.*"
 	},
+	"require-dev": {
+		"way/generators": "~2.0",
+		"phpunit/phpunit": "4.2.*",
+		"mockery/mockery": "0.9.*",
+		"behat/behat": "3.0.*@dev",
+		"codeception/codeception": "dev-master",
+		"cartalyst/sentry": "2.0.*@dev",
+		"lusitanian/oauth": "~0.3",
+		"artdarek/oauth-4-laravel": "dev-master",
+		"intervention/image": "dev-master",
+		"barryvdh/laravel-ide-helper": "1.11.*@dev",
+		"barryvdh/laravel-debugbar": "1.*",
+		"league/fractal": "0.9.*@dev",
+		"jlapp/swaggervel": "dev-master",
+		"fzaninotto/faker": "1.5.*@dev",
+		"laracasts/flash": "~1.0",
+		"laracasts/validation": "~1.0",
+		"laracasts/testdummy": "~1.0",
+		"laracasts/commander": "~1.0"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",
