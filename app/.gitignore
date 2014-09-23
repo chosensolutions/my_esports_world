@@ -9,6 +9,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 /node_modules
-/public/bower_components/*
+/public/bower_components
 
 tests/_output/*
