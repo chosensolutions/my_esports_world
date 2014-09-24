@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/Toronto',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'umV7s2Je6c1AIhyZJRYXiKCpY6HtVAXY',
+	'key' => 'P4RYTGnx04ZgMj97bwdNjuspwo7Jn6Cc',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -122,8 +122,11 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Laracasts\Commander\CommanderServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
-		'Artdarek\OAuth\OAuthServiceProvider'
+		'Jlapp\Swaggervel\SwaggervelServiceProvider',
+
 	),
 
 	/*
@@ -191,8 +194,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry' 		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Carbon'		  => 'Carbon\Carbon',
-		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
+		'Carbon'   		  => 'Carbon\Carbon'
 	),
 
 );
