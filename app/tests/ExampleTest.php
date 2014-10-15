@@ -9,7 +9,7 @@ class ExampleTest extends TestCase {
 	 */
 	public function testBasicExample()
 	{
-		$response = $this->client->request('GET', '/');
+		$crawler = $this->client->request('GET', '/');
 
 		$this->assertTrue($this->client->getResponse()->isOk());
 	}

@@ -1,25 +1,24 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
-use Faker\Factory as Faker;
-
 class UsersTableSeeder extends Seeder {
 
-	public function run()
-	{
-		$faker = Faker::create();
+    public function run()
+    {
+        DB::table('users')->delete();
 
-		foreach(range(1, 100) as $index)
-		{
-			User::create([
-				'email' => $faker->email,
-                'username' => $faker->username,
-				'password' => Hash::make('password'),
-				'activated' => rand(0, 1),
-				'first_name' => $faker->firstName,
-				'last_name' => $faker->lastName
-			]);
-		}
-	}
+        $users = array(
+            array(
+                'email'         => 'admin@example.org',
+                'password'      => Hash::make('admin'),
+                'created_at'    => new DateTime,
+                'updated_at'    => new DateTime,
+                'remember_token'=> ''        
+            )
+        );
+
+        DB::table('users')->insert( $users );
+    }
 
 }
+
+?>

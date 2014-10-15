@@ -1,14 +1,15 @@
 /vendor
 /.idea
 /vendor
-/.sass-cache
+/.sass-cache*
 /bootstrap/compiled.php
 composer.phar
 composer.lock
 .env.php
+.env.*.php
 .DS_Store
 Thumbs.db
 /node_modules
 /public/bower_components/*
-
+_ide_helper.php
 tests/_output/*

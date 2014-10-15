@@ -11,8 +11,3 @@
 |
 */
 
-Artisan::add(new UserCreatorCommand);
-
-Artisan::add(new MigrateSentryCommand);
-
-
