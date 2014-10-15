@@ -62,3 +62,20 @@ Once you have the app up and running you can visit `http://localhost:8000` and y
 If you liked this code and screencast you should follow me on twitter: [@dmosher](http://www.twitter.com/dmosher)
 
 Happy Coding! :)
+
+-------------------------------------
+-------------------------------------
+
+
+My Esports World
+========================
+
+My Esports World is the place for players, coaches, managers, and anyone interested in a career 
+in e-sports to put up their profile. Professional teams can find players they want and professional
+players can find the team they want to join.
+
+Installation
+========================
+1. composer update/install
+2. npm install
+3. cd bower, bower install, bower list
