@@ -31,27 +31,27 @@ app.config(function($httpProvider) {
 ////////////////////////////////////////////////////////////
 app.config(function($routeProvider) {
 
-  $routeProvider.when('/login', {
-    templateUrl: 'templates/login.html',
-    controller: 'LoginController'
-  });
+    $routeProvider.when('/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginController'
+    });
 
-  $routeProvider.when('/home', {
-    templateUrl: 'templates/home.html',
-    controller: 'HomeController'
-  });
+    $routeProvider.when('/home', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
+    });
 
-  $routeProvider.when('/books', {
-    templateUrl: 'templates/books.html',
-    controller: 'BooksController',
-    resolve: {
-      books : function(BookService) {
-        return BookService.get();
-      }
-    }
-  });
+    $routeProvider.when('/books', {
+        templateUrl: 'templates/books.html',
+        controller: 'BooksController',
+        resolve: {
+          books : function(BookService) {
+            return BookService.get();
+          }
+        }
+    });
 
-  $routeProvider.otherwise({ redirectTo: '/login' });
+    $routeProvider.otherwise({ redirectTo: '/login' });
 
 });
 
@@ -149,13 +149,15 @@ app.factory("AuthenticationService", function($http, $sanitize, SessionService, 
 // Controllers
 ////////////////////////////////////////////////////////////
 app.controller("LoginController", function($scope, $location, AuthenticationService) {
-  $scope.credentials = { email: "", password: "" };
 
-  $scope.login = function() {
-    AuthenticationService.login($scope.credentials).success(function() {
-      $location.path('/home');
-    });
-  };
+    $scope.credentials = { email: "", password: "" };
+
+    $scope.login = function() {
+        AuthenticationService.login($scope.credentials).success(function() {
+            $location.path('/home');
+        });
+    };
+
 });
 
 app.controller("BooksController", function($scope, books) {
