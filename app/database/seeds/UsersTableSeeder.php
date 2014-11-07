@@ -1,24 +1,25 @@
 <?php
 
+use Faker\Factory as Faker;
+
 class UsersTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('users')->delete();
+        $faker = Faker::create();
 
-        $users = array(
-            array(
-                'email'         => 'admin@example.org',
-                'password'      => Hash::make('admin'),
-                'created_at'    => new DateTime,
-                'updated_at'    => new DateTime,
-                'remember_token'=> ''        
-            )
-        );
+        User::create([
+            'email' => 'yichen@yichen.com',
+            'password' => 'yichen'
+        ]);
 
-        DB::table('users')->insert( $users );
+        foreach(range(1, 100) as $index)
+        {
+            User::create([
+                'email' => $faker->email,
+                'password' => 'password'
+            ]);
+        }
     }
 
 }
-
-?>

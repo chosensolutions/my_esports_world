@@ -1,42 +1,38 @@
 <?php
 
-class AuthController extends BaseController {
+class UsersController extends BaseController {
 
-    public function status()
+    public function getAuthUser()
     {
-        return Response::json(Auth::check());
+        return Auth::user();
     }
 
-    public function secrets()
+    public function register()
+    {
+        return 'register the user';
+    }
+
+    public function isLoggedIn()
     {
         if (Auth::check())
         {
-            return 'You are logged in, here are secrets.';
-        }
-        else
-        {
-            return 'You aint logged in, no secrets for you.';
+            return 'user is logged in';
         }
     }
 
     public function login()
     {
-        if (Auth::attempt(array('email' => Input::json('email'), 'password' => Input::json('password'))))
+        $credentials = Input::only('email', 'password');
+
+        if (Auth::attempt($credentials))
         {
             return Response::json(Auth::user());
-
-        }
-        else
-        {
-            return Response::json(array('flash' => 'Invalid username or password'), 500);
         }
     }
 
     public function logout()
     {
         Auth::logout();
-
-        return Response::json(array('flash' => 'Logged Out!'));
     }
 
 }
