@@ -2,21 +2,13 @@
 
 class UsersController extends BaseController {
 
-    public function getAuthUser()
-    {
-        return Auth::user();
-    }
-
     public function register()
     {
-        return 'register the user';
-    }
+        $credentials = Input::only('email', 'password');
 
-    public function isLoggedIn()
-    {
-        if (Auth::check())
+        if (User::create($credentials))
         {
-            return 'user is logged in';
+            return Response::json(Auth::user());
         }
     }
 
@@ -33,6 +25,19 @@ class UsersController extends BaseController {
     public function logout()
     {
         Auth::logout();
+    }
+
+    public function isLoggedIn()
+    {
+        return Auth::check();
+    }
+
+    public function getAuthUser()
+    {
+        if (Auth::check())
+        {
+            return Auth::user();
+        }
     }
 
 }

@@ -24,6 +24,7 @@ class CreateProfilesTable extends Migration {
             $table->string('gender');
             $table->string('phone');
             $table->string('email');
+            $table->string('picture');
 
 			$table->timestamps();
 
