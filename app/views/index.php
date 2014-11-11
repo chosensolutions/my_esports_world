@@ -7,8 +7,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content="mew is awesome">
+        <meta name="author" content="yichen">
         <link rel="shortcut icon" href="app/images/favicon.ico">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="app/css/styles.css" rel="stylesheet" type="text/css"/>
@@ -32,11 +32,13 @@
 
         </div>
 
+        <!-- Bower Dependencies-->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 
+        <!-- App -->
         <script src="app/app.js"></script>
         <script src="app/controllers/customersController.js"></script>
         <script src="app/controllers/ordersController.js"></script>
