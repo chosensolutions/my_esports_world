@@ -4,9 +4,9 @@ use Validator;
 
 class ValidationException extends \Exception {
 
-    function __construct(Validator $validator)
+    function __construct($validator)
     {
-        $this->message = 'Validation has failed, or something';
+        $this->message = 'Custom Message: The validation has failed';
         $this->validator = $validator;
     }
 

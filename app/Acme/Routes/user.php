@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: YiChen
- * Date: 11/11/2014
- * Time: 12:04 PM
- */ 
+
+Route::post('/users/register', 'UsersController@register');
+
+Route::post('/users/login', 'UsersController@login');
+
+Route::post('/users/logout', 'UsersController@logout');

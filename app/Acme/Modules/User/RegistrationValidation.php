@@ -1,4 +1,6 @@
-<?php namespace Acme\Utilities\Validation;
+<?php namespace Acme\Modules\User;
+
+use Acme\Utilities\Validation\Validation;
 
 class RegistrationValidation extends Validation {
 

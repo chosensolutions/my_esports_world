@@ -1,19 +1,15 @@
 <?php namespace Acme\Utilities\Validation;
 
+use Validator;
+
 abstract class Validation {
 	
 	protected $rules;
-	protected $input;
 	protected $message;
 
-	function __construct(array $input = [])
+	public function validate($input)
 	{
-		$this->input = $input;
-	}
-
-	public function validate()
-	{
-		$validator = Validator::make($this->getInput(), $this->getRules());
+		$validator = Validator::make($input, $this->getRules());
 
 		if ($validator->fails())
 		{
@@ -24,11 +20,6 @@ abstract class Validation {
 	public function getRules()
 	{
 		return $this->rules;
-	}
-
-	public function getInput()
-	{
-		return $this->input;
 	}
 
 }
