@@ -1,15 +1,25 @@
 <?php
 
-class UsersController extends BaseController {
+use Acme\Modules\User\RegistrationValidation;
+
+class UsersController extends \BaseController {
+
+    protected $registrationValidation;
+
+    function __construct(RegistrationValidation $registrationValidation)
+    {
+        $this->registrationValidation = $registrationValidation;
+    }
 
     public function register()
     {
         $credentials = Input::only('email', 'password');
 
-        if (User::create($credentials))
-        {
-            return Response::json(Auth::user());
-        }
+        $this->registrationValidation->validate($credentials);
+
+        $user = User::create($credentials);
+
+        return $user;
     }
 
     public function login()
@@ -34,7 +44,7 @@ class UsersController extends BaseController {
 
     public function getAuthUser()
     {
-        if (Auth::check())
+        if ($this->isLoggedIn())
         {
             return Auth::user();
         }

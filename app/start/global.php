@@ -11,6 +11,8 @@
 |
 */
 
+use Acme\Utilities\Validation\ValidationException;
+
 ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
@@ -51,6 +53,26 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+// custom validation exception response
+App::error(function(ValidationException $exception, $code)
+{
+    $errorResponse = [
+        'message' => $exception->getMessage(),
+        'errors' => $exception->getErrors()
+    ];
+
+    return Response::json($errorResponse, $code);
+});
+
+App::missing(function($exception)
+{
+    $errorResponse = [
+        'message' => 'Endpoint does not exist'
+    ];
+
+    return Response::json($errorResponse);
 });
 
 /*
