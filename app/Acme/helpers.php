@@ -1,6 +1,5 @@
 <?php
 
-use Response;
 
 function response(array $data, $status_code, $header = [])
 {
