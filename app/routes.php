@@ -1,5 +1,16 @@
 <?php
 
+Event::listen('Acme\Modules\User\Commands\Register\Events\UserHasRegistered', function()
+{
+    var_dump('listening to events');
+});
+
+//Event::listen('Acme.Modules.User.Commands.Register.Events.UserHasRegistered', 'EmailNotifier@whenUserHasRegistered');
+
+//Event::listen('Acme.*', 'Acme.Modules.User.Commands.Register.Events.EmailNotifier@handle');
+
+
+
 Route::get('/', function()
 {
     return View::make('index');

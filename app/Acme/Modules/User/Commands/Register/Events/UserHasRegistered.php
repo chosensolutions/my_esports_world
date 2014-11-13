@@ -1,11 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: YiChen
- * Date: 11/12/2014
- * Time: 7:30 PM
- */
+<?php namespace Acme\Modules\User\Commands\Register\Events;
 
 class UserHasRegistered {
+
+    public $user;
+
+    function __construct($user)
+    {
+        $this->user = $user;
+    }
 
 } 

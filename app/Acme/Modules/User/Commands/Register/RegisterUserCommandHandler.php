@@ -1,9 +1,12 @@
-<?php namespace Acme\Modules\User;
+<?php namespace Acme\Modules\User\Commands\Register;
 
 use Acme\Modules\User\Repositories\UserRepositoryInterface;
 use Laracasts\Commander\CommandHandler;
+use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterUserCommandHandler implements CommandHandler{
+
+    use DispatchableTrait;
 
     protected $userRepository;
 
@@ -13,14 +16,29 @@ class RegisterUserCommandHandler implements CommandHandler{
     }
 
     /**
-     * Handle the command
+     * Registering a user will:
+     * 1. store the user in the database
+     * 2. send a welcome email to the user
+     * 3. add the user to the mailing list
      *
      * @param $command
      * @return mixed
      */
     public function handle($command)
     {
-        // TODO: Implement handle() method.
+        $input = [
+            'email' => $command->email,
+            'password' => $command->password
+        ];
+
+        $user = $this->userRepository->create($input);
+
+        // sends an email to the user
+        var_dump('handle the actual action');
+
+        $this->dispatchEventsFor($user);
+
+        return $user;
     }
 
 }

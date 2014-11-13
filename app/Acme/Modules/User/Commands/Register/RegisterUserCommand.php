@@ -1,4 +1,4 @@
-<?php namespace Acme\Modules\User;
+<?php namespace Acme\Modules\User\Commands\Register;
 
 class RegisterUserCommand {
 

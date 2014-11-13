@@ -2,7 +2,7 @@
 
 use Acme\Utilities\Validation\Validation;
 
-class RegistrationValidation extends Validation {
+class RegisterUserValidation extends Validation {
 
     public function getRules()
     {

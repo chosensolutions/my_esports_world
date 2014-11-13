@@ -1,4 +1,4 @@
-<?php namespace Acme\Modules\User;
+<?php namespace Acme\Modules\User\Repositories;
 
 interface UserRepositoryInterface {
 

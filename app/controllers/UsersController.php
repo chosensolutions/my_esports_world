@@ -1,25 +1,17 @@
 <?php
 
-use Acme\Modules\User\RegistrationValidation;
+use Acme\Modules\User\Commands\Register\RegisterUserCommand;
 
 class UsersController extends \BaseController {
 
-    protected $registrationValidation;
-
-    function __construct(RegistrationValidation $registrationValidation)
-    {
-        $this->registrationValidation = $registrationValidation;
-    }
-
     public function register()
     {
-        $credentials = Input::only('email', 'password');
+        var_dump('preparing for the user instruction');
+        $this->execute(RegisterUserCommand::class, Input::all(), [
+            'Acme\Modules\User\Commands\Register\RegisterUserSanitizer'
+        ]);
 
-        $this->registrationValidation->validate($credentials);
-
-        $user = User::create($credentials);
-
-        return $user;
+        //return $user;
     }
 
     public function login()

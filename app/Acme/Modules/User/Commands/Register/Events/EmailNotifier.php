@@ -1,14 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: YiChen
- * Date: 11/12/2014
- * Time: 7:55 PM
- */
+<?php namespace Acme\Modules\User\Commands\Register\Events;
 
-namespace Acme\Modules\User\Commands\Register\Events;
+class EmailNotifier extends EventListener {
 
-
-class EmailNotifier {
+    public function whenUserHasRegistered()
+    {
+        dd('send off welcome email');
+    }
 
 } 

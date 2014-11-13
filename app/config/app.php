@@ -123,7 +123,9 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Jlapp\Swaggervel\SwaggervelServiceProvider',
-        'Cartalyst\Sentry\SentryServiceProvider'
+        'Cartalyst\Sentry\SentryServiceProvider',
+        'Laracasts\Commander\CommanderServiceProvider',
+        'Acme\BackendServiceProvider'
 
 	),
 

@@ -1,14 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: YiChen
- * Date: 11/12/2014
- * Time: 6:46 PM
- */
+<?php namespace Acme\Modules\User\Commands\Register;
 
-namespace Acme\Modules\User;
+use Laracasts\Commander\CommandBus;
 
+class RegisterUserSanitizer implements CommandBus {
 
-class RegisterUserSanitizer {
-
-} 
+    /**
+     * Execute a command
+     *
+     * @param $command
+     * @return mixed
+     */
+    public function execute($command)
+    {
+        var_dump('sanitize');
+    }
+}
