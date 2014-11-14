@@ -1,1 +1,7 @@
 php artisan commander:generate Acme/Bar/SubscribeUserCommand --properties="first, last" -base="app"
+
+dotfiles - create generic bashfiles for linux AND windows
+PHPSTORM - import the dam settings
+DEBUG - phpstorm xdebug waiting for incoming connection with ide key
+VAGRANT - multiple VMS or mulitple projects in 1 VM
+GRUNT - liveload
