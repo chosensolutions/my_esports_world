@@ -1,17 +1,26 @@
 <?php
 
+use Acme\Modules\Profile\Repositories\ProfileRepositoryInterface;
+
 class ProfilesController extends \BaseController {
 
-	/**
+    protected $profileRepository;
+
+    function __construct(ProfileRepositoryInterface $profileRepository)
+    {
+        $this->profileRepository = $profileRepository;
+    }
+
+    /**
 	 * Display a listing of profiles
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$profiles = Profile::all();
+		$profiles = $this->profileRepository->getAll();
 
-		return $profiles;
+		return $profiles->first;
 	}
 
     /**
@@ -22,7 +31,7 @@ class ProfilesController extends \BaseController {
      */
     public function show($id)
     {
-        $profile = Profile::find($id);
+        $profile = Profile::finds($id);
 
         return $profile;
     }

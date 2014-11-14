@@ -24,3 +24,9 @@ Route::group(['prefix' => 'api/v1/', 'after' => 'allowOrigin'], function()
         require_once $partial->getPathname();
     }
 });
+
+
+Route::get('/debug', function()
+{
+    $a = ['1', 2, 4];
+});

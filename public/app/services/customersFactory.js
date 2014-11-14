@@ -8,7 +8,7 @@
         };
 
         factory.getCustomer = function(customerId) {
-            return $http.get('/customers/' + customerId);
+            return $http.get('/api/v1/profiles' + customerId);
         };
 
         factory.getOrders = function() {

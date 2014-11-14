@@ -15,5 +15,10 @@ class BackendServiceProvider extends ServiceProvider {
             'Acme\Modules\User\Repositories\UserRepositoryInterface',
             'Acme\Modules\User\Repositories\EloquentUserRepository'
         );
+
+        $this->app->bind(
+            'Acme\Modules\Profile\Repositories\ProfileRepositoryInterface',
+            'Acme\Modules\Profile\Repositories\EloquentProfileRepository'
+        );
     }
 }
