@@ -5,3 +5,40 @@ PHPSTORM - import the dam settings
 DEBUG - phpstorm xdebug waiting for incoming connection with ide key
 VAGRANT - multiple VMS or mulitple projects in 1 VM
 GRUNT - liveload
+VIM - learn how to use
+install LINUX
+Package development - my first LARAVEL package
+
+PROOF THAT IOC WORKS
+Route::get('/debug', function()
+{
+    $userRepo = new EloquentProfileRepository();
+    //$profile = new Profile($userRepo, 1);
+    //return $profile->test();
+
+    return App::make('Profile', [$userRepo, 'test'])->test();
+});
+
+    function __construct(ProfileRepositoryInterface $profileRepository, $test)
+    {
+        $this->profileRepository = $profileRepository;
+        dd($test);
+    }
+
+    public function test()
+    {
+        return $this->profileRepository->getAll();
+    }
+
+
+
+use Acme\Modules\Profile\Repositories\EloquentProfileRepository;
+
+Event::listen('Acme\Modules\User\Commands\Register\Events\UserHasRegistered', function()
+{
+    var_dump('listening to events');
+});
+
+//Event::listen('Acme.Modules.User.Commands.Register.Events.UserHasRegistered', 'EmailNotifier@whenUserHasRegistered');
+
+//Event::listen('Acme.*', 'Acme.Modules.User.Commands.Register.Events.EmailNotifier@handle');

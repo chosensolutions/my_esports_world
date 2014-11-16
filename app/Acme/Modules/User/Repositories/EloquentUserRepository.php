@@ -1,26 +1,56 @@
 <?php namespace Acme\Modules\User\Repositories;
 
-use Acme\Modules\User\Commands\Register\Events\UserHasRegistered;
-use Laracasts\Commander\Events\EventGenerator;
 use User;
+use Auth;
 
 class EloquentUserRepository implements UserRepositoryInterface {
 
-    use EventGenerator;
+    /**
+     * @var User
+     */
+    private $userModel;
 
-    protected $userModel;
+    /**
+     * @var Auth
+     */
+    private $authModel;
 
-    function __construct(User $userModel)
+    /**
+     * @param User $userModel
+     * @param Auth $authModel
+     */
+    function __construct(
+        User $userModel,
+        Auth $authModel
+    )
     {
         $this->userModel = $userModel;
+        $this->authModel = $authModel;
     }
 
-    public function create($input)
+    /**
+     * @param $input
+     */
+    public function register($input)
     {
-        $instance = $this->userModel->create($input);
-
-        $this->raise(new UserHasRegistered($instance));
-
-        //return $instance;
+        $this->userModel->create($input);
     }
+
+    /**
+     * @param $credentials
+     * @return mixed
+     */
+    public function login($credentials)
+    {
+        return $this->authModel->attempt($credentials);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function logout()
+    {
+        return $this->authModel->logout();
+    }
+
 }

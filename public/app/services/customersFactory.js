@@ -1,25 +1,25 @@
 (function() {
     var customersFactory = function($http) {
 
-        var factory = {};
+        var factories = {};
 
-        factory.getCustomers = function() {
+        factories.getCustomers = function() {
             return $http.get('/api/v1/profiles');
         };
 
-        factory.getCustomer = function(customerId) {
+        factories.getCustomer = function(customerId) {
             return $http.get('/api/v1/profiles' + customerId);
         };
 
-        factory.getOrders = function() {
+        factories.getOrders = function() {
             return $http.get('/orders');
         };
 
-        factory.deleteCustomer = function(customerId) {
+        factories.deleteCustomer = function(customerId) {
             return $http.delete('/customers/' + customerId);
         }
 
-        return factory;
+        return factories;
     };
 
     customersFactory.$inject = ['$http'];

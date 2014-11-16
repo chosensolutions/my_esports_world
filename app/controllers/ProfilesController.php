@@ -4,8 +4,16 @@ use Acme\Modules\Profile\Repositories\ProfileRepositoryInterface;
 
 class ProfilesController extends \BaseController {
 
+    /**
+     * @var ProfileRepositoryInterface
+     */
     protected $profileRepository;
 
+    /**
+     * Constructor
+     *
+     * @param ProfileRepositoryInterface $profileRepository
+     */
     function __construct(ProfileRepositoryInterface $profileRepository)
     {
         $this->profileRepository = $profileRepository;
