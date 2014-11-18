@@ -28,7 +28,7 @@ class ProfilesController extends \BaseController {
 	{
 		$profiles = $this->profileRepository->getAll();
 
-		return $profiles->first;
+		return $profiles;
 	}
 
     /**
