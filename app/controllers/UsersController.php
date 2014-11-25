@@ -2,6 +2,7 @@
 
 use Acme\Modules\User\Commands\Register\RegisterUserCommand;
 use Acme\Modules\User\Repositories\UserRepositoryInterface;
+use Acme\Modules\User\Validation\RegisterUserValidation;
 
 class UsersController extends \BaseController {
 
@@ -11,15 +12,25 @@ class UsersController extends \BaseController {
     protected $userRepository;
 
     /**
-     * @param UserRepositoryInterface $userRepository
+     * @var RegisterUserValidation
      */
-    function __construct(UserRepositoryInterface $userRepository)
+    protected $registrationValidation;
+
+    /**
+     * @param UserRepositoryInterface $userRepository
+     * @param RegisterUserValidation $registrationValidation
+     */
+    function __construct(
+        UserRepositoryInterface $userRepository,
+        RegisterUserValidation $registrationValidation
+    )
     {
         $this->userRepository = $userRepository;
+        $this->registrationValidation = $registrationValidation;
     }
 
     /**
-     *
+     * commander pattern baby
      */
     public function register()
     {
@@ -35,6 +46,8 @@ class UsersController extends \BaseController {
     public function login()
     {
         $credentials = Input::only('email', 'password');
+
+        $this->registrationValidation->validate($credentials);
 
         $this->userRepository->login($credentials);
     }

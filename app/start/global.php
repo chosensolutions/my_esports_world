@@ -63,7 +63,7 @@ App::error(function(ValidationException $exception, $code)
         'errors' => $exception->getErrors()
     ];
 
-    return Response::json($errorResponse, $code);
+    return Response::json($errorResponse, 200);
 });
 
 App::missing(function($exception)
