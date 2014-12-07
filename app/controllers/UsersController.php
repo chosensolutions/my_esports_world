@@ -1,43 +1,31 @@
 <?php
 
 use Acme\Modules\User\Commands\Register\RegisterUserCommand;
-use Acme\Modules\User\Repositories\UserRepositoryInterface;
-use Acme\Modules\User\Validation\RegisterUserValidation;
 
 class UsersController extends \BaseController {
 
     /**
-     * @var UserRepositoryInterface
-     */
-    protected $userRepository;
-
-    /**
-     * @var RegisterUserValidation
-     */
-    protected $registrationValidation;
-
-    /**
-     * @param UserRepositoryInterface $userRepository
-     * @param RegisterUserValidation $registrationValidation
-     */
-    function __construct(
-        UserRepositoryInterface $userRepository,
-        RegisterUserValidation $registrationValidation
-    )
-    {
-        $this->userRepository = $userRepository;
-        $this->registrationValidation = $registrationValidation;
-    }
-
-    /**
-     * commander pattern baby
+     * Registering a user will do the following:
+     * 1. validate the the input
+     * 2. sanitize the information (trim, strlower, strval)
+     * 3. store the user in the database (handle the actual command)
+     * 4. send events
+     *    - send a welcoming email
+     *    - add user to mailing list
+     *    - log the user in
+     * 5. redirect OR response in json
+     *
+     * @return Response
      */
     public function register()
     {
         var_dump('preparing for the user instruction');
-        $this->execute(RegisterUserCommand::class, Input::all(), [
+
+        $command = $this->execute(RegisterUserCommand::class, Input::all(), [
             'Acme\Modules\User\Commands\Register\RegisterUserSanitizer'
         ]);
+
+        return $command;
     }
 
     /**
@@ -49,7 +37,7 @@ class UsersController extends \BaseController {
 
         $this->registrationValidation->validate($credentials);
 
-        $this->userRepository->login($credentials);
+        $user = $this->userRepository->login($credentials);
     }
 
     /**
@@ -57,7 +45,7 @@ class UsersController extends \BaseController {
      */
     public function logout()
     {
-        $this->userRepository->logout();
+        return $this->userRepository->logout();
     }
 
     /**

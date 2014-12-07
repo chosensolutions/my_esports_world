@@ -1,7 +1,6 @@
 <?php namespace Acme\Modules\User\Repositories;
 
-use User;
-use Auth;
+use User, Auth;
 
 class EloquentUserRepository implements UserRepositoryInterface {
 
@@ -31,7 +30,7 @@ class EloquentUserRepository implements UserRepositoryInterface {
     /**
      * @param $input
      */
-    public function register($input)
+    public function register(array $input)
     {
         $this->userModel->create($input);
     }
@@ -40,7 +39,7 @@ class EloquentUserRepository implements UserRepositoryInterface {
      * @param $credentials
      * @return mixed
      */
-    public function login($credentials)
+    public function login(array $credentials)
     {
         return $this->authModel->attempt($credentials);
     }

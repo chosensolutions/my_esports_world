@@ -6,39 +6,47 @@ use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterUserCommandHandler implements CommandHandler{
 
-    use DispatchableTrait;
+    // use FireEventsTrait;
+    // use DispatchableTrait;
 
-    protected $userRepository;
+    /**
+     * @var UserRepositoryInterface
+     */
+    private $userRepository;
 
+    /**
+     * @param UserRepositoryInterface $userRepository
+     */
     function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }
 
     /**
-     * Registering a user will:
-     * 1. store the user in the database
-     * 2. send a welcome email to the user
-     * 3. add the user to the mailing list
-     *
      * @param $command
      * @return mixed
      */
     public function handle($command)
     {
+        // fire events BEFORE the actual command occurs
+        //$this->fireBeforeEvents([]);
+
+        // manipulate the input
         $input = [
             'email' => $command->email,
             'password' => $command->password
         ];
 
-        $user = $this->userRepository->create($input);
+        // store it in the database
+        //$user = $this->userRepository->register($input);
 
         // sends an email to the user
         var_dump('handle the actual action');
 
-        $this->dispatchEventsFor($user);
+        // fire the events that should occur after
+        //$this->fireAfterEvents([]);
 
-        return $user;
+        //return $user;
     }
 
 }

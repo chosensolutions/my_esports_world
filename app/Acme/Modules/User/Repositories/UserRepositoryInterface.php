@@ -2,9 +2,9 @@
 
 interface UserRepositoryInterface {
 
-    public function register($input);
+    public function register(array $input);
 
-    public function login($credentials);
+    public function login(array $credentials);
 
     public function logout();
 

@@ -4,10 +4,14 @@ dotfiles - create generic bashfiles for linux AND windows
 PHPSTORM - import the dam settings
 DEBUG - phpstorm xdebug waiting for incoming connection with ide key
 VAGRANT - multiple VMS or mulitple projects in 1 VM
+BOWER.io - this is pretty darn insanely cool - laracasts
 GRUNT - liveload
 VIM - learn how to use
 install LINUX
 Package development - my first LARAVEL package
+
+
+
 
 PROOF THAT IOC WORKS
 Route::get('/debug', function()
