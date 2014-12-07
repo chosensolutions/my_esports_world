@@ -1,1 +1,0 @@
-C:\wamp\www\github\my_esports_world\app/views/profiles/index.blade.php
