@@ -10,5 +10,4 @@ interface MessageRepositoryInterface {
 
     public function setRead($id);
 
-
 } 

@@ -22,7 +22,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password');
+	protected $hidden = ['password'];
 
 	/**
 	 * Get the unique identifier for the user.
@@ -54,7 +54,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
-	// Added For 4.1.26 security update of Laravel
 	public function getRememberToken()
 	{
 		return $this->remember_token;
@@ -68,6 +67,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getRememberTokenName()
 	{
 		return 'remember_token';
+	}
+
+	public function profile()
+	{
+		return $this->hasOne('Profile');
 	}
 
 }

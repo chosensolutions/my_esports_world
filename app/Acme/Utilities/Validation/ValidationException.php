@@ -1,4 +1,4 @@
-<?php namespace Acme\Utilities\Validator;
+<?php namespace Acme\Utilities\Validation;
 
 use Validator;
 
