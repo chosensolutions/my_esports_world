@@ -11,8 +11,6 @@ install LINUX
 Package development - my first LARAVEL package
 
 
-
-
 PROOF THAT IOC WORKS
 Route::get('/debug', function()
 {

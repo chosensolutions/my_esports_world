@@ -3,26 +3,19 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+        "laracasts/commander": "~1.0",
+        "laracasts/validation": "~1.0"
 	},
     "require-dev": {
         "way/generators": "~2.0",
+        "fzaninotto/faker": "1.5.*@dev",
         "phpunit/phpunit": "4.2.*",
         "mockery/mockery": "0.9.*",
         "behat/behat": "3.0.*@dev",
         "codeception/codeception": "dev-master",
-        "cartalyst/sentry": "2.0.*@dev",
-        "artdarek/oauth-4-laravel": "dev-master",
-        "intervention/image": "dev-master",
-        "barryvdh/laravel-ide-helper": "1.11.*@dev",
-        "barryvdh/laravel-debugbar": "1.*",
         "league/fractal": "0.10.0",
-        "fzaninotto/faker": "1.5.*@dev",
-        "laracasts/flash": "~1.0",
-        "laracasts/validation": "~1.0",
         "laracasts/testdummy": "~1.0",
-        "laracasts/commander": "~1.0",
-        "stripe/stripe-php": "dev-master",
         "jlapp/swaggervel": "dev-master"
     },
 	"autoload": {

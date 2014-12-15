@@ -1,0 +1,19 @@
+migration
+-----------
+Blog
+'title',
+'body',
+'author'
+Comment
+'name',
+'email',
+'body'
+
+controller
+-----------
+BlogController
+
+route
+-----------
+Route::resource('blog', 'BlogController');
+
