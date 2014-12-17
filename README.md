@@ -23,7 +23,6 @@ players can find the team they want to join.
 1. create a file called ".env.php"
 2. copy and paste:
 ```
-#!php
 <?php
     return [
         'DB_HOST' => 'localhost',
