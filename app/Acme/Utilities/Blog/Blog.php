@@ -8,6 +8,11 @@ class Blog extends \Eloquent {
 		'author'
 	];
 
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
+
 	public function comments()
 	{
 		return $this->hasMany('Comment');

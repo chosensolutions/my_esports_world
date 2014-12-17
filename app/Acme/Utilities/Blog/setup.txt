@@ -9,6 +9,10 @@ Comment
 'email',
 'body'
 
+seeds
+-------
+xxx seeds
+
 controller
 -----------
 BlogController
