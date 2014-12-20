@@ -9,7 +9,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            customersFactory.getCustomers()
+            customersFactory.getAllProfiles()
                 .success(function(customers) {
                     $scope.customers = customers;
                 })

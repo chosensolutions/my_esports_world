@@ -7,6 +7,11 @@ players can find the team they want to join.
 
 ## Installation & Build Guide ##
 
+### Miscellaneous ###
+- API docs: https://speca.io/yichenzhu1337/mew-api/
+- IP: XXX
+- URL: XXX
+
 ### Backend Setup and Update ###
 1. Install Laravel: "composer install"
 2. update Laravel: "composer update"
@@ -23,7 +28,6 @@ players can find the team they want to join.
 1. create a file called ".env.php"
 2. copy and paste:
 ```
-#!php
 <?php
     return [
         'DB_HOST' => 'localhost',

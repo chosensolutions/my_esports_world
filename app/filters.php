@@ -13,7 +13,17 @@
 
 App::before(function($request)
 {
-	//
+    /* remove during production
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+    header('Access-Control-Allow-Credentials: true');
+    */
+    header('Access-Control-Allow-Origin: http://localhost:8080');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+    header('Access-Control-Allow-Credentials: true');
+    header('Allow-Access-Control-Credentials: true');
 });
 
 
@@ -75,14 +85,16 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-	if (Session::token() != Input::get('_token'))
+	if (Session::token() !== Input::get('_token'))
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
 
-Route::filter('csrf_json', function() {
-  if (Session::token() != Input::json('csrf_token')) {
-    throw new Illuminate\Session\TokenMismatchException;
-  }
+Route::filter('csrf_json', function()
+{
+    if (Session::token() !== Input::json('csrf_token'))
+    {
+      throw new Illuminate\Session\TokenMismatchException;
+    }
 });
