@@ -3,7 +3,7 @@
 
         var factories = {};
 
-        factories.getCustomers = function() {
+        factories.getAllProfiles = function() {
             return $http.get('/api/v1/profiles');
         };
 

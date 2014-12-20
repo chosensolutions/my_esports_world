@@ -104,9 +104,3 @@ gulp.task('watch', function() {
  
 /* Default Task */
 gulp.task('default', [/*'phpunit', 'coffee', ''sass', */'watch']);
-
-/*
- * INSTALLATION
-npm install --save-dev gulp gulp-util gulp-notify gulp-ruby-
-sass gulp-autoprefixer gulp-coffee gulp-phpunit fs gulp-livereload tiny-lr
-*/

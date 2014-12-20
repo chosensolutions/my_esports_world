@@ -40,12 +40,11 @@
 
         <!-- App -->
         <script src="app/app.js"></script>
-        <script src="app/controllers/customersController.js"></script>
-        <script src="app/controllers/ordersController.js"></script>
-        <script src="app/controllers/allOrdersController.js"></script>
         <script src="app/services/customersFactory.js"></script>
         <script src="app/services/customersService.js"></script>
         <script src="app/services/values.js"></script>
-
+        <script src="app/controllers/customersController.js"></script>
+        <script src="app/controllers/ordersController.js"></script>
+        <script src="app/controllers/allOrdersController.js"></script>
     </body>
 </html>
