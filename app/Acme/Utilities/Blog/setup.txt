@@ -17,3 +17,18 @@ route
 -----------
 Route::resource('blog', 'BlogController');
 
+table seeder
+------------
+php artisan generate:seed BlogTableSeeder
+
+tests
+-----------
+BlogTests
+/BlogApiTest.php
+/BlogFunctionalTest.php
+/BlogIntegrationTest.php
+/BlogUnitTest.php
+
+service provider
+-------------
+'Acme\XXXServiceProvider'
