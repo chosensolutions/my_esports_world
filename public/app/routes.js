@@ -1,5 +1,7 @@
 (function() {
 
+    "use strict";
+
     var app = angular.module('MewApp', [
         'ngRoute',
         'ngAnimate'
@@ -7,15 +9,15 @@
 
     app.config(function ($routeProvider) {
         $routeProvider
-            .when('/',
+            .when('/profiles',
             {
                 controller: 'ProfilesController',
-                templateUrl: 'app/views/customers.html'
+                templateUrl: 'app/Modules/Profile/Views/profiles.html'
             })
             .when('/profiles/:id',
             {
                 controller: 'ProfilesController',
-                templateUrl: 'app/views/customer.html'
+                templateUrl: 'app/Modules/Profile/Views/profile.html'
             })
             .otherwise({
                 redirectTo: '/'

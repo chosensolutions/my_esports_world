@@ -1,7 +1,5 @@
 (function() {
 
-
-
     var CustomersController = function ($scope, $log, $routeParams, customersFactory, appSettings) {
 
         var customerId = $routeParams.customerId;

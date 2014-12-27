@@ -42,6 +42,7 @@
 
         <!-- MEW App -->
         <script src="app/Modules/routes.js"></script>
+        <script src="app/Modules/values.js"></script>
 
     </body>
 </html>
