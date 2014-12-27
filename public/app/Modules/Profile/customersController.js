@@ -1,4 +1,7 @@
 (function() {
+
+
+
     var CustomersController = function ($scope, $log, $routeParams, customersFactory, appSettings) {
 
         var customerId = $routeParams.customerId;
@@ -19,12 +22,12 @@
         }
 
         init();
-
+/*
         customersFactory.getCustomers(customerId).
             success(function (customer) {
                 $scope.user = customer;
             });
-
+*/
 
         $scope.doSort = function(propName) {
             $scope.sortBy = propName;
@@ -58,4 +61,5 @@
 
     angular.module('MewApp')
         .controller('CustomersController', CustomersController);
+
 }());
