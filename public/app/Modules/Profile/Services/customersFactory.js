@@ -1,10 +1,11 @@
 (function() {
+
     var customersFactory = function($http) {
 
         var factories = {};
 
         factories.getAllProfiles = function() {
-            return $http.get('/api/v1/profiles');
+            return $http.get('http://localhost:8000/api/v1/profiles');
         };
 
         factories.getCustomer = function(customerId) {

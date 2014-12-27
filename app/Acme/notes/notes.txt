@@ -44,3 +44,6 @@ Event::listen('Acme\Modules\User\Commands\Register\Events\UserHasRegistered', fu
 //Event::listen('Acme.Modules.User.Commands.Register.Events.UserHasRegistered', 'EmailNotifier@whenUserHasRegistered');
 
 //Event::listen('Acme.*', 'Acme.Modules.User.Commands.Register.Events.EmailNotifier@handle');
+
+
+speca.io

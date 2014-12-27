@@ -30,6 +30,8 @@
 
             <div ng-view class="slide-animation"></div>
 
+            <footer> the footer here </footer>
+
         </div>
 
         <!-- Bower Dependencies-->
@@ -38,13 +40,8 @@
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 
-        <!-- App -->
-        <script src="app/app.js"></script>
-        <script src="app/services/customersFactory.js"></script>
-        <script src="app/services/customersService.js"></script>
-        <script src="app/services/values.js"></script>
-        <script src="app/controllers/customersController.js"></script>
-        <script src="app/controllers/ordersController.js"></script>
-        <script src="app/controllers/allOrdersController.js"></script>
+        <!-- MEW App -->
+        <script src="app/Modules/routes.js"></script>
+
     </body>
 </html>
