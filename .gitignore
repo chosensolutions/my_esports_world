@@ -1,6 +1,5 @@
 /vendor
 /.idea
-/vendor
 /.sass-cache*
 /bootstrap/compiled.php
 composer.phar
