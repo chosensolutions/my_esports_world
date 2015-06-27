@@ -1,0 +1,16 @@
+{
+  "name": "my_esports_world",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yichenzhu1337/my_esports_world",
+  "authors": [
+    "yichen <yichenzhu1337@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

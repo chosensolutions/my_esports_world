@@ -1,0 +1,62 @@
+=============================
+===== My Esports World ======
+=============================
+mission statement
+goal:
+linkedin for esports
+dribbble for esports
+hire a pro gamer
+become a pro gamer
+
+--- gaming companies hiring people???
+
+problems to solve
+-----------------
+help players transition to pro gamers
+help people get a job in the esports industry
+help organizations facilitate the hiring/recruiting process
+standardize esports careers for the future
+help standardize advertisements and sponsors and esports organizations
+- what are the different types of leagues out there?
+-> MLG, LCS, events.....
+
+games
+-----
+lol, ssb, csgo, sc, hs, dota, hets, cod
+
+audience
+--------
+players, coaches, analysts
+entertainers, youtuber, livestreamers
+casters/commentators
+owners, ceos
+
+what does the ui look like?
+---------------------------
+
+technology stack
+----------------
+goal
+master frontend
+
+angular 2
+jquery
+css
+responsive design
+frontend
+bootstrap
+ui kit
+backend
+.net
+laravel 5
+
+modules / features
+-----------------------
+
+
+
+
+organizations and
+
+
+if im tsm and im looking for junglers, i post on twitter
