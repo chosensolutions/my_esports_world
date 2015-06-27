@@ -60,3 +60,28 @@ organizations and
 
 
 if im tsm and im looking for junglers, i post on twitter
+
+
+
+Steps to becoming A CSS master
+-------------------------------
+How to Master CSS - https://www.youtube.com/watch?v=Vafp5xr_bxk
+CSS Basics- https://www.youtube.com/watch?v=s7ONvIgOWdM&list=PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy
+HTML and CSS Tutorial for Beginners: The Ultimate Guide to Learning HTML and CSS - https://www.youtube.com/watch?v=sEo8ci9Lfmw
+http://www.pluralsight.com/author/susan-simkins
+- CSS Positioning
+- introduction to CSS for Designers
+
+http://designshack.net/articles/css/5-steps-to-drastically-improve-your-css-knowledge-in-24-hours/
+
+build a navbar
+- horizontal
+- vertical
+
+pagination
+transitions / transformations
+responsive
+sass and less
+browser support
+
+build MEW
