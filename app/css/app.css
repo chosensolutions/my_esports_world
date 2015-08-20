@@ -1,14 +1,43 @@
 /* line 1, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
-body {
-  background-color: maroon;
-  margin: 100px 100px; }
+* {
+  padding: 0;
+  margin: 0; }
 
-/* line 1, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_buttons.scss */
+/* line 6, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
 body {
-  font-family: cursive;
-  font-size: 2.2em;
-  border: solid black 10px;
-  display: grid;
-  color: aqua; }
+  background-color: red;
+  margin: 10px 10px; }
+
+/* aqua */
+/* line 12, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
+nav {
+  height: 200px;
+  border: solid aqua 10px;
+  background-color: aqua; }
+
+/* yellow */
+/* yellow */
+/* line 24, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
+nav ul li {
+  height: 50px;
+  width: 200px;
+  border: solid yellow 10px;
+  background-color: yellow;
+  list-style-type: none;
+  float: left;
+  text-align: center; }
+
+/* blue */
+/* line 35, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
+nav ul li a {
+  background-color: blue;
+  color: bisque;
+  text-decoration: none;
+  line-height: 20px;
+  display: block; }
+
+/* line 44, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
+nav ul li a:hover {
+  background-color: black; }
 
 /*# sourceMappingURL=app.css.map */

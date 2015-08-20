@@ -1,6 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background-color: maroon;
-    margin: 100px 100px;
+    background-color: oldlace;
+    margin: 10px 10px;
+}
+
+/* aqua */
+nav {
+    height: 200px;
+    border: solid aqua 10px;
+    background-color: aqua;
+}
+
+/* yellow */
+nav ul {
+    
+}
+
+/* yellow */
+nav ul li {
+    height: 50px;
+    width: 200px;
+    border: solid yellow 10px;
+    background-color: yellow;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+}
+
+/* blue */
+nav ul li a {
+    background-color: blue;
+    color: bisque;
+    text-decoration: none;
+    line-height: 20px;
+    display: block;
 }
 
 
+nav ul li a:hover {
+    background-color: black;
+}
