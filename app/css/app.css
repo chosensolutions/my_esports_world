@@ -1,26 +1,14 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+/* line 1, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_main.scss */
+body {
+  background-color: maroon;
+  margin: 100px 100px; }
 
-li {
-    float: left;
-}
+/* line 1, C:/Users/yichen/Desktop/github/my_esports_world/app/css/sass/_buttons.scss */
+body {
+  font-family: cursive;
+  font-size: 2.2em;
+  border: solid black 10px;
+  display: grid;
+  color: aqua; }
 
-a:link, a:visited {
-    display: block;
-    width: 120px;
-    font-weight: bold;
-    color: #FFFFFF;
-    background-color: #98bf21;
-    text-align: center;
-    padding: 4px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-a:hover, a:active {
-    background-color: #7A991A;
-}
+/*# sourceMappingURL=app.css.map */
