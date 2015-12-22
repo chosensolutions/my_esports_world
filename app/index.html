@@ -12,20 +12,26 @@
     </head>
 
     <body>
-        <nav>
-            <ul>
-                <li><a href="/app/index.html#/"> Home </a></li>
-                <li><a href="/app/index.html#/about"> About </a></li>
-                <li><a href="/app/index.html#/contact"> Contact </a></li>
-            </ul>
-        </nav>
-        <ui-view></ui-view>
 
+        <div ng-include="'js/modules/navbar/navbar.html'"></div>
+        
+        <div class="content">
+            <ui-view></ui-view>
+        </div>
+        
+        <div ng-include="'js/modules/footer/footer.html'"></div>
+        
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+        <!-- Main App with routes -->
         <script src="js/config/app.js"></script>
+        
+        <!-- Modules -->
+        <script src="js/modules/profile/profile-routes.config.js"></script>
+    
     </body>
 
 </html>
