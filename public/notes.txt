@@ -85,3 +85,8 @@ sass and less
 browser support
 
 build MEW
+
+
+
+FROM THE companys perspective
+- make interviews easier

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -29,3 +31,13 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+// App routes
+Route::get('login', 'Auth\AuthController@login');
+
+Route::get('logout', 'Auth\AuthController@logout');
+
+Route::get('profile', 'Auth\AuthController@profile');
+
+Route::get('test', 'Auth\AuthController@test');
