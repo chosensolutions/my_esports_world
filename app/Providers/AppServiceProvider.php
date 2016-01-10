@@ -13,7 +13,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(
+            'App\Acme\Modules\Authentication\Repositories\AuthenticationRepositoryInterface',
+            'App\Acme\Modules\Authentication\Repositories\AuthenticationRepository'
+        );
+
+        $this->app->bind(
+            'App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRepositoryInterface',
+            'App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRepository'
+        );
+
+        $this->app->bind(
+            'App\Acme\Modules\Authentication\Repositories\Social\TwitterAuthenticationRepositoryInterface',
+            'App\Acme\Modules\Authentication\Repositories\Social\TwitterAuthenticationRepository'
+        );
     }
 
     /**

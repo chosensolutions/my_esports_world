@@ -41,3 +41,5 @@ Route::get('logout', 'Auth\AuthController@logout');
 Route::get('profile', 'Auth\AuthController@profile');
 
 Route::get('test', 'Auth\AuthController@test');
+
+Route::get('twitter', 'Auth\AuthController@twitter');

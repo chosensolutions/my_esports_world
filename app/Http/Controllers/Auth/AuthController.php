@@ -2,22 +2,52 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Acme\Modules\Authentication\Repositories\Social\TwitterAuthenticationRepositoryInterface;
+use App\Acme\Modules\Authentication\Repositories\AuthenticationRepository;
 use App\Http\Controllers\Controller;
+use App\User;
 use Facebook\Facebook;
+use Illuminate\Support\Facades\Input;
 
 class AuthController extends Controller
 {
     /**
      * AuthController constructor.
+     * @param TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository
+     * @param AuthenticationRepository $authenticationRepository
      */
-    public function __construct()
+    public function __construct
+    (
+        TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository,
+        AuthenticationRepository $authenticationRepository
+    )
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', [
+            'except' => 'logout'
+        ]);
+
+        $this->twitterAuthenticationRepository = $twitterAuthenticationRepository;
+        $this->authenticationRepository = $authenticationRepository;
+
         $this->facebook = new Facebook([
             'app_id' => '789305654421319',
             'app_secret' => 'd8718ba34a0179da088fb3628f2bbaf1',
             'default_graph_version' => 'v2.2',
             'persistent_data_handler'=>'session'
+        ]);
+    }
+
+    protected function twitter()
+    {
+        return $this->twitterAuthenticationRepository->login();
+    }
+
+    protected function register()
+    {
+        //$this->authenticationRepository->register();
+        User::create([
+            'email' => Input::get('email'),
+            'password' => Input::get('password')
         ]);
     }
 

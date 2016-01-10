@@ -1,0 +1,10 @@
+Routes
+============
+
+POST /auth/login
+POST /auth/logout
+POST /auth/register
+
+GET /accounts/
+
+GET /profiles/{id}
