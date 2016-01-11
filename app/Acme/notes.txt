@@ -4,6 +4,7 @@ do the regular login
 
 backend
 request validation
+sanitization
 output
 event handler
 error messages

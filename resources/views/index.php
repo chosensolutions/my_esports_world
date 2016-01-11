@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="app">
+
     <head>
-        <title>Laravel</title>
+        <title> My E-sports World </title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+        <!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+        <!-- Main App -->
+        <link rel="stylesheet" type="text/css" href="build/app.css">
     </head>
+
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+        <div ng-include="'app/js/modules/navbar/navbar.html'"></div>
+
+        <div class="content">
+            <ui-view></ui-view>
         </div>
+
+        <div ng-include="'app/js/modules/footer/footer.html'"></div>
+
+        <!-- Dependencies -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- Main App -->
+        <script src="build/app.js"></script>
     </body>
+
 </html>

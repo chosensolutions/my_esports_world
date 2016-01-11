@@ -8,6 +8,7 @@ use App\Acme\Modules\Authentication\Repositories\AuthenticationRepository;
 use App\Http\Controllers\Controller;
 use App\User;
 use Facebook\Facebook;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class AuthController extends Controller
@@ -43,10 +44,15 @@ class AuthController extends Controller
     }
 
     /**
-     * Returns a url string
+     * @param Request $request
+     *
+     * @return int
      */
-    protected function register()
+    protected function register(Request $request)
     {
+
+        return $request->all();
+
         $authType = 'normal';
         switch($authType)
         {
@@ -57,11 +63,10 @@ class AuthController extends Controller
                 $this->facebookAuthenticationRepository->register();
                 return 2;
             case 'twitter';
-                echo 'Good choice';
-                break;
+                $this->twitterAuthenticationRepository->register();
+                return 3;
             default;
-                echo 'Please make a new selection...';
-                break;
+                return 4;
         }
     }
 

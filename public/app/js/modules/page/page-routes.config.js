@@ -3,23 +3,29 @@
     'use strict';
 
     angular
-        .module('app')
-        .config(routeConfig);
+        .module('app', [
+            'ui.router'
+        ])
+        .config(config);
 
-    function routeConfig($stateProvider)
-    {
-        var local_url = 'app/js/modules/blog/';
+    function config($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('main.blog', {
-                url : '/blog',
-                templateUrl: local_url + 'index/blog.index.html'
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/js/config/home.html'
             })
-            .state('main.blogEdit', {
-                url : '/blog/:blogId/edit',
-                templateUrl: local_url + 'edit/blog.edit.html'
+            .state('about', {
+                url: '/about',
+                templateUrl: 'app/js/config/about.html'
+            })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'app/js/config/contact.html'
             });
+
     }
 
 })();
-
