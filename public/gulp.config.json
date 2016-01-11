@@ -1,6 +1,6 @@
 {
   "build": {
-    "folder": "public/build/",
+    "folder": "build/",
     "files": {
       "js": "app.js",
       "css": "app.css",
@@ -8,38 +8,30 @@
       "vendorcss": "vendor.css"
     }
   },
-  "spec": [
-    "public/app/**/*.spec.js"
-  ],
+
   "js": [
-    "public/app/js/**/*.module.js",
-    "public/app/js/**/*.config.js",
-    "public/app/js/**/*.constant.js",
-    "public/app/js/**/*.controller.js",
-    "public/app/js/**/*.filter.js",
-    "public/app/js/**/*.factory.js",
-    "public/app/js/**/*.directive.js",
-    "public/app/js/**/*.provider.js"
+    "app/js/**/*.module.js",
+    "app/js/**/*.config.js",
+    "app/js/**/*.constant.js",
+    "app/js/**/*.controller.js",
+    "papp/js/**/*.filter.js",
+    "app/js/**/*.factory.js",
+    "app/js/**/*.directive.js",
+    "app/js/**/*.provider.js"
   ],
-  "less": [
-    "public/css/jp-styling/main.less"
+
+  "css": [
+    "app/css/**/*.scss"
   ],
+
   "vendorjs": [
-    "public/bower_components/jqueryui/jquery-ui.js",
-    "public/bower_components/jquery/dist/jquery.js",
-    "public/bower_components/angular/angular.js",
-    "public/bower_components/angular-ui-router/release/angular-ui-router.js",
-    "public/bower_components/toastr/toastr.js",
-
+    "bower_components/angular/angular.js",
+    "bower_components/angular-ui-router/release/angular-ui-router.js",
+    "bower_components/jqueryui/jquery-ui.js",
+    "bower_components/jquery/dist/jquery.js"
   ],
+
   "vendorcss": [
-    "public/bower_components/ng-tags-input/ng-tags-input.bootstrap.css",
-    "public/bower_components/ng-tags-input/ng-tags-input.css",
     "public/bower_components/toastr/toastr.css"
-  ],
-  "testing": [
-    "public/bower_components/angular/angular.js",
-    "public/bower_components/angular-mocks/angular-mocks.js"
   ]
-
 }

@@ -12,7 +12,7 @@
         
         $urlRouterProvider.otherwise('/');
 
-        $stateProvider
+/*        $stateProvider
             .state('home', {
                 url: '/',
                 templateUrl: 'app/js/modules/page/home.html'
@@ -24,7 +24,7 @@
             .state('contact', {
                 url: '/contact',
                 templateUrl: 'app/js/modules/page/contact.html'
-            });
+            });*/
     
     }
     

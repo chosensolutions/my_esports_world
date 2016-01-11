@@ -23,13 +23,7 @@
 
         <div ng-include="'app/js/modules/footer/footer.html'"></div>
 
-        <!-- Dependencies -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
-        <!-- Main App -->
+        <script src="build/vendor.js"></script>
         <script src="build/app.js"></script>
     </body>
 
