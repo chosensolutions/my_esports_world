@@ -3,9 +3,7 @@
     'use strict';
 
     angular
-        .module('app', [
-            'ui.router'
-        ])
+        .module('app')
         .config(config);
 
     function config($stateProvider, $urlRouterProvider) {

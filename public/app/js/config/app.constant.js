@@ -3,29 +3,20 @@
     'use strict';
     
     angular
-        .module('app', [
-            'ui.router'
-        ])
-        .config(config);
-    
-    function config($stateProvider, $urlRouterProvider) {
-        
-        $urlRouterProvider.otherwise('/');
+        .module('app')
+        .constant('API', {
+            version: 'v1',
+            type: 'web',
+            port: '8000',
+            host: 'http://localhost:',
+            url: 'http://localhost:8000/api/web/v1/'
+        })
+        .constant('APP', {
+            name: 'My E-Sports World',
+            version: 1.0
+        })
+        .value('PATH', {
+            modules : 'app/js/modules/'
+        });
 
-/*        $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'app/js/modules/page/home.html'
-            })
-            .state('about', {
-                url: '/about',
-                templateUrl: 'app/js/modules/page/about.html'
-            })
-            .state('contact', {
-                url: '/contact',
-                templateUrl: 'app/js/modules/page/contact.html'
-            });*/
-    
-    }
-    
 })();

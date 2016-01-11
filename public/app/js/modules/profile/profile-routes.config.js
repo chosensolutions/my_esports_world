@@ -4,10 +4,10 @@
 
     angular
         .module('app')
-        .config(routeConfig);
+        .config(config);
 
-    function routeConfig($stateProvider)
-    {
+    function config($stateProvider) {
+
         var local_url = 'app/js/modules/profile/';
 
         $stateProvider
