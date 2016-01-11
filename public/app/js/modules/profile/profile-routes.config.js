@@ -8,7 +8,7 @@
 
     function routeConfig($stateProvider)
     {
-        var local_url = 'js/modules/profile/';
+        var local_url = 'app/js/modules/profile/';
 
         $stateProvider
             .state('profile', {
