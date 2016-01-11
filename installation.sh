@@ -13,6 +13,5 @@ bower install
 npm install
 
 gulp build --dev
-gulp watch --dev
 
 echo "Installation Complete!"
