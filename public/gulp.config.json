@@ -27,11 +27,12 @@
   "vendorjs": [
     "bower_components/angular/angular.js",
     "bower_components/angular-ui-router/release/angular-ui-router.js",
-    "bower_components/jqueryui/jquery-ui.js",
-    "bower_components/jquery/dist/jquery.js"
+    "bower_components/jquery/dist/jquery.js",
+    "bower_components/bootstrap/dist/js/bootstrap.js"
+
   ],
 
   "vendorcss": [
-    "public/bower_components/toastr/toastr.css"
+    "bower_components/bootstrap/dist/css/bootstrap.css"
   ]
 }

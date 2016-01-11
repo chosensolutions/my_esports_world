@@ -7,10 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Dependencies -->
-        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-
-        <!-- Main App -->
+        <link rel="stylesheet" type="text/css" href="build/vendor.css">
         <link rel="stylesheet" type="text/css" href="build/app.css">
     </head>
 
