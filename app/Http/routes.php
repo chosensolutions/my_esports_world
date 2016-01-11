@@ -43,3 +43,5 @@ Route::get('profile', 'Auth\AuthController@profile');
 Route::get('test', 'Auth\AuthController@test');
 
 Route::get('twitter', 'Auth\AuthController@twitter');
+
+Route::resource('profiles', 'ProfileController');

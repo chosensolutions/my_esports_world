@@ -1,0 +1,16 @@
+Routes - User
+============
+
+POST /users/login
+POST /users/logout
+
+POST /auth/register
+{
+    register_type: string; normal, facebook, twitter,
+    email: string,
+    password: string
+}
+
+GET /users/login/facebook -> returns the urlredirect
+GET /users/login/twitter
+
