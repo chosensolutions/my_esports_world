@@ -93,4 +93,16 @@ class FacebookAuthenticationRepository
     {
 
     }
+
+    /**
+     * Profile picture of the logged in user
+     */
+    protected function test()
+    {
+        $response = $this->facebook->get('/me', $_SESSION['fb_access_token']);
+        var_dump('http://graph.facebook.com/' . $response->getGraphUser()->getId() . '/picture'); // photo
+        echo '<pre>';
+        print_r($response->getGraphUser()->all());
+        echo '</pre>';
+    }
 }

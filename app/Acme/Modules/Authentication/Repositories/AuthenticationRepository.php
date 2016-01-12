@@ -7,29 +7,50 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticationRepository
 {
+    /**
+     * AuthenticationRepository constructor.
+     *
+     * @param User $user
+     * @param Auth $auth
+     */
     function __construct(User $user, Auth $auth)
     {
-
         $this->user = $user;
         $this->auth = $auth;
     }
 
-    public function register(array $input)
+    /**
+     * Inserts the the email and password into the database
+     * @param $input
+     * @return static
+     */
+    public function register($input)
     {
-        $this->user->create([
-            'email' => 1,
-            'password' => 1
+        return $this->user->create([
+            'email' => $input['email'],
+            'password' => $input['password'],
+            'facebook_id' => null,
+            'twitter_id' => null,
         ]);
     }
 
-    public function login()
+    /**
+     * @param $input
+     * @return mixed
+     */
+    public function login($input)
     {
-        $this->auth->attempt();
+        return $this->auth->attempt([
+            'email' => $input['email'],
+            'password' => $input['password']
+        ]);
     }
 
+    /**
+     * @return mixed
+     */
     public function logout()
     {
-        $this->auth->logout();
+        return $this->auth->logout();
     }
-
 }

@@ -6,15 +6,15 @@ use App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRe
 use App\Acme\Modules\Authentication\Repositories\Social\TwitterAuthenticationRepositoryInterface;
 use App\Acme\Modules\Authentication\Repositories\AuthenticationRepository;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Http\Requests\RegisterUserRequest;
 use Facebook\Facebook;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class AuthController extends Controller
 {
     /**
      * AuthController constructor.
+     *
      * @param AuthenticationRepository $authenticationRepository
      * @param FacebookAuthenticationRepository $facebookAuthenticationRepository
      * @param TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository
@@ -44,38 +44,69 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param RegisterUserRequest $request
      *
-     * @return int
+     * @return int|static
      */
-    protected function register(Request $request)
+    protected function register(RegisterUserRequest $request)
     {
-
-        return $request->all();
-
         $authType = 'normal';
+
+        $input = $request->only([
+            'email',
+            'password'
+        ]);
+
         switch($authType)
         {
             case 'normal';
-                $this->authenticationRepository->register([]);
-                return 1;
+                $user = $this->authenticationRepository->register($input);
+                return $this->response(
+                    $data = $user,
+                    $message = 'Users information.',
+                    $code = 201
+                );
             case 'facebook';
                 $this->facebookAuthenticationRepository->register();
                 return 2;
+
             case 'twitter';
                 $this->twitterAuthenticationRepository->register();
                 return 3;
+
             default;
                 return 4;
         }
     }
 
     /**
-     * Facebook login baby
+     * @param Request $request
+     * @return int|mixed
      */
-    protected function login()
+    protected function login(Request $request)
     {
+        $authType = 'normal';
 
+        $input = $request->only([
+            'email',
+            'password'
+        ]);
+
+        switch($authType)
+        {
+            case 'normal';
+                $user = $this->authenticationRepository->login($input);
+                return $this->response(
+                    $data = $user,
+                    $message = 'Users information.',
+                    $code = 201
+                );
+            case 'facebook';
+                $this->facebookAuthenticationRepository->register();
+                return 2;
+            default;
+                return 4;
+        }
     }
 
     /**
@@ -83,19 +114,18 @@ class AuthController extends Controller
      */
     protected function logout()
     {
-        return 'logout';
-    }
+        $authType = 'normal';
 
-    /**
-     * Profile picture of the logged in user
-     */
-    protected function test()
-    {
-        $response = $this->facebook->get('/me', $_SESSION['fb_access_token']);
-        var_dump('http://graph.facebook.com/' . $response->getGraphUser()->getId() . '/picture'); // photo
-        echo '<pre>';
-        print_r($response->getGraphUser()->all());
-        echo '</pre>';
+        switch($authType)
+        {
+            case 'normal';
+                $this->authenticationRepository->logout();
+                return 1;
+            case 'facebook';
+                $this->facebookAuthenticationRepository->register();
+                return 2;
+            default;
+                return 4;
+        }
     }
-
 }
