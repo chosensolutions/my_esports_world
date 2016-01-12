@@ -15,7 +15,7 @@ Route::group(['middleware' => ['web']], function ()
 // App routes
 Route::post('register', 'Auth\AuthController@register');
 
-Route::get('login', 'Auth\AuthController@login');
+Route::post('login', 'Auth\AuthController@login');
 
 Route::get('logout', 'Auth\AuthController@logout');
 

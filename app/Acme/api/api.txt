@@ -1,3 +1,20 @@
+speca.io/ asdasdasdasd
+
 GET /accounts/
 
 GET /profiles/{id}
+
+General format for successful and errors responses
+
+{
+  "message": "Users information.",
+  "code": 201,
+  "data": {
+    "email": "asdasd@asdacom.com111111",
+    "facebook_id": null,
+    "twitter_id": null,
+    "updated_at": "2016-01-12 08:58:05",
+    "created_at": "2016-01-12 08:58:05",
+    "id": 4
+  }
+}

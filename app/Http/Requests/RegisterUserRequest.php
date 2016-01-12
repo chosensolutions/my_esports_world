@@ -54,7 +54,7 @@ class RegisterUserRequest extends Request
     {
         return new JsonResponse([
             'message' => 'Error registering the user.',
-            'code' => 100,
+            'code' => 400,
             'data' => $errors
         ], 400);
     }

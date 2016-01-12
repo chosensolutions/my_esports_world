@@ -14,6 +14,7 @@ Modules
         - notification settings
 
     Profile
+        - search profiles/players
         - small sub modules
 
     Job

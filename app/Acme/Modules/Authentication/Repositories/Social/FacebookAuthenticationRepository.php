@@ -19,8 +19,12 @@ class FacebookAuthenticationRepository
 
     public function register()
     {
-        $helper = $this->facebook->getRedirectLoginHelper('http://localhost:8000/test');
-        $url = $helper->getLoginUrl('http://localhost:8000/profile');
+        $helper = $this->facebook->getRedirectLoginHelper('http://localhost/github/my_esports_world/public/#/');
+        $url = $helper->getLoginUrl('http://localhost/github/my_esports_world/public/#/');
+        $client = new \GuzzleHttp\Client([
+            'base_url' => $url
+        ]);
+        $client->get('/');
     }
 
     public function login()

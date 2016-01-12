@@ -50,14 +50,13 @@ class AuthController extends Controller
      */
     protected function register(RegisterUserRequest $request)
     {
-        $authType = 'normal';
-
         $input = $request->only([
             'email',
-            'password'
+            'password',
+            'type'
         ]);
 
-        switch($authType)
+        switch($input['type'])
         {
             case 'normal';
                 $user = $this->authenticationRepository->register($input);
@@ -68,7 +67,7 @@ class AuthController extends Controller
                 );
             case 'facebook';
                 $this->facebookAuthenticationRepository->register();
-                return 2;
+                break;
 
             case 'twitter';
                 $this->twitterAuthenticationRepository->register();
@@ -85,20 +84,19 @@ class AuthController extends Controller
      */
     protected function login(Request $request)
     {
-        $authType = 'normal';
-
         $input = $request->only([
             'email',
-            'password'
+            'password',
+            'type'
         ]);
 
-        switch($authType)
+        switch($input['type'])
         {
             case 'normal';
-                $user = $this->authenticationRepository->login($input);
+                $login_attempt = $this->authenticationRepository->login($input);
                 return $this->response(
-                    $data = $user,
-                    $message = 'Users information.',
+                    $data = ['login_attempt' => $login_attempt],
+                    $message = 'Users Login attempt.',
                     $code = 201
                 );
             case 'facebook';

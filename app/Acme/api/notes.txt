@@ -15,3 +15,11 @@ ui
 click
 call
 show errors - toastr???
+
+
+/*        $client = new \GuzzleHttp\Client([
+            'base_url' => $url
+        ]);
+        $response = $client->get('/');*/
+
+                //dd("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");

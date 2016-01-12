@@ -28,4 +28,13 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($password);
     }
 
+    public function account()
+    {
+        return $this->hasOne('Account');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('Profile');
+    }
 }
