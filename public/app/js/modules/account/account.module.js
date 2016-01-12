@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app.auth', [
+    angular.module('app.account', [
         'ui.router'
     ]);
 

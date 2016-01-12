@@ -3,17 +3,12 @@
     'use strict';
 
     angular
-        .module('app.auth')
-        .controller('AuthenticationRegisterController', AuthenticationRegisterController);
+        .module('app.account')
+        .controller('AccountEditController', AccountEditController);
 
-    function AuthenticationRegisterController($state, $http, API, PATH) {
+    function AccountEditController($state, $http) {
 
         var vm = this;
-
-        vm.hi = "asdasd";
-
-        console.log(API.url);
-        console.log(PATH.modules);
 
         $http({
             method: 'GET',

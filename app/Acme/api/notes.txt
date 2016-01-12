@@ -1,0 +1,16 @@
+What I want to do
+
+do the regular login
+
+backend
+request validation
+sanitization
+output
+event handler
+error messages
+
+frontend
+ui
+click
+call
+show errors - toastr???
