@@ -13,7 +13,7 @@
         $stateProvider
             .state('profile', {
                 url : '/profile',
-                templateUrl: local_url + 'profile.html'
+                templateUrl: local_url + 'show/profile.show.html'
             });
     }
 

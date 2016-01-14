@@ -17,6 +17,8 @@
     "angular": "~1.4.4",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "jquery": "~2.2.0"
+    "jquery": "~2.2.0",
+    "bootstrap-social": "~4.12.0",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }

@@ -1,8 +1,18 @@
-@import 'sass/_main.scss';
+// Modules
+// Auth
+@import 'sass/auth/_register.scss';
 
-@import 'sass/_buttons.scss';
+// Profile
+@import 'sass/profile/_profile.show.scss';
+@import 'sass/profile/_profile.edit.scss';
 
-
+// Components
 @import 'sass/navbar/_navbar.scss';
 @import 'sass/footer/_footer.scss';
-@import 'sass/profile/_profile.scss';
+
+// Utilities
+@import 'sass/utilities/_core.scss';
+@import 'sass/utilities/_colors.scss';
+@import 'sass/utilities/_buttons.scss';
+
+// vendor

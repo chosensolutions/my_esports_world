@@ -1,3 +1,48 @@
-register,
+<div class="register-container">
 
-<li ng-repeat="friend in vm.friends"> {{ friend.title }} </li>
+    <div class="social-auth">
+        <a class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span>
+            <span> Register with Facebook </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-twitter">
+            <span class="fa fa-twitter"></span>
+            <span> Register with Twitter </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-google">
+            <span class="fa fa-google"></span>
+            <span> Register with Google </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-reddit">
+            <span class="fa fa-reddit"></span>
+            <span> Register with Reddit </span>
+        </a>
+    </div>
+
+    <div class="normal-auth">
+
+        <div class="email">
+            <input class="focus" name="email" type="email" placeholder="Email"/>
+            <img src="app/assets/images/icons/mail_icon.svg"/>
+        </div>
+
+        <div class="password">
+            <input class="focus" name="password" type="password" placeholder="Password"/>
+            <img src="app/assets/images/icons/lock_icon.svg"/>
+        </div>
+
+        <div class="register-button">
+            <input class="button-0" type="submit" value="Register"/>
+        </div>
+
+        <div id="login">
+            <a href="#/forgot-password"> Already Have an Account? Login. </a>
+        </div>
+    </div>
+
+</div>
+
+
