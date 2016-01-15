@@ -16,35 +16,16 @@ nav {
                 text-decoration: none;
                 display: inline-block;
                 padding: 25px 25px;
-            }
 
-            a:link {
-                color: red;
-            }
+                &:link, &:visited {
+                    color: red;
+                }
 
-            a:visited {
-
+                &:hover, &:active {
+                    background-color: white;
+                    text-decoration: none;
+                }
             }
-
-            a:hover {
-                background-color: white;
-                text-decoration: none;
-            }
-            
-            a:active {
-                background-color: white;
-                text-decoration: none;
-            }
-            
-        }
-        
-        div {
-            float: right;
         }
     }
-
-}
-
-@media screen and (max-width: 580px) {
-    
 }

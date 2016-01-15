@@ -2,7 +2,6 @@
 
     width: 60%;
     height: 500px;
-    //border: solid 1px black;
     margin: 0 auto;
 
     .social-auth {
@@ -85,13 +84,6 @@
 
         .register-button {
 
-            /*
-            background-color: white;
-            height: 50px;
-            padding: 5px;
-            border-radius: 5px;
-            */
-
             .button-0 {
                 margin-top: 10px;
                 margin-left: 10%;
@@ -113,16 +105,15 @@
 
             .button-0:hover,
             .button-0:focus {
-/*                text-decoration: none;
-                color: #fff;*/
+                //text-decoration: none;
+                //color: #fff;
             }
 
             .button-0:active {
-/*                transform: translate(0px,5px);
-                -webkit-transform: translate(0px,5px);
-                border-bottom: 1px solid;*/
+                //transform: translate(0px,5px);
+                //-webkit-transform: translate(0px,5px);
+                //border-bottom: 1px solid;
             }
-
         }
 
         #login {

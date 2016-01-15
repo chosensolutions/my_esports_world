@@ -3,10 +3,10 @@
     'use strict';
 
     angular
-        .module('app.account')
-        .controller('AccountEditController', AccountEditController);
+        .module('app.profile')
+        .controller('ProfileShowController', ProfileShowController);
 
-    function AccountEditController($state, $http) {
+    function ProfileShowController($state, $http) {
 
         var vm = this;
 
