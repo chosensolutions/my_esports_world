@@ -2,27 +2,26 @@
 
 session_start();
 
+/**
+ * SPA
+ */
 Route::get('/', function ()
 {
     return view('index');
+});
+
+/**
+ * requires (not require_once) all the routes file from Acme/Routes folder
+ */
+Route::group(['prefix' => 'api/web/v1/', 'after' => 'allowOrigin'], function()
+{
+    foreach (File::allFiles(__DIR__.'/../Acme/Routes') as $partial)
+    {
+        require $partial->getPathname();
+    }
 });
 
 Route::group(['middleware' => ['web']], function ()
 {
     return 1;
 });
-
-// App routes
-Route::post('register', 'Auth\AuthController@register');
-
-Route::post('login', 'Auth\AuthController@login');
-
-Route::get('logout', 'Auth\AuthController@logout');
-
-Route::get('profile', 'Auth\AuthController@profile');
-
-Route::get('test', 'Auth\AuthController@test');
-
-Route::get('twitter', 'Auth\AuthController@twitter');
-
-Route::resource('profiles', 'ProfileController');
