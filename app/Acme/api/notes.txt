@@ -23,3 +23,22 @@ show errors - toastr???
         $response = $client->get('/');*/
 
                 //dd("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+
+
+
+Name:	musbe
+IP Address:	107.170.101.23
+Username:	forge
+Sudo Password:	bJL8RMorr3VGetO3Omwu
+Database Username:	forge
+Database Password:	SQmEr5lIXUqKlGQ0UJPj
+
+ssh forge@107.170.101.23
+
+mysql --host=localhost --user=forge --password=SQmEr5lIXUqKlGQ0UJPj musbe
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mysql-server-5.6
+
+mysqldump --lock-all-tables -u forge -p --all-databases > dump.sql
