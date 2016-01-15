@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yichen
- * Date: 1/15/2016
- * Time: 2:05 AM
- */
+
+namespace App\Acme\Utilities\Mailer;
+
+use Illuminate\Support\Facades\Mail;
+
+class Mailer
+{
+    public function send()
+    {
+
+    }
+}
