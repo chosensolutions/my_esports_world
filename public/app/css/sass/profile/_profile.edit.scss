@@ -13,6 +13,50 @@
     .profile-rank {
       width: 25%;
       float: left;
+
+      div {
+        text-align: center;
+
+        &:first-child {
+          img {
+            width: 80%;
+          }
+        }
+
+        &:nth-child(2) {
+          .profile-rank-team3 {
+            width: 50%;
+            float: left;
+          }
+          .profile-rank-team5 {
+            width: 50%;
+            float: left;
+
+            img {
+              width: 80%;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          margin-top: 10px;
+          border-top: solid lightgrey 3px;
+          border-bottom: solid lightgray 3px;
+        }
+      }
+      .stats {
+        button {
+          background-color: #d2d2d2;
+          width: 80%;
+          margin: 10px auto 0 auto;
+          opacity: 0.9;
+          border-radius: 5px;
+          font-size: 14px;
+          img {
+            width: 20%;
+          }
+        }
+      }
     }
 
     .profile-info {
@@ -27,13 +71,13 @@
         box-shadow: 1px 1px 2px #888888;
       }
     }
-
   }
 
   .profile-right-box {
     width: 20%;
     float: left;
     padding: 10px;
+
     ul {
       list-style-type: none;
       padding: 0;
@@ -51,7 +95,4 @@
       }
     }
   }
-
-  clear: both;
-
 }
