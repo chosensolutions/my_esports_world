@@ -109,20 +109,27 @@
     width: 20%;
     float: left;
     padding: 10px;
-
+    text-align: center;
     ul {
       list-style-type: none;
       padding: 0;
 
-      li a {
-        &:hover {
-          background-color: white;
+      li {
+        a {
+          &:hover {
+            background-color: white;
+          }
+
+          img {
+            height: 100px;
+            width: 150px;
+            margin: 10px;
+          }
         }
 
-        img {
-          height: 100px;
-          width: 150px;
-          margin: 10px;
+        p {
+
+          font-size: 12px;
         }
       }
     }
