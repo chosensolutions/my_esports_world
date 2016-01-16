@@ -47,3 +47,5 @@ sudo apt-get install mysql-server-5.6
 
 mysqldump --lock-all-tables -u forge -p --all-databases > dump.sql
 sudo apt-get install mysql-server-5.6
+
+https://www.youtube.com/watch?v=oXjJRrbKjp0
