@@ -21,5 +21,8 @@ Route::group(['prefix' => 'api/v1/', 'after' => 'allowOrigin', 'middleware' => [
     }
 });
 
-Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+Route::group(['after' => 'allowOrigin', 'middleware' => ['web']], function()
+{
+    Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+});
