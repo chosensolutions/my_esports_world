@@ -50,7 +50,7 @@ return [
     'google' => [
         'client_id' => '431714739626-qb21pd2ugo3iq698sj3d46kr092jhdna.apps.googleusercontent.com',
         'client_secret' => 'EZAw8_YAtimksUiFS-kNaXVY',
-        'redirect' => 'http://mew.musbe.ca/auth/twitter/callback',
+        'redirect' => 'http://mew.musbe.ca/auth/google/callback',
     ],
 
     'github' => [
