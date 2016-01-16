@@ -39,7 +39,7 @@ Database Password:	SQmEr5lIXUqKlGQ0UJPj
 
 ssh forge@107.170.101.23
 
-mysql --host=localhost --user=forge --password=SQmEr5lIXUqKlGQ0UJPj musbe
+mysql --host=localhost --user=root --password=SQmEr5lIXUqKlGQ0UJPj musbe
 
 sudo apt-get update
 sudo apt-get upgrade
