@@ -20,3 +20,6 @@ Route::group(['prefix' => 'api/v1/', 'after' => 'allowOrigin', 'middleware' => [
         require $partial->getPathname();
     }
 });
+
+Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');

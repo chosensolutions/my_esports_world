@@ -36,8 +36,8 @@ return [
     ],
 
     'github' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
+        'client_id' => '02ed5c2847f37e30aabe',
+        'client_secret' => '46816bd3d9f52d6c27b3924b81b2d584738fabaf',
         'redirect' => 'http://your-callback-url',
     ],
 ];
