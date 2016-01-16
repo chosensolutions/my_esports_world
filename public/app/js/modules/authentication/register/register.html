@@ -25,22 +25,23 @@
     <div class="normal-auth">
 
         <div class="email">
-            <input class="focus" name="email" type="email" placeholder="Email"/>
+            <input class="focus" ng-model="vm.input.email" name="email" type="email" placeholder="Email"/>
             <img src="app/assets/images/icons/mail_icon.svg"/>
         </div>
 
         <div class="password">
-            <input class="focus" name="password" type="password" placeholder="Password"/>
+            <input class="focus" ng-model="vm.input.type" name="password" type="password" placeholder="Password"/>
             <img src="app/assets/images/icons/lock_icon.svg"/>
         </div>
 
         <div class="register-button">
-            <input class="button-0" type="submit" value="Register"/>
+            <input class="button-0" ng-click="vm.register()" type="submit" value="Register"/>
         </div>
 
         <div id="login">
             <a href="#/forgot-password"> Already Have an Account? Login. </a>
         </div>
+
     </div>
 
 </div>

@@ -6,38 +6,46 @@
         .module('app.auth')
         .controller('AuthenticationRegisterController', AuthenticationRegisterController);
 
-    function AuthenticationRegisterController($state, $http, API, PATH) {
+    function AuthenticationRegisterController($state, AuthenticationService) {
 
         var vm = this;
 
-        vm.hi = "asdasd";
+        vm.input = {
+            type: 'normal',
+            email: 'string@sadasd.com',
+            password: 'password'
+        };
 
-        console.log(API.url);
-        console.log(PATH.modules);
+        vm.register = function()
+        {
+            AuthenticationService
+                .register(vm.input)
+                .then(function successCallback(response)
+                {
+                    console.log('---------------------------------');
+                    console.log('---------- Success --------------');
+                    console.log('---------------------------------');
+                    console.log('Code:', response.data.code);
+                    console.log('Message:', response.data.message);
+                    console.log('Data:', response.data.data);
+                    console.log('Status Code: ' + response.status);
+                    console.log('Status Text: ' + response.statusText);
+                }, function errorCallback(response)
+                {
+                    console.log('---------------------------------');
+                    console.log('---------- Error ----------------');
+                    console.log('---------------------------------');
+                    console.log('Code:', response.data.code);
+                    console.log('Message:', response.data.message);
+                    console.log('Data:', response.data.data);
+                    console.log('Status Code: ' + response.status);
+                    console.log('Status Text: ' + response.statusText);
 
-        $http({
-            method: 'GET',
-            url: 'http://jsonplaceholder.typicode.com/posts',
-            headers: {
-                'Content-Type': undefined
-            },
-            data: {
-                test: 'test'
-            }
-        })
-        .then(function successCallback(response) {
-
-            vm.friends = response.data;
-            console.log(response.data); // data – {string|Object} – The response body transformed with the transform functions.
-            console.log(response.status); // status – {number} – HTTP status code of the response.
-            console.log(response.headers); // headers – {function([headerName])} – Header getter function.
-            console.log(response.config); // config – {Object} – The configuration object that was used to generate the request.
-            console.log(response.statusText); // statusText – {string} – HTTP status text of the response.
-        }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
-
+                    _(response.data.data).forEach(function(value, key) {
+                        toastr.error(value, 'Failed to Create your Account.');
+                    });
+                });
+        };
     }
 
 })();
