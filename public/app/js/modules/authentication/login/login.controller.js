@@ -36,7 +36,6 @@
                         inherit: false,
                         notify: true
                     });
-
                 }, function errorCallback(response)
                 {
                     console.log('---------------------------------');

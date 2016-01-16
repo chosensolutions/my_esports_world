@@ -18,9 +18,9 @@
                 .logout()
                 .then(function successCallback(response)
                 {
-                    $state.transitionTo('auth.profile', $stateParams, {
+                    $state.transitionTo('auth.home', $stateParams, {
                         reload: true,
-                        inherit: false,
+                        inherit: true,
                         notify: true
                     });
                     console.log(response.data);
