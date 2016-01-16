@@ -155,6 +155,6 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('github')->user();
 
-        return $user;
+        dd($user);
     }
 }
