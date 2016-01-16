@@ -29,6 +29,9 @@ Route::group(['after' => 'allowOrigin', 'middleware' => ['web']], function()
     Route::get('auth/twitter', 'Auth\AuthController@redirectToProviderTwitter');
     Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallbackTwitter');
 
+    Route::get('auth/google', 'Auth\AuthController@redirectToProviderGoogle');
+    Route::get('auth/google/callback', 'Auth\AuthController@handleProviderCallbackGoogle');
+
     Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
     Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
 });
