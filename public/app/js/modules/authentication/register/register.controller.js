@@ -12,7 +12,7 @@
 
         vm.input = {
             type: 'normal',
-            email: 'string@sadasd.com',
+            email: 'test@test.com',
             password: 'password'
         };
 
@@ -30,6 +30,8 @@
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
                     console.log('Status Text: ' + response.statusText);
+                    $state.go('home');
+                    toastr.success('You will now be redirected to the home page.', 'Registration Success!');
                 }, function errorCallback(response)
                 {
                     console.log('---------------------------------');
@@ -42,7 +44,7 @@
                     console.log('Status Text: ' + response.statusText);
 
                     _(response.data.data).forEach(function(value, key) {
-                        toastr.error(value, 'Failed to Create your Account.');
+                        toastr.error(value, 'Registration Failed.');
                     });
                 });
         };

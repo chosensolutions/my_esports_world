@@ -4,11 +4,19 @@ namespace App\Acme\Modules\Authentication\Repositories\Social;
 
 use Illuminate\Support\Facades\Auth;
 use Facebook\Facebook;
+use Illuminate\Support\Facades\Redirect;
 
 class FacebookAuthenticationRepository
 {
-    function __construct()
+    /**
+     * FacebookAuthenticationRepository constructor.
+     *
+     * @param Auth $auth
+     */
+    function __construct(Auth $auth)
     {
+        $this->auth = $auth;
+
         $this->facebook  = new Facebook([
             'app_id' => '789305654421319',
             'app_secret' => 'd8718ba34a0179da088fb3628f2bbaf1',
@@ -17,14 +25,19 @@ class FacebookAuthenticationRepository
         ]);
     }
 
+    /**
+     * Logs the user in
+     */
     public function register()
     {
-        $helper = $this->facebook->getRedirectLoginHelper('http://localhost/github/my_esports_world/public/#/');
-        $url = $helper->getLoginUrl('http://localhost/github/my_esports_world/public/#/');
-        $client = new \GuzzleHttp\Client([
-            'base_url' => $url
-        ]);
-        $client->get('/');
+        $helper = $this->facebook->getRedirectLoginHelper('http://localhost:8069/#/');
+        $url = $helper->getLoginUrl('http://localhost:8069/#/');
+
+        return Redirect::to($url);
+
+        // add facebook_id to the User
+        // get information from fb and insert them into users, profiles, accounts table
+        // log the user in with Auth::loginUsingId();
     }
 
     public function login()
@@ -59,22 +72,22 @@ class FacebookAuthenticationRepository
             exit;
         }
 
-// Logged in
+        // Logged in
         echo '<h3>Access Token</h3>';
         var_dump($accessToken->getValue());
 
-// The OAuth 2.0 client handler helps us manage access tokens
+        // The OAuth 2.0 client handler helps us manage access tokens
         $oAuth2Client = $fb->getOAuth2Client();
 
-// Get the access token metadata from /debug_token
+        // Get the access token metadata from /debug_token
         $tokenMetadata = $oAuth2Client->debugToken($accessToken);
         echo '<h3>Metadata</h3>';
         var_dump($tokenMetadata);
 
-// Validation (these will throw FacebookSDKException's when they fail)
+        // Validation (these will throw FacebookSDKException's when they fail)
         $tokenMetadata->validateAppId('789305654421319');
-// If you know the user ID this access token belongs to, you can validate it here
-//$tokenMetadata->validateUserId('123');
+        // If you know the user ID this access token belongs to, you can validate it here
+        //$tokenMetadata->validateUserId('123');
         $tokenMetadata->validateExpiration();
 
         if (! $accessToken->isLongLived()) {
@@ -95,7 +108,8 @@ class FacebookAuthenticationRepository
 
     public function logout()
     {
-
+        // unset the session / fb token
+        // Auth::logout
     }
 
     /**

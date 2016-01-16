@@ -31,7 +31,6 @@
 
         function postLoginUser(data)
         {
-            console.log('should be posting now?', data);
             return $http.post(API.url + local_url + 'login', data);
         }
 
@@ -42,7 +41,7 @@
 
         function getAuthUser()
         {
-            return $http.get(API.url + local_url);
+            return $http.get(API.url + local_url + 'get-auth-user');
         }
     }
 
