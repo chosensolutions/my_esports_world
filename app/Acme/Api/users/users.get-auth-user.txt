@@ -1,4 +1,4 @@
-POST /users/register
+GET /users/get-auth-user
 ===================================
 
 Input
@@ -12,4 +12,6 @@ Input
 Output
 -----------------------------------
 {
+    test: string
 }
+

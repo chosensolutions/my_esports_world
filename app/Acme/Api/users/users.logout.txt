@@ -1,15 +1,15 @@
-POST /users/register
+POST /users/logout
 ===================================
 
 Input
 -----------------------------------
 {
-    type: string (normal, facebook, twitter, etc...)
-    email: string,
-    password: string
+    NULL
 }
 
 Output
 -----------------------------------
 {
+    logout_attempt: boolean
 }
+

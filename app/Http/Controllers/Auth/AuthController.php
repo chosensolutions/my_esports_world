@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use Facebook\Facebook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -65,6 +66,7 @@ class AuthController extends Controller
                     $message = 'Users information.',
                     $code = 201
                 );
+
             case 'facebook';
                 $this->facebookAuthenticationRepository->register();
                 break;
@@ -108,7 +110,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Facebook logout baby
+     * @return int
      */
     protected function logout()
     {
@@ -120,10 +122,14 @@ class AuthController extends Controller
                 $this->authenticationRepository->logout();
                 return 1;
             case 'facebook';
-                $this->facebookAuthenticationRepository->register();
+                $this->facebookAuthenticationRepository->logout();
                 return 2;
-            default;
-                return 4;
         }
     }
+
+    public function getAuthUser()
+    {
+        return Auth::user();
+    }
+
 }
