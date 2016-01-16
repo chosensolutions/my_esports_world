@@ -35,6 +35,12 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '789305654421319',
+        'client_secret' => 'd8718ba34a0179da088fb3628f2bbaf1',
+        'redirect' => 'http://mew.musbe.ca/auth/facebook/callback',
+    ],
+
     'github' => [
         'client_id' => '02ed5c2847f37e30aabe',
         'client_secret' => '46816bd3d9f52d6c27b3924b81b2d584738fabaf',
