@@ -41,6 +41,12 @@ return [
         'redirect' => 'http://mew.musbe.ca/auth/facebook/callback',
     ],
 
+    'twitter' => [
+        'client_id' => 'Hz7STqUWvk3Keo1Yedca7DJcw',
+        'client_secret' => 'qjWJNF8LrozOhd9zcPsrbC46EZg3gqq6RLwCMDmAL3aANxqqRm',
+        'redirect' => 'http://mew.musbe.ca/auth/twitter/callback',
+    ],
+
     'github' => [
         'client_id' => '02ed5c2847f37e30aabe',
         'client_secret' => '46816bd3d9f52d6c27b3924b81b2d584738fabaf',

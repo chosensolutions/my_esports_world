@@ -158,24 +158,26 @@ class AuthController extends Controller
         dd($user);
     }
 
-    /**
-     * Redirect the user to the GitHub authentication page.
-     *
-     * @return Response
-     */
     public function redirectToProviderFacebook()
     {
         return Socialite::driver('facebook')->redirect();
     }
 
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return Response
-     */
     public function handleProviderCallbackFacebook()
     {
         $user = Socialite::driver('facebook')->user();
+
+        dd($user);
+    }
+
+    public function redirectToProviderTwitter()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function handleProviderCallbackTwitter()
+    {
+        $user = Socialite::driver('twitter')->user();
 
         dd($user);
     }
