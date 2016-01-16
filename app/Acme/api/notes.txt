@@ -34,7 +34,7 @@ Name:	musbe
 IP Address:	107.170.101.23
 Username:	forge
 Sudo Password:	bJL8RMorr3VGetO3Omwu
-Database Username:	forge
+Database Username:	forge / root
 Database Password:	SQmEr5lIXUqKlGQ0UJPj
 
 ssh forge@107.170.101.23
@@ -46,5 +46,4 @@ sudo apt-get upgrade
 sudo apt-get install mysql-server-5.6
 
 mysqldump --lock-all-tables -u forge -p --all-databases > dump.sql
-
-test
+sudo apt-get install mysql-server-5.6

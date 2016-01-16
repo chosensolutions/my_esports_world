@@ -1,11 +1,6 @@
 <nav ng-controller="NavbarController as vm">
     <ul>
         <li><a href="#/"> Home </a></li>
-        <li><a href="#/about"> About </a></li>
-        <li><a href="#/contact"> Contact </a></li>
-        <li><a href="#/profile"> Profile </a></li>
-        <li><a href="#/profile/edit"> Profile Edit </a></li>
-        <li><a href="#/account"> Account </a></li>
 
         <div ng-if="!authUser">
             <li><a href="#/login"> Login </a></li>
@@ -13,7 +8,22 @@
         </div>
 
         <div ng-if="authUser">
-            <li><a href="#/account" ng-click="vm.logout()"> Logout </a></li>
+            <!-- drop down
+            <img src="..." alt="..." class="img-rounded">
+            -->
+            <li>
+                <a href="#/profile/edit"> Profile </a>
+                <div class="nav-content">
+                    <div class="nav-sub">
+                        <ul>
+                            <li><a href="#/account"> Account Settings </a></li>
+                            <li><a href="#/account"> Account Settings </a></li>
+                            <li><a href="#/account" ng-click="vm.logout()"> Logout </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
         </div>
     </ul>
 </nav>
+
