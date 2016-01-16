@@ -12,4 +12,9 @@ Input
 Output
 -----------------------------------
 {
+  "message": "Users Login attempt.",
+  "code": 200,
+  "data": {
+    "login_attempt": true
+  }
 }

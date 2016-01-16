@@ -1,6 +1,8 @@
 What I want to do
 
-do the regular login
+do the regular login -> full stack
+
+TDD setup -> with Elite testing framework
 
 
 do facebook login

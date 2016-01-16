@@ -8,20 +8,19 @@
 
     function config($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
-
+        var path = 'app/js/modules/page/static/';
         $stateProvider
-            .state('home', {
+            .state('auth.home', {
                 url: '/',
-                templateUrl: 'app/js/modules/page/home.html'
+                templateUrl: path + 'home.html'
             })
             .state('about', {
                 url: '/about',
-                templateUrl: 'app/js/modules/page/about.html'
+                templateUrl: path + 'about.html'
             })
             .state('contact', {
                 url: '/contact',
-                templateUrl: 'app/js/modules/page/contact.html'
+                templateUrl: path + 'contact.html'
             });
 
     }

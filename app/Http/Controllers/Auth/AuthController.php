@@ -27,9 +27,11 @@ class AuthController extends Controller
 
     )
     {
+        /*
         $this->middleware('guest', [
             'except' => 'logout'
         ]);
+        */
 
         $this->authenticationRepository = $authenticationRepository;
         $this->facebookAuthenticationRepository = $facebookAuthenticationRepository;
@@ -88,41 +90,48 @@ class AuthController extends Controller
         switch($input['type'])
         {
             case 'normal';
-                $login_attempt = $this->authenticationRepository->login($input);
+                $data = [
+                    'login_attempt' => $this->authenticationRepository->login($input),
+                    'logged in' => Auth::check()
+                ];
                 return $this->response(
-                    $data = ['login_attempt' => $login_attempt],
+                    $data,
                     $message = 'Users Login attempt.',
-                    $code = 201
+                    $code = 200
                 );
+
             case 'facebook';
-                $this->facebookAuthenticationRepository->register();
+                $this->facebookAuthenticationRepository->login();
                 return 2;
-            default;
-                return 4;
         }
     }
 
     /**
-     * @return int
+     * Logs out / terminates every single possible sessions there are
      */
     protected function logout()
     {
-        $authType = 'normal';
-
-        switch($authType)
-        {
-            case 'normal';
-                $this->authenticationRepository->logout();
-                return 1;
-            case 'facebook';
-                $this->facebookAuthenticationRepository->logout();
-                return 2;
-        }
+        $this->authenticationRepository->logout();
+        return $this->response(
+            $data = [
+                'logged_in' => Auth::check()
+            ],
+            $message = 'Users has successfully logged out.',
+            $code = 200
+        );
     }
 
+    /**
+     * Returns information about the currently auth user
+     *
+     * @return mixed
+     */
     public function getAuthUser()
     {
-        return Auth::user();
+        return $this->response(
+            $data = Auth::user(),
+            $message = 'Currently Authenticated User Information.',
+            $code = 200
+        );
     }
-
 }

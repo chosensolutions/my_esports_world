@@ -1,7 +1,13 @@
 <?php
 
 // just testing shit here
+Route::get('test', function() {
 
-Route::get('test', 'Auth\AuthController@test');
+    //Auth::loginUsingId(1);
 
-Route::get('twitter', 'Auth\AuthController@twitter');
+/*    Auth::attempt([
+        'email' => 'test@test.com',
+        'password' => 'password'
+    ]);*/
+    return (Auth::user());
+});

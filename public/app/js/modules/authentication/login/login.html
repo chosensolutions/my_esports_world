@@ -1,0 +1,49 @@
+<div class="register-container">
+
+    <div class="social-auth">
+        <a class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span>
+            <span> Login with Facebook </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-twitter">
+            <span class="fa fa-twitter"></span>
+            <span> Login with Twitter </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-google">
+            <span class="fa fa-google"></span>
+            <span> Login with Google </span>
+        </a>
+
+        <a class="btn btn-block btn-social btn-reddit">
+            <span class="fa fa-reddit"></span>
+            <span> Login with Reddit </span>
+        </a>
+    </div>
+
+    <div class="normal-auth">
+
+        <div class="email">
+            <input class="focus" ng-model="vm.input.email" name="email" type="email" placeholder="Email"/>
+            <img src="app/assets/images/icons/mail_icon.svg"/>
+        </div>
+
+        <div class="password">
+            <input class="focus" ng-model="vm.input.type" name="password" type="password" placeholder="Password"/>
+            <img src="app/assets/images/icons/lock_icon.svg"/>
+        </div>
+
+        <div class="register-button">
+            <input class="button-0" ng-click="vm.register()" type="submit" value="Login"/>
+        </div>
+
+        <div id="login">
+            <a href="#/forgot-password"> Already Have an Account? Login. </a>
+        </div>
+
+    </div>
+
+</div>
+
+

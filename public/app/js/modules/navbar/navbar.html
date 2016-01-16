@@ -1,4 +1,4 @@
-<nav>
+<nav ng-controller="NavbarController as vm">
     <ul>
         <li><a href="#/"> Home </a></li>
         <li><a href="#/about"> About </a></li>
@@ -7,9 +7,13 @@
         <li><a href="#/profile/edit"> Profile Edit </a></li>
         <li><a href="#/account"> Account </a></li>
 
-        <div>
+        <div ng-if="!authUser">
             <li><a href="#/login"> Login </a></li>
             <li><a href="#/register"> Register </a></li>
+        </div>
+
+        <div ng-if="authUser">
+            <li><a href="#/account" ng-click="vm.logout()"> Logout </a></li>
         </div>
     </ul>
 </nav>

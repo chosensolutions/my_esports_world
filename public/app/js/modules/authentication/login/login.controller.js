@@ -4,9 +4,9 @@
 
     angular
         .module('app.auth')
-        .controller('AuthenticationRegisterController', AuthenticationRegisterController);
+        .controller('AuthenticationLoginController', AuthenticationLoginController);
 
-    function AuthenticationRegisterController($state, AuthenticationService) {
+    function AuthenticationLoginController($state, $stateParams, AuthenticationService) {
 
         var vm = this;
 
@@ -19,7 +19,7 @@
         vm.register = function()
         {
             AuthenticationService
-                .register(vm.input)
+                .login(vm.input)
                 .then(function successCallback(response)
                 {
                     console.log('---------------------------------');
@@ -30,8 +30,13 @@
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
                     console.log('Status Text: ' + response.statusText);
-                    $state.go('home');
-                    toastr.success('You will now be redirected to the home page.', 'Registration Success!');
+
+                    $state.transitionTo('auth.profileEdit', $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+
                 }, function errorCallback(response)
                 {
                     console.log('---------------------------------');
@@ -44,7 +49,7 @@
                     console.log('Status Text: ' + response.statusText);
 
                     _(response.data.data).forEach(function(value, key) {
-                        toastr.error(value, 'Registration Failed.');
+                        toastr.error(value, 'Login Failed.');
                     });
                 });
         };

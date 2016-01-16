@@ -36,14 +36,14 @@ class AuthenticationRepository
 
     /**
      * @param $input
-     * @return mixed
+     * @return boolean
      */
     public function login($input)
     {
-        return $this->auth->attempt([
+        return Auth::attempt([
             'email' => $input['email'],
             'password' => $input['password']
-        ]);
+        ], true);
     }
 
     /**
@@ -51,6 +51,6 @@ class AuthenticationRepository
      */
     public function logout()
     {
-        return $this->auth->logout();
+        return Auth::logout();
     }
 }

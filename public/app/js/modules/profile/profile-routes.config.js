@@ -15,14 +15,16 @@
                 url : '/profiles',
                 templateUrl: local_url + 'index/profile.index.html'
             })
-            .state('profile', {
+            .state('auth.profile', {
                 url : '/profile',
-                templateUrl: local_url + 'show/profile.show.html'
+                templateUrl: local_url + 'show/profile.show.html',
+                controller: 'ProfileShowController',
+                controllerAs: 'vm'
             })
-            .state('profile_edit', {
+            .state('auth.profileEdit', {
                 url : '/profile/edit',
                 templateUrl: local_url + 'edit/profile.edit.html',
-                controller: 'AccountEditController',
+                controller: 'ProfileEditController',
                 controllerAs: 'vm'
             });
     }

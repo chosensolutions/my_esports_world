@@ -36,7 +36,10 @@
 
         function postLogoutUser()
         {
-            return $http.post(API.url + local_url + 'logout');
+            return $http({
+                method: 'GET',
+                url: API.url + local_url + 'logout'
+            });
         }
 
         function getAuthUser()

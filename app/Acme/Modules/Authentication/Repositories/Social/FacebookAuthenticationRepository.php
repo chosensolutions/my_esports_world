@@ -21,7 +21,7 @@ class FacebookAuthenticationRepository
             'app_id' => '789305654421319',
             'app_secret' => 'd8718ba34a0179da088fb3628f2bbaf1',
             'default_graph_version' => 'v2.2',
-            'persistent_data_handler'=>'session'
+            'persistent_data_handler'=> 'session'
         ]);
     }
 
