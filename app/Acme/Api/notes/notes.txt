@@ -9,16 +9,18 @@ event handler
 output -> success and/or error messages
 
 TODO - Today
-- schema /
-- models /
-- factories /
-- seeds /
-- write tests * + TDD setup
-- profile show
-- set up testing framework -> EliteTesting Framework?
 
 TODO - All
 do the regular login -> full stack
 do facebook login
-
 soft delete?
+
+Arrange Act Assert
+
+figure out all the api end points
+
+auth
+account
+profile
+
+events via email

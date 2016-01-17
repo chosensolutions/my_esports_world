@@ -4,6 +4,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Artisan;
+use App\User;
+use App\Acme\Models\Profile;
 
 class ProfileTest extends TestCase
 {
@@ -20,6 +22,48 @@ class ProfileTest extends TestCase
         Parent::setUp();
         //Artisan::call('migrate');
         //$this->artisan('db:seed');
+
+        // User
+        $users = factory(App\User::class, 2)->create();
+
+        foreach($users as $user)
+        {
+            // Account
+            factory(App\Acme\Models\Account::class)->create([
+                'user_id' => $user->id
+            ]);
+
+            // Summoner
+            factory(App\Acme\Models\Summoner::class)->create([
+                'user_id' => $user->id
+            ]);
+
+            // Video
+            factory(App\Acme\Models\Video::class)->create([
+                'user_id' => $user->id
+            ]);
+
+            // Profile
+            $profile = factory(App\Acme\Models\Profile::class)->create([
+                'user_id' => $user->id
+            ]);
+
+            factory(App\Acme\Models\ProfileExperience::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileAward::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileEducation::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileLanguage::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+        }
     }
 
     /**
@@ -27,11 +71,10 @@ class ProfileTest extends TestCase
      *
      * @return void
      */
-    public function test_it_does_something()
+    public function test_it_shows_all_profiles()
     {
-        \App\User::create(['email' => 'a@a.com1']);
-        $this->seeInDatabase('users', [
-            'email' => 'a@a.com1'
+        $this->get('api/v1/profiles')->seeJson([
+            'code' => 200,
         ]);
     }
 
@@ -40,12 +83,10 @@ class ProfileTest extends TestCase
      *
      * @return void
      */
-    public function test_it_does_something_also()
+    public function test_shows_a_specific_profile_by_id()
     {
-        \App\User::create(['email' => 'a@a.com1']);
-        $this->seeInDatabase('users', [
-            'email' => 'a@a.com1'
+        $this->get('api/v1/profiles/1')->seeJson([
+            'code' => 200,
         ]);
     }
-
 }

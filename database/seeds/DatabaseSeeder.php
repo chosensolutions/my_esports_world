@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
      */
     private function cleanDatabase()
     {
+        // getenv('APP_ENV') == 'testing' ?:
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
         foreach ($this->tables as $table)
