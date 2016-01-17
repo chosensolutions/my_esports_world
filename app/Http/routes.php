@@ -17,7 +17,7 @@ Route::group([
     'prefix' => 'api/v1/',
     'after' => 'allowOrigin',
     'middleware' => [
-        'web'
+        'cors', 'web'
     ]
 ], function()
 {
@@ -27,7 +27,16 @@ Route::group([
     }
 });
 
-Route::group(['after' => 'allowOrigin', 'middleware' => ['web']], function()
+/**
+ * Tests
+ */
+Route::group([
+    'after' => 'allowOrigin',
+    'middleware' => [
+        'cors',
+        'web'
+    ]
+], function()
 {
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProviderFacebook');
     //////
