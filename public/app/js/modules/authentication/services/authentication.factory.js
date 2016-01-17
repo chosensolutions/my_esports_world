@@ -22,9 +22,6 @@
             return $http({
                 method: 'POST',
                 url: API.url + local_url + 'register',
-                headers: {
-                    'Content-Type' : 'application/x-www-form-urlencoded'
-                },
                 data: $.param(data)
             });
         }
