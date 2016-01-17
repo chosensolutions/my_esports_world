@@ -1,11 +1,8 @@
-speca.io/ asdasdasdasd
-
-GET /accounts/
-
-GET /profiles/{id}
+www.speca.io/my_esports_world.com
 
 General format for successful and errors responses
 
+Output
 {
   "message": "Users information.",
   "code": 201,
@@ -18,7 +15,6 @@ General format for successful and errors responses
     "id": 4
   }
 }
-
 
 ===================================
 -----------------------------------
