@@ -39,6 +39,7 @@ class AuthenticationRepository
                 ]);
 
             case 'facebook';
+                dd('facebook baby');
                 return Socialite::driver('facebook')->redirect();
         }
     }
