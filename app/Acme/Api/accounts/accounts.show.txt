@@ -1,0 +1,19 @@
+GET /accounts
+===================================
+
+Gets the currently authenticated user's account settings information.
+
+Input
+-----------------------------------
+{
+    type: string (normal, facebook, twitter, etc...)
+    email: string,
+    password: string
+}
+
+Output
+-----------------------------------
+{
+    test: string
+}
+
