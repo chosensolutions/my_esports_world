@@ -1,10 +1,7 @@
 <?php
 
 session_start();
-header('Access-Control-Allow-Origin', 'some url');
-header('Allow', 'GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
-header('Access-Control-Allow-Credentials', 'true');
+
 /**
  * SPA
  */
