@@ -26,7 +26,6 @@ class AuthController extends Controller
         AuthenticationRepository $authenticationRepository,
         FacebookAuthenticationRepository $facebookAuthenticationRepository,
         TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository
-
     )
     {
         /*

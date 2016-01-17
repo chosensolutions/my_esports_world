@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'App\Acme\Modules\Profile\ProfileRepositoryInterface',
+            'App\Acme\Modules\Profile\ProfileRepository'
+        );
+
+        $this->app->bind(
             'App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRepositoryInterface',
             'App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRepository'
         );

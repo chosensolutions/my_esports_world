@@ -2,30 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Acme\Modules\Profile\ProfileRepositoryInterface;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Facebook\Facebook;
-use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {
-    public function __construct()
+    /**
+     * @var ProfileRepositoryInterface
+     */
+    private $profileRepository;
+
+    /**
+     * ProfileController constructor.
+     * @param $profileRepository
+     */
+    public function __construct(ProfileRepositoryInterface $profileRepository)
     {
-        $this->facebook = new Facebook([
-            'app_id' => '789305654421319',
-            'app_secret' => 'd8718ba34a0179da088fb3628f2bbaf1',
-            'default_graph_version' => 'v2.2',
-            'persistent_data_handler'=>'session'
-        ]);
+        $this->profileRepository = $profileRepository;
     }
 
+    /**
+     * @return mixed
+     */
     protected function index()
     {
-        $helper = $this->facebook->getRedirectLoginHelper('http://localhost/github/my_esports_world/public/#/');
-        $url = $helper->getLoginUrl('http://localhost/github/my_esports_world/public/#/login');
+        return $this->response(
+            $this->profileRepository->getAll(),
+            'All profiles in the database',
+            200
+        );
+    }
 
-        return Redirect::to($url);
+    /**
+     * @param $id
+     * @return mixed
+     */
+    protected function show($id)
+    {
+        return $this->response(
+            $this->profileRepository->getById($id),
+            'profile of the user by id.',
+            200
+        );
     }
 }
