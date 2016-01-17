@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
+
     protected $guarded = [];
 
     /**
@@ -30,11 +32,11 @@ class User extends Authenticatable
 
     public function account()
     {
-        return $this->hasOne('Account');
+        return $this->hasOne('App\Acme\Models\Account');
     }
 
     public function profile()
     {
-        return $this->hasOne('Profile');
+        return $this->hasOne('App\Acme\Models\Profile');
     }
 }
