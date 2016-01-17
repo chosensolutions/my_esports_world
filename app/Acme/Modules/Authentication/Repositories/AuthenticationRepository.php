@@ -4,6 +4,7 @@ namespace App\Acme\Modules\Authentication\Repositories;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticationRepository
 {
@@ -21,17 +22,25 @@ class AuthenticationRepository
 
     /**
      * Inserts the the email and password into the database
+     *
      * @param $input
      * @return static
      */
     public function register($input)
     {
-        return $this->user->create([
-            'email' => $input['email'],
-            'password' => $input['password'],
-            'facebook_id' => null,
-            'twitter_id' => null,
-        ]);
+        switch($input['auth_type'])
+        {
+            case 'normal';
+                return $this->user->create([
+                    'email' => $input['email'],
+                    'password' => $input['password'],
+                    'facebook_id' => null,
+                    'twitter_id' => null,
+                ]);
+
+            case 'facebook';
+                return Socialite::driver('facebook')->redirect();
+        }
     }
 
     /**
@@ -40,10 +49,17 @@ class AuthenticationRepository
      */
     public function login($input)
     {
-        return Auth::attempt([
-            'email' => $input['email'],
-            'password' => $input['password']
-        ], true);
+        switch($input['auth_type'])
+        {
+            case 'normal':
+                return Auth::attempt([
+                    'email' => $input['email'],
+                    'password' => $input['password']
+                ], true);
+            case 'facebook':
+
+        }
+
     }
 
     /**

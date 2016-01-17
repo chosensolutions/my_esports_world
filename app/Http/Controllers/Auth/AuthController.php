@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
@@ -40,6 +41,11 @@ class AuthController extends Controller
     }
 
     /**
+     * Request {
+     *  'email',
+     *  'password',
+     *  'auth_type'
+     * }
      * @param RegisterUserRequest $request
      *
      * @return int|static
@@ -49,31 +55,14 @@ class AuthController extends Controller
         $input = $request->only([
             'email',
             'password',
-            'type'
+            'auth_type'
         ]);
 
-        switch($input['type'])
-        {
-            case 'normal';
-                $user = $this->authenticationRepository->register($input);
-
-                return $this->response(
-                    $data = $user,
-                    $message = 'Users information.',
-                    $code = 201
-                );
-
-            case 'facebook';
-                $this->facebookAuthenticationRepository->register();
-                break;
-
-            case 'twitter';
-                $this->twitterAuthenticationRepository->register();
-                return 3;
-
-            default;
-                return 4;
-        }
+        return $this->response(
+            $data = $this->authenticationRepository->register($input),
+            $message = 'User Registration success.',
+            $code = 201
+        );
     }
 
     /**
@@ -88,23 +77,16 @@ class AuthController extends Controller
             'type'
         ]);
 
-        switch($input['type'])
-        {
-            case 'normal';
-                $data = [
-                    'login_attempt' => $this->authenticationRepository->login($input),
-                    'logged in' => Auth::check()
-                ];
-                return $this->response(
-                    $data,
-                    $message = 'Users Login attempt.',
-                    $code = 200
-                );
+        $data = [
+            'login_attempt' => $this->authenticationRepository->login($input),
+            'logged in' => Auth::check()
+        ];
+        return $this->response(
+            $data,
+            $message = 'Users Login attempt.',
+            $code = 200
+        );
 
-            case 'facebook';
-                $this->facebookAuthenticationRepository->login();
-                return 2;
-        }
     }
 
     /**
@@ -144,8 +126,7 @@ class AuthController extends Controller
     public function handleProviderCallbackFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-
-        dd($user);
+        Redirect::to('/');
     }
 
     public function redirectToProviderTwitter()

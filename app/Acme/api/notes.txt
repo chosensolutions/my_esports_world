@@ -1,10 +1,6 @@
 What I want to do
-
 do the regular login -> full stack
-
 TDD setup -> with Elite testing framework
-
-
 do facebook login
 
 backend
@@ -19,16 +15,6 @@ ui
 click
 call
 show errors - toastr???
-
-
-/*        $client = new \GuzzleHttp\Client([
-            'base_url' => $url
-        ]);
-        $response = $client->get('/');*/
-
-                //dd("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
-
-
 
 Name:	musbe
 IP Address:	107.170.101.23
@@ -55,3 +41,9 @@ https://developers.facebook.com/apps/789305654421319/dashboard/
 https://apps.twitter.com/app/9365087/show
 https://console.developers.google.com/home/dashboard?project=my-esports-world
 https://github.com/settings/applications/286897
+
+TODAY
+- set up testing framework -> EliteTesting Framework?
+- write tests
+- seed database
+- write up all the schema
