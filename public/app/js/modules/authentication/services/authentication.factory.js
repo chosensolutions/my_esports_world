@@ -14,7 +14,8 @@
             register: postRegisterUser,
             login: postLoginUser,
             logout: postLogoutUser,
-            getAuthUser: getAuthUser
+            getAuthUser: getAuthUser,
+            test: test
         };
 
         function postRegisterUser(data)
