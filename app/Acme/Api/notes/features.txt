@@ -1,0 +1,27 @@
+Modules
+    Authentication
+        - regular(email), (phone number?), facebook, twitter, google
+            - register
+            - login
+            - logout
+        - password recover, reset
+
+    Account / Settings
+        - verify summoner name by change of rune pages
+        - email settings
+        - connect/disconnect facebook, twitter
+        - username, email, password
+        - notification settings
+
+    Profile
+        - search profiles/players
+        - small sub modules
+
+    Job
+        - postings made by teams
+
+    Notification
+
+    Message/chat system
+
+    Follow System
