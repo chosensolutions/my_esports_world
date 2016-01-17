@@ -29,10 +29,14 @@ class CORS {
             return Response::make('OK', 200, $headers);
         }
 
-        $response = $next($request);
+/*        $response = $next($request);
         $response->header->set('Access-Control-Allow-Origin', '*');
         $response->header->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-        return $response;
+        return $response;*/
+
+        return response($request)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 }
