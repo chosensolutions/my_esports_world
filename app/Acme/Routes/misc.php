@@ -2,5 +2,5 @@
 
 // just testing shit here
 Route::get('test', function() {
-    return redirect('google.ca');
+    return redirect()->away('https://www.dropbox.com');
 });
