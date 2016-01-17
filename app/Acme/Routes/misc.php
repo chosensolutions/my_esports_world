@@ -2,5 +2,5 @@
 
 // just testing shit here
 Route::get('test', function() {
-    return redirect()->away('https://www.dropbox.com');
+    return redirect()->away('https://www.facebook.com/');
 });
