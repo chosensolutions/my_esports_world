@@ -39,6 +39,8 @@ class AuthenticationRepository
                 ]);
 
             case 'facebook';
+                return redirect()->away('https://www.facebook.com/');
+                dd(Socialite::driver('facebook')->redirect());
                 return Socialite::driver('facebook')->redirect();
         }
     }
