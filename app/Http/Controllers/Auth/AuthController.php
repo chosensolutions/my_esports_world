@@ -125,7 +125,7 @@ class AuthController extends Controller
     public function handleProviderCallbackFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-        Redirect::to('/');
+        redirect('/');
     }
 
     public function redirectToProviderTwitter()
