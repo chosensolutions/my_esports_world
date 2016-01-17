@@ -17,7 +17,7 @@ Route::group([
     'prefix' => 'api/v1/',
     'after' => 'allowOrigin',
     'middleware' => [
-        'cors', 'web'
+        'web'
     ]
 ], function()
 {
@@ -33,7 +33,6 @@ Route::group([
 Route::group([
     'after' => 'allowOrigin',
     'middleware' => [
-        'cors',
         'web'
     ]
 ], function()
