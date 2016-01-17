@@ -45,15 +45,16 @@
                     console.log('---------------------------------');
                     console.log('---------- Error ----------------');
                     console.log('---------------------------------');
+                    console.log(response);
 /*                    console.log('Code:', response.data.code);
                     console.log('Message:', response.data.message);
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
-                    console.log('Status Text: ' + response.statusText);*/
+                    console.log('Status Text: ' + response.statusText);
 
                     _(response.data.data).forEach(function(value, key) {
                         toastr.error(value, 'Registration Failed.');
-                    });
+                    });*/
                 });
         };
     }
