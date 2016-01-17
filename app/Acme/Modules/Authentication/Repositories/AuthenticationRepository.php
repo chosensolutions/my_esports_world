@@ -28,6 +28,7 @@ class AuthenticationRepository
      */
     public function register($input)
     {
+        dd($input);
         switch($input['auth_type'])
         {
             case 'normal';

@@ -1,0 +1,7 @@
+cd /home/forge/mew.musbe.ca
+git pull origin master
+composer install --no-interaction --no-dev --prefer-dist
+php artisan migrate --force
+cd public
+bower install
+gulp build --dev

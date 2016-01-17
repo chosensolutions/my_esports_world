@@ -20,7 +20,7 @@
         {
             console.log('authTYPE:', auth_type);
             AuthenticationService
-                .register(vm.input)
+                .register(data)
                 .then(function successCallback(response)
                 {
                     console.log('---------------------------------');
