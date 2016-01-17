@@ -15,6 +15,17 @@
             password: 'password'
         };
 
+        AuthenticationService
+            .test()
+            .then(function successCallback(response) {
+                console.log(response);
+            },
+                function errorCallback(response)
+                {
+                    console.log(response);
+                }
+            );
+
         vm.register = function(auth_type)
         {
             console.log('authTYPE:', auth_type);

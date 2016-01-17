@@ -1,6 +1,6 @@
 <?php
 
 // just testing shit here
-Route::get('test', function() {
+Route::post('test', function() {
     return redirect()->away('https://www.facebook.com/');
 });
