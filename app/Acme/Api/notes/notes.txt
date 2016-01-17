@@ -1,70 +1,21 @@
-What I want to do
-do the regular login -> full stack
-TDD setup -> with Elite testing framework
-do facebook login
-
-backend
-request validation
+Order of Action in Backend
+---------------------------------
+route name
+request / query strings in url
+validation
 sanitization
-output
+business logic / insert into db
 event handler
-error messages
+output -> success and/or error messages
 
-frontend
-ui
-click
-call
-show errors - toastr???
-
-Name:	musbe
-IP Address:	107.170.101.23
-Username: forge
-Sudo Password: bJL8RMorr3VGetO3Omwu
-Database Username: forge / root
-Database Password: SQmEr5lIXUqKlGQ0UJPj
-
-ssh forge@107.170.101.23
-
-mysql --host=localhost --user=root --password=SQmEr5lIXUqKlGQ0UJPj musbe
-
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install mysql-server-5.6
-
-mysqldump --lock-all-tables -u forge -p --all-databases > dump.sql
-sudo apt-get install mysql-server-5.6
-
-mysql shit fixed tutorial here with the sockets
-https://www.youtube.com/watch?v=oXjJRrbKjp0
-
-Links
---------------------
-https://github.com/chosensolutions/my_esports_world/
-https://speca.io/ChosenSolutions/myesportsworld
-invis.io/B85KK3S2X
-https://developers.facebook.com/apps/789305654421319/dashboard/
-https://apps.twitter.com/app/9365087/show
-https://console.developers.google.com/home/dashboard?project=my-esports-world
-https://github.com/settings/applications/286897
-
-github
-stackoverflow
-
-TODAY
+TODO - Today
 - set up testing framework -> EliteTesting Framework?
 - write tests
 - seed database
 - write up all the schema
 
-
-PROBLEMS
-------------------
-problem with POST redirect to an external page - allow access control origin CORS problem
-
-SCHEMA
-===============
-User
-    Profile
-        ProfileEducation
-        ProfileLanguage
-    Account
+TODO - All
+What I want to do
+do the regular login -> full stack
+TDD setup -> with Elite testing framework
+do facebook login

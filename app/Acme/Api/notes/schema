@@ -1,0 +1,7 @@
+SCHEMA
+===============
+User
+    Profile
+        ProfileEducation
+        ProfileLanguage
+    Account
