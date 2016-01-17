@@ -32,10 +32,10 @@ show errors - toastr???
 
 Name:	musbe
 IP Address:	107.170.101.23
-Username:	forge
-Sudo Password:	bJL8RMorr3VGetO3Omwu
-Database Username:	forge / root
-Database Password:	SQmEr5lIXUqKlGQ0UJPj
+Username: forge
+Sudo Password: bJL8RMorr3VGetO3Omwu
+Database Username: forge / root
+Database Password: SQmEr5lIXUqKlGQ0UJPj
 
 ssh forge@107.170.101.23
 
