@@ -33,11 +33,11 @@
                     console.log('---------------------------------');
                     console.log('---------- Success --------------');
                     console.log('---------------------------------');
-                    console.log('Code:', response.data.code);
+/*                    console.log('Code:', response.data.code);
                     console.log('Message:', response.data.message);
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
-                    console.log('Status Text: ' + response.statusText);
+                    console.log('Status Text: ' + response.statusText);*/
                     $state.go('auth.home');
                     toastr.success('You will now be redirected to the home page.', 'Registration Success!');
                 }, function errorCallback(response)
