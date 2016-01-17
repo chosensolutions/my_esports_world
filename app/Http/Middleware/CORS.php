@@ -28,7 +28,7 @@ class CORS {
             // The client-side application can set only headers allowed in Access-Control-Allow-Headers
             return Response::make('OK', 200, $headers);
         }
-        $request->header('Access-Control-Allow-Origin', 'http://musbe.ca');
+        $request->header('Access-Control-Allow-Origin', 'http://mew.musbe.ca');
         $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         return $response = $next($request);

@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-
+header('Access-Control-Allow-Origin: http://mew.musbe.ca');
+header('Access-Control-Allow-Credentials: true');
 /**
  * SPA
  */
