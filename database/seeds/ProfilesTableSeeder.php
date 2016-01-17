@@ -13,13 +13,28 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        $users = factory(App\User::class, 3)->create();
 
-        foreach(range(1, 20) as $index)
+        foreach($users as $user)
         {
-            Profile::create([
-                'user_id' => $index,
-                'email' => $faker->companyEmail
+            $profile = factory(App\Acme\Models\Profile::class)->create([
+                'user_id' => $user->id
+            ]);
+
+            factory(App\Acme\Models\ProfileExperience::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileAward::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileEducation::class, 3)->create([
+                'profile_id' => $profile->id
+            ]);
+
+            factory(App\Acme\Models\ProfileLanguage::class, 3)->create([
+                'profile_id' => $profile->id
             ]);
         }
     }

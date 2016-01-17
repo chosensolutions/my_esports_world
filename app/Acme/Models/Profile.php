@@ -15,6 +15,16 @@ class Profile extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function experiences()
+    {
+        return $this->hasMany('App\Acme\Models\ProfileExperience');
+    }
+
+    public function awards()
+    {
+        return $this->hasMany('App\Acme\Models\ProfileAward');
+    }
+
     public function educations()
     {
         return $this->hasMany('App\Acme\Models\ProfileEducation');

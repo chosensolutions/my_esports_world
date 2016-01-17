@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfileLanguagesTable extends Migration
+class CreateProfileExperiencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,19 @@ class CreateProfileLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_languages', function (Blueprint $table)
+        Schema::create('profile_experiences', function (Blueprint $table)
         {
             $table->increments('id');
 
             $table->integer('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
 
-            $table->string('type');
-            $table->string('fluency');
+            $table->string('organization');
+            $table->string('position');
+            $table->string('location');
+            $table->string('date_from');
+            $table->string('date_to');
+            $table->string('description');
 
             $table->timestamps();
         });
@@ -33,6 +37,6 @@ class CreateProfileLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('profile_languages');
+        Schema::drop('profile_experiences');
     }
 }

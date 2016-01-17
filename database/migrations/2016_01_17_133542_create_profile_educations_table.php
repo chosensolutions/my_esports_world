@@ -12,11 +12,18 @@ class CreateProfileEducationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_educations', function (Blueprint $table) {
+        Schema::create('profile_educations', function (Blueprint $table)
+        {
             $table->increments('id');
+
             $table->integer('profile_id')->unsigned();
-            $table->foreign('profile_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
+
             $table->string('institution');
+            $table->string('date_from');
+            $table->string('date_to');
+            $table->string('degree');
+
             $table->timestamps();
         });
     }

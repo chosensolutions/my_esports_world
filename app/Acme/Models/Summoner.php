@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Summoner extends Model
 {
-    protected $table = 'profile_summoners';
+    protected $table = 'summoners';
 
     protected $guarded = [];
 
-    public function profile()
+    public function user()
     {
-        return $this->belongsTo('App\Acme\Models\Profile');
+        return $this->belongsTo('App\User');
     }
 }

@@ -9,13 +9,14 @@ event handler
 output -> success and/or error messages
 
 TODO - Today
+- schema /
+- models /
+- factories /
+- seeds /
 - set up testing framework -> EliteTesting Framework?
 - write tests
-- seed database
-- write up all the schema
 
 TODO - All
-What I want to do
 do the regular login -> full stack
 TDD setup -> with Elite testing framework
 do facebook login

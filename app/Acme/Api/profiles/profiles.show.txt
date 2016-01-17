@@ -1,4 +1,4 @@
-GET /users/get-auth-user
+GET /profiles
 ===================================
 
 Input

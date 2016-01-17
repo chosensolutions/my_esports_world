@@ -13,8 +13,12 @@ class DatabaseSeeder extends Seeder
         'users',
         'accounts',
         'profiles',
+        'profile_awards',
+        'profile_experiences',
         'profile_educations',
         'profile_languages',
+        'summoners',
+        'videos'
     ];
 
     /**

@@ -1,31 +1,19 @@
 <?php
 
-$factory->define(App\Acme\Models\Profile::class, function (Faker\Generator $faker) {
+$factory->define(App\Acme\Models\Profile::class, function (Faker\Generator $faker)
+{
     return [
-        'email' => $faker->email
-    ];
-});
+        'user_id' => 1,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'description' => $faker->paragraph(3),
+        'nationality' => $faker->country,
+        'location' => $faker->locale,
+        'status' => $faker->firstName,
+        'image_url' => $faker->imageUrl($width = 640, $height = 480) ,
+        'summoner_url' => $faker->url,  // lolking, op.gg, lolprofile, etc....
+        'public' => $faker->boolean(50),
 
-$factory->define(App\Acme\Models\ProfileEducation::class, function (Faker\Generator $faker) {
-    return [
-        'institution' => $faker->firstNameFemale
-    ];
-});
-
-$factory->define(App\Acme\Models\ProfileLanguage::class, function (Faker\Generator $faker) {
-    return [
-        'institution' => $faker->firstNameFemale
-    ];
-});
-
-$factory->define(App\Acme\Models\ProfileExperience::class, function (Faker\Generator $faker) {
-    return [
-        'institution' => $faker->firstNameFemale
-    ];
-});
-
-$factory->define(App\Acme\Models\ProfileAward::class, function (Faker\Generator $faker) {
-    return [
-        'institution' => $faker->firstNameFemale
     ];
 });
