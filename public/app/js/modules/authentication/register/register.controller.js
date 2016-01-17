@@ -38,7 +38,7 @@
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
                     console.log('Status Text: ' + response.statusText);
-                    $state.go('home');
+                    $state.go('auth.home');
                     toastr.success('You will now be redirected to the home page.', 'Registration Success!');
                 }, function errorCallback(response)
                 {
