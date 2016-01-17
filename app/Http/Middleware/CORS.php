@@ -28,15 +28,17 @@ class CORS {
             // The client-side application can set only headers allowed in Access-Control-Allow-Headers
             return Response::make('OK', 200, $headers);
         }
+        $request->header('Access-Control-Allow-Origin', '*');
+        $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-/*        $response = $next($request);
-        $response->header->set('Access-Control-Allow-Origin', '*');
-        $response->header->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        return $response = $next($request);
+        /*       $response->header->set('Access-Control-Allow-Origin', '*');
+              $response->header->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-        return $response;*/
+              return $response;*/
 
-        return response($next($request))
+/*        return response($next($request))
             ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');*/
     }
 }
