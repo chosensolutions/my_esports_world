@@ -28,7 +28,7 @@ class AuthenticationRepository
      */
     public function register($input)
     {
-/*        switch($input['auth_type'])
+        switch($input['auth_type'])
         {
             case 'normal';
                 return $this->user->create([
@@ -40,9 +40,7 @@ class AuthenticationRepository
 
             case 'facebook';
                 return Socialite::driver('facebook')->redirect();
-        }*/
-
-        return Socialite::driver('facebook')->redirect();
+        }
     }
 
     /**

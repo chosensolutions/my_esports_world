@@ -77,12 +77,10 @@ class AuthController extends Controller
             'type'
         ]);
 
-        $data = [
-            'login_attempt' => $this->authenticationRepository->login($input),
-            'logged in' => Auth::check()
-        ];
+        return $this->authenticationRepository->login($input);
+
         return $this->response(
-            $data,
+            $data = [],
             $message = 'Users Login attempt.',
             $code = 200
         );
