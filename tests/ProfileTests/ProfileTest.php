@@ -22,13 +22,25 @@ class ProfileTest extends TestCase
         //$this->artisan('db:seed');
     }
 
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_it_does_something()
+    {
+        \App\User::create(['email' => 'a@a.com1']);
+        $this->seeInDatabase('users', [
+            'email' => 'a@a.com1'
+        ]);
+    }
 
     /**
      * A basic functional test example.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function test_it_does_something_also()
     {
         \App\User::create(['email' => 'a@a.com1']);
         $this->seeInDatabase('users', [

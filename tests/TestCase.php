@@ -22,4 +22,13 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
+
+    /**
+     * Teardown:
+     * 1. roll-back the transaction
+     */
+    public function tearDown()
+    {
+        \Mockery::close();
+    }
 }
