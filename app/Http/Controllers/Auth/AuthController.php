@@ -58,7 +58,10 @@ class AuthController extends Controller
             'auth_type'
         ]);
 
+        return redirect()->away('https://www.facebook.com/');
+
         return $this->authenticationRepository->register($input);
+
         return $this->response(
             $data = $this->authenticationRepository->register($input),
             $message = 'User Registration success.',
@@ -125,7 +128,6 @@ class AuthController extends Controller
     public function handleProviderCallbackFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-        redirect('/');
     }
 
     public function redirectToProviderTwitter()

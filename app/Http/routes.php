@@ -30,8 +30,9 @@ Route::group([
 Route::group(['after' => 'allowOrigin', 'middleware' => ['web']], function()
 {
     Route::get('auth/facebook', 'Auth\AuthController@redirectToProviderFacebook');
+    //////
     Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallbackFacebook');
-
+    /////
     Route::get('auth/twitter', 'Auth\AuthController@redirectToProviderTwitter');
     Route::get('auth/twitter/callback', 'Auth\AuthController@handleProviderCallbackTwitter');
 
