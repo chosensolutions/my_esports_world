@@ -58,7 +58,9 @@ class AuthController extends Controller
             'auth_type'
         ]);
 
-        return redirect()->away('https://www.facebook.com/');
+        header("Location: https://www.google.com/"); /* Redirect browser */
+        exit();
+        //return redirect()->away('https://www.facebook.com/');
 
         return $this->authenticationRepository->register($input);
 
