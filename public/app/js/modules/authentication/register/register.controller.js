@@ -11,13 +11,14 @@
         var vm = this;
 
         vm.input = {
-            type: 'normal',
+            auth_type: 'facebook',
             email: 'test@test.com',
             password: 'password'
         };
 
-        vm.register = function()
+        vm.register = function(auth_type)
         {
+            console.log('authTYPE:', auth_type);
             AuthenticationService
                 .register(vm.input)
                 .then(function successCallback(response)

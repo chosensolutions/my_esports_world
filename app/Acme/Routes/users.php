@@ -10,4 +10,4 @@ Route::get('users/logout', 'Auth\AuthController@logout');
 Route::get('users/get-auth-user', 'Auth\AuthController@getAuthUser');
 
 
-Route::get();
+//Route::get();
