@@ -1,17 +1,5 @@
 <?php
 
-App::before(function($request)
-{
-    //header('Access-Control-Allow-Origin: http://mew.musbe.ca');
-    header("Access-Control-Allow-Origin: *");
-    //header("Access-Control-Allow-Credentials: *");
-    //header("Access-Control-Request-Method: DELETE");
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With, X-Auth-Token');
-
-    header('Access-Control-Allow-Credentials: true');
-    header('Allow-Access-Control-Credentials: true');
-});
 
 /**
  * SPA
