@@ -30,13 +30,13 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($password);
     }
 
-    public function account()
-    {
-        return $this->hasOne('App\Acme\Models\Account');
-    }
-
     public function profile()
     {
         return $this->hasOne('App\Acme\Models\Profile');
+    }
+
+    public function account()
+    {
+        return $this->hasOne('App\Acme\Models\Account');
     }
 }

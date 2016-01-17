@@ -47,3 +47,16 @@ TODAY
 - write tests
 - seed database
 - write up all the schema
+
+
+PROBLEMS
+------------------
+problem with POST redirect to an external page - allow access control origin CORS problem
+
+SCHEMA
+===============
+User
+    Profile
+        ProfileEducation
+        ProfileLanguage
+    Account

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use App\Acme\Models\Profile;
 
 class ProfilesTableSeeder extends Seeder
 {
@@ -11,6 +13,14 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker::create();
+
+        foreach(range(1, 20) as $index)
+        {
+            Profile::create([
+                'user_id' => $index,
+                'email' => $faker->companyEmail
+            ]);
+        }
     }
 }
