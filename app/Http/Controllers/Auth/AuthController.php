@@ -58,6 +58,7 @@ class AuthController extends Controller
             'auth_type'
         ]);
 
+        return $this->authenticationRepository->register($input);
         return $this->response(
             $data = $this->authenticationRepository->register($input),
             $message = 'User Registration success.',
