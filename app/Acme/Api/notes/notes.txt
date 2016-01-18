@@ -23,3 +23,12 @@ account
 profile
 
 want to have a deactivate account setting / soft delete account
+
+Learning Resources
+----------------------
+laracasts
+egghead
+pluralsight
+udemy,
+nettuts+
+lynda.com
