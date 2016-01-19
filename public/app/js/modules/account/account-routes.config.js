@@ -23,7 +23,7 @@
                 }
             });
 
-        function getData(companyData, $stateParams) // companyData is a factory
+        function getData(companyData, $stateParams)
         {
             return companyData.load($stateParams.companyId);
         }

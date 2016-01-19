@@ -9,6 +9,10 @@ event handler
 output -> success and/or error messages
 
 TODO - Today
+-----------------
+navbar styling
+search functionality
+account settings module
 
 TODO - All
 do the regular login -> full stack

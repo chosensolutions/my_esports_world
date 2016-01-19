@@ -1,7 +1,7 @@
-(function() {
-    
+(function () {
+
     'use strict';
-    
+
     angular
         .module('app')
         .constant('API', {
@@ -9,14 +9,14 @@
             type: 'web',
             port: '8000',
             host: 'http://localhost:',
-            url:  'http://mew.musbe.ca/api/v1/' //'http://localhost:8000/api/v1/'
+            url: 'http://mew.musbe.ca/api/v1/' //'http://localhost:8000/api/v1/'
         })
         .constant('APP', {
             name: 'My E-Sports World',
             version: 1.0
         })
         .value('PATH', {
-            modules : 'app/js/modules/'
+            modules: 'app/js/modules/'
         });
 
 })();

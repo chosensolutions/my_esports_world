@@ -15,6 +15,7 @@
     var sourcemaps = require('gulp-sourcemaps');
     var sass = require('gulp-sass');
     var minifyCss = require('gulp-minify-css');
+    var browserSync = require('browser-sync').create();
 
     /**
      * Command line arguments
@@ -91,6 +92,18 @@
             .pipe(bytediff.stop());
     });
 
+    gulp.task('browser-sync', function() {
+        browserSync.init({
+            port: 2222,
+            //server: "..resources/views/index.php",
+            proxy: 'localhost:8000',
+            files: [
+                "app/css/sass/*.scss",
+                "app/js/modules/**/*.html"
+            ]
+        });
+    });
+
     /**
      *  Watch for changes in app, sass, vendor dependencies & compile new dependency as necessary.
      */
@@ -104,6 +117,7 @@
      */
     gulp.task('default', [
         'watch'
+        //'browser-sync'
     ]);
 
 })();

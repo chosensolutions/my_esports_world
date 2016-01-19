@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     'use strict';
 
@@ -9,7 +9,7 @@
             'app.account',
             'app.profile',
             'app.page'
-    ]);
+        ]);
 
 })();
 

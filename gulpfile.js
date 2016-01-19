@@ -12,5 +12,6 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.phpUnit();
+    //mix.phpUnit();
+    mix.browserSync();
 });
