@@ -13,7 +13,7 @@
         console.log('---------------------------------');
         console.log('---------- DEBUG-- --------------');
         console.log('---------------------------------');
-        console.log($rootScope.authUser);
+        console.log((window.location.origin).toString() == 'http://localhost:8000');
 
     }
 
