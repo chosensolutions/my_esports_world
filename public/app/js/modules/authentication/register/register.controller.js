@@ -11,22 +11,13 @@
         var vm = this;
 
         vm.input = {
-            email: 'test1@test.com',
-            password: 'password',
             auth_type: 'normal'
         };
 
         vm.register = function(auth_type)
         {
-            var data = vm.input;
-            if(auth_type != null)
-            {
-                data = {
-                    auth_type: auth_type
-                }
-            }
             AuthenticationService
-                .register(data)
+                .register(vm.input)
                 .then(function successCallback(response)
                 {
                     console.log('---------------------------------');
