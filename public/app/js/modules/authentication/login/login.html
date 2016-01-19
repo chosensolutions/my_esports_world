@@ -25,7 +25,7 @@
     <div class="normal-auth">
 
         <div class="email">
-            <input class="focus" ng-model="vm.input.email" name="email" type="email" placeholder="Email"/>
+            <input class="focus" ng-model="vm.input.email" name="email" type="text" placeholder="Email"/>
             <img src="app/assets/images/icons/mail_icon.svg"/>
         </div>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div class="register-button">
-            <input class="button-0" ng-click="vm.login()" type="submit" value="Login"/>
+            <input class="button-0" ng-click="vm.login('normal')" type="submit" value="Login"/>
         </div>
 
         <div id="login">

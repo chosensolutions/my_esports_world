@@ -39,7 +39,7 @@ class RegisterUserRequest extends Request
     {
         return [
             'email.required' => 'An email is required.',
-            'email.email' => 'You must enter a valid email address bro',
+            'email.email' => 'You must enter a valid email.',
             'email.unique' => 'The email is already taken.',
             'password.required'  => 'A password is required',
         ];
