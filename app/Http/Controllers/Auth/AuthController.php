@@ -2,41 +2,26 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Acme\Modules\Authentication\Repositories\Social\FacebookAuthenticationRepository;
-use App\Acme\Modules\Authentication\Repositories\Social\TwitterAuthenticationRepositoryInterface;
 use App\Acme\Modules\Authentication\Repositories\AuthenticationRepository;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
     /**
-     * AuthController constructor.
-     *
-     * @param AuthenticationRepository $authenticationRepository
-     * @param FacebookAuthenticationRepository $facebookAuthenticationRepository
-     * @param TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository
+     * @var AuthenticationRepository
      */
-    public function __construct
-    (
-        AuthenticationRepository $authenticationRepository,
-        FacebookAuthenticationRepository $facebookAuthenticationRepository,
-        TwitterAuthenticationRepositoryInterface $twitterAuthenticationRepository
-    )
-    {
-        /*
-        $this->middleware('guest', [
-            'except' => 'logout'
-        ]);
-        */
+    private $authenticationRepository;
 
+    /**
+     * AuthController constructor.
+     * @param $authenticationRepository
+     */
+    public function __construct(AuthenticationRepository $authenticationRepository)
+    {
         $this->authenticationRepository = $authenticationRepository;
-        $this->facebookAuthenticationRepository = $facebookAuthenticationRepository;
-        $this->twitterAuthenticationRepository = $twitterAuthenticationRepository;
     }
 
     /**
@@ -57,16 +42,6 @@ class AuthController extends Controller
             'auth_type'
         ]);
 
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Credentials: true ");
-        header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
-        header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
-        header("Location: https://www.google.com/"); /* Redirect browser */
-        exit();
-        //return redirect()->away('https://www.facebook.com/');
-
-        return $this->authenticationRepository->register($input);
-
         return $this->response(
             $data = $this->authenticationRepository->register($input),
             $message = 'User Registration success.',
@@ -75,21 +50,28 @@ class AuthController extends Controller
     }
 
     /**
+     * Request {
+     *  'email',
+     *  'password',
+     *  'auth_type'
+     * }
      * @param Request $request
      * @return int|mixed
      */
     protected function login(Request $request)
     {
         $input = $request->only([
+            'auth_type',
             'email',
-            'password',
-            'type'
+            'password'
         ]);
 
-        return $this->authenticationRepository->login($input);
+        $this->authenticationRepository->login($input);
 
         return $this->response(
-            $data = [],
+            $data = [
+                'login_attempt' => Auth::check()
+            ],
             $message = 'Users Login attempt.',
             $code = 200
         );
@@ -97,7 +79,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Logs out / terminates every single possible sessions there are
+     * Logs out -> terminates every single possible sessions there are, fb, twitter, etc...
      */
     protected function logout()
     {
@@ -123,61 +105,5 @@ class AuthController extends Controller
             $message = 'Currently Authenticated User Information.',
             $code = 200
         );
-    }
-
-    public function redirectToProviderFacebook()
-    {
-        return Socialite::driver('facebook')->redirect();
-    }
-
-    public function handleProviderCallbackFacebook()
-    {
-        $user = Socialite::driver('facebook')->user();
-    }
-
-    public function redirectToProviderTwitter()
-    {
-        return Socialite::driver('twitter')->redirect();
-    }
-
-    public function handleProviderCallbackTwitter()
-    {
-        $user = Socialite::driver('twitter')->user();
-
-        dd($user);
-    }
-
-    public function redirectToProviderGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    public function handleProviderCallbackGoogle()
-    {
-        $user = Socialite::driver('google')->user();
-
-        dd($user);
-    }
-
-    /**
-     * Redirect the user to the GitHub authentication page.
-     *
-     * @return Response
-     */
-    public function redirectToProvider()
-    {
-        return Socialite::driver('github')->redirect();
-    }
-
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return Response
-     */
-    public function handleProviderCallback()
-    {
-        $user = Socialite::driver('github')->user();
-
-        dd($user);
     }
 }

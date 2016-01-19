@@ -11,12 +11,12 @@
         var vm = this;
 
         vm.input = {
-            type: 'normal',
+            auth_type: 'normal',
             email: 'test@test.com',
             password: 'password'
         };
 
-        vm.register = function()
+        vm.login = function()
         {
             AuthenticationService
                 .login(vm.input)
@@ -31,11 +31,18 @@
                     console.log('Status Code: ' + response.status);
                     console.log('Status Text: ' + response.statusText);
 
-                    $state.transitionTo('auth.profileEdit', $stateParams, {
-                        reload: true,
-                        inherit: false,
-                        notify: true
-                    });
+                    if(response.data.data.login_attempt)
+                    {
+                        $state.transitionTo('auth.profileEdit', $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
+                    }
+                    else {
+                        toastr.error('Your Email/Password is Incorrect.', 'Login Failed.');
+                    }
+
                 }, function errorCallback(response)
                 {
                     console.log('---------------------------------');
@@ -46,10 +53,6 @@
                     console.log('Data:', response.data.data);
                     console.log('Status Code: ' + response.status);
                     console.log('Status Text: ' + response.statusText);
-
-                    _(response.data.data).forEach(function(value, key) {
-                        toastr.error(value, 'Login Failed.');
-                    });
                 });
         };
     }

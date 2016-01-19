@@ -21,26 +21,27 @@ class AuthenticationRepository
     }
 
     /**
-     * Inserts the the email and password into the database
+     * Inserts the the email and password into the database,
+     * and logs the user in right after
      *
-     * @param $input
+     * @param array $input
      * @return static
      */
-    public function register($input)
+    public function register(array $input)
     {
         switch($input['auth_type'])
         {
-            case 'normal';
-                return $this->user->create([
+            case 'normal':
+                $user = $this->user->create([
                     'email' => $input['email'],
                     'password' => $input['password'],
                     'facebook_id' => null,
                     'twitter_id' => null,
                 ]);
-
-            case 'facebook';
-                return redirect()->away('https://www.facebook.com/');
-                dd(Socialite::driver('facebook')->redirect());
+                Auth::loginUsingId($user->id);
+                return $user;
+            case 'facebook':
+                //return redirect()->away('https://www.facebook.com/');
                 return Socialite::driver('facebook')->redirect();
         }
     }
@@ -49,7 +50,7 @@ class AuthenticationRepository
      * @param $input
      * @return boolean
      */
-    public function login($input)
+    public function login(array $input)
     {
         switch($input['auth_type'])
         {
@@ -58,10 +59,7 @@ class AuthenticationRepository
                     'email' => $input['email'],
                     'password' => $input['password']
                 ], true);
-            case 'facebook':
-
         }
-
     }
 
     /**

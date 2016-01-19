@@ -12,6 +12,64 @@ Input
 Output
 -----------------------------------
 {
-    test: string
+    "message": "Auth info with user profile.",
+    "code": 200,
+    "data": {
+        "user": {
+            "id": 31,
+            "email": "test@test.com",
+            "facebook_id": 8946787,
+            "twitter_id": 7855850,
+            "created_at": "2016-01-19 12:52:08",
+            "updated_at": "2016-01-19 13:03:35",
+            "profile": {
+            "id": 31,
+            "user_id": 31,
+            "first_name": "Alexandrine",
+            "last_name": "Stehr",
+            "date_of_birth": "1981-05-31 00:00:00",
+            "description": "Vitae enim nobis consequatur sint unde dolor aliquam animi. Molestiae rerum optio quaerat quas molestiae amet voluptates. Non assumenda non dolorum.",
+            "nationality": "Thailand",
+            "location": "my_MM",
+            "status": "Jared",
+            "image_url": "http://lorempixel.com/640/480/?65660",
+            "summoner_url": "http://wiegand.com/excepturi-aspernatur-enim-omnis",
+            "public": 1,
+            "created_at": "2016-01-19 12:52:17",
+            "updated_at": "2016-01-19 12:52:17"
+            },
+            "account": {
+            "id": 31,
+            "user_id": 31,
+            "username": "Mireya Hansen",
+            "phone_number": "(505)985-2941x9056",
+            "created_at": "2016-01-19 12:52:17",
+            "updated_at": "2016-01-19 12:52:17"
+            }
+        },
+        "profile": {
+        "id": 31,
+        "user_id": 31,
+        "first_name": "Alexandrine",
+        "last_name": "Stehr",
+        "date_of_birth": "1981-05-31 00:00:00",
+        "description": "Vitae enim nobis consequatur sint unde dolor aliquam animi. Molestiae rerum optio quaerat quas molestiae amet voluptates. Non assumenda non dolorum.",
+        "nationality": "Thailand",
+        "location": "my_MM",
+        "status": "Jared",
+        "image_url": "http://lorempixel.com/640/480/?65660",
+        "summoner_url": "http://wiegand.com/excepturi-aspernatur-enim-omnis",
+        "public": 1,
+        "created_at": "2016-01-19 12:52:17",
+        "updated_at": "2016-01-19 12:52:17"
+        },
+        "account": {
+        "id": 31,
+        "user_id": 31,
+        "username": "Mireya Hansen",
+        "phone_number": "(505)985-2941x9056",
+        "created_at": "2016-01-19 12:52:17",
+        "updated_at": "2016-01-19 12:52:17"
+        }
+    }
 }
-

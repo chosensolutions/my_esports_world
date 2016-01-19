@@ -11,7 +11,9 @@ output -> success and/or error messages
 TODO - Today
 -----------------
 navbar styling
-search functionality
+
+search functionality aglio
+make home be profile - edit page
 account settings module
 
 TODO - All

@@ -3,17 +3,34 @@
 namespace App\Acme\Modules\Profile;
 
 use App\Acme\Models\Profile;
+use App\Acme\Models\Account;
+use Auth;
 
+/**
+ * Class ProfileRepository
+ * @package App\Acme\Modules\Profile
+ */
 class ProfileRepository implements ProfileRepositoryInterface
 {
     /**
-     * ProfileRepository constructor.
-     *
-     * @param Profile $profileModel
+     * @var Profile
      */
-    public function __construct(Profile $profileModel)
+    private $profileModel;
+
+    /**
+     * @var Account
+     */
+    private $accountModel;
+
+    /**
+     * ProfileRepository constructor.
+     * @param $profileModel
+     * @param $accountModel
+     */
+    public function __construct(Profile $profileModel, Account $accountModel)
     {
         $this->profileModel = $profileModel;
+        $this->accountModel = $accountModel;
     }
 
     /**
@@ -45,6 +62,19 @@ class ProfileRepository implements ProfileRepositoryInterface
                         'languages'
                     ])
                     ->find($id);
+    }
+
+    /**
+     * @return int
+     */
+    public function getAuthProfile()
+    {
+        $user = Auth::user();
+        return [
+            'user' => $user,
+            'profile' => $user->profile,
+            'account' => $user->account
+        ];
     }
 
     /**

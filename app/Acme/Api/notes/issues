@@ -1,3 +1,6 @@
 PROBLEMS
 ------------------
 problem with POST redirect to an external page - allow access control origin CORS problem
+
+-> cannot do facebook login
+-> need to find a way to be able to redirect to external website

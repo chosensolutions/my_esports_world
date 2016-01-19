@@ -1,15 +1,18 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarController as vm">
 
     <div class="container">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#navbar"
+                    aria-expanded="false"
+                    aria-controls="navbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#/"> My E-Sports World </a>
             <form id="searchBox" class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
             </form>
@@ -19,23 +22,27 @@
 
             <ul class="nav navbar-nav">
                 <li><a href="#about"> Profiles </a></li>
-                <li><a href="#contact"> Team </a></li>
-                <li><a href="#contact"> Job </a></li>
+                <li><a href="#contact"> Teams </a></li>
+                <li><a href="#contact"> Jobs </a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/"> Notifications </a></li>
+            <ul ng-if="!authUser" class="nav navbar-nav navbar-right">
+                <li><a href="#/register"> Register </a></li>
+                <li><a href="#/login"> Login </a></li>
+            </ul>
+
+            <ul ng-if="authUser" class="nav navbar-nav navbar-right">
+                <li><a href="#/"> Notifications <i class="fa fa-bell"></i></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <img src="app/assets/images/hai.jpg" height="50" width="50"/> <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#/profile/edit"> Profile </a></li>
+                        <li><a href="#/account"> Account Settings </a></li>
+                        <li><a href="#"> My Game Plays </a></li>
                         <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#"> logout </a></li>
+                        <li><a href="#/logout" ng-click="vm.logout()"> Logout </a></li>
                     </ul>
                 </li>
             </ul>

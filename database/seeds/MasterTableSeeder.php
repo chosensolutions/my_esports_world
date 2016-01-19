@@ -15,7 +15,10 @@ class MasterTableSeeder extends Seeder
     {
         // User
         $users = factory(App\User::class, self::I_WANT_X_USERS)->create();
-
+        $users[] = factory(App\User::class)->create([
+            'email' => 'test@test.com',
+            'password' => 'password'
+        ]);
         foreach($users as $user)
         {
             // Account

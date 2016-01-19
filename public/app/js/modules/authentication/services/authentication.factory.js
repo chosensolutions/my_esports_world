@@ -51,8 +51,8 @@
         function test()
         {
             return $http({
-                method: 'POST',
-                url: API.url + local_url + 'test',
+                method: 'GET',
+                url: API.url + 'test',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             });
         }
