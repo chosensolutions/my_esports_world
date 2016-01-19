@@ -6,7 +6,7 @@
         .module('app')
         .controller('NavbarController', NavbarController);
 
-    function NavbarController($state, $stateParams, AuthenticationService) {
+    function NavbarController($state, $stateParams, $timeout, AuthenticationService) {
 
         var vm = this;
 
@@ -16,12 +16,17 @@
                 .logout()
                 .then(function successCallback(response)
                 {
-                    toastr.success('You are now Logged out.');
-                    $state.transitionTo('auth.home', $stateParams, {
-                        reload: true,
-                        inherit: true,
-                        notify: true
-                    });
+                    location.reload();
+                    $timeout(function() {
+                        toastr.success('You are now Logged out.');
+                        $state.transitionTo('auth.home', $stateParams, {
+                            reload: true,
+                            inherit: true,
+                            notify: true
+                        });
+                        console.log('update with timeout fired')
+                    }, 1000);
+
                     console.log(response.data);
                 }, function errorCallback(response)
                 {

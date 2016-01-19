@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <label for="exampleInputEmail1"> Change Email Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <input type="text" ng-model="authUser.email" class="form-control" id="exampleInputEmail1" placeholder="Email">
     </div>
 
     <div class="form-group">
@@ -19,4 +19,36 @@
 
     <button type="submit" class="btn btn-default"> Update </button>
 
+</form>
+
+<h1> Verify Your Summoner </h1>
+
+<pre>
+    {{ vm.input | json }}
+</pre>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1"> 1. Summoner Name </label>
+        <input type="text" ng-model="vm.input.summoner_name" class="form-control" id="summonerName" placeholder="Bjergsen">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1"> 2. Go to league of legends client and rename one of you rune pages to the verification code generated below; don't forget to save! </label>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1"> 3. Click Verify below </label>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Verification Code: <b><i> {{ vm.input.verification_code }} </i></b></label>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default" ng-click="vm.verify()"> Verify! </button>
+    </div>
+
+    <div class="form-group">
+        <img src="../app/assets/images/runepage.png"/>
+    </div>
 </form>

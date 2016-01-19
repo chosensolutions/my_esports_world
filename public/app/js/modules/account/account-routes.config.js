@@ -11,22 +11,12 @@
         var path = 'app/js/modules/account/';
 
         $stateProvider
-            .state('account', {
+            .state('auth.account', {
                 url: '/account',
                 templateUrl: path + 'edit/account.edit.html',
                 controller: 'AccountEditController',
-                controllerAs: 'vm',
-                resolve: {
-                    test: function() {
-                        return true
-                    }
-                }
+                controllerAs: 'vm'
             });
-
-        function getData(companyData, $stateParams)
-        {
-            return companyData.load($stateParams.companyId);
-        }
 
     }
 

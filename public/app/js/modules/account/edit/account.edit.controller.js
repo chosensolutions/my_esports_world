@@ -6,32 +6,35 @@
         .module('app.account')
         .controller('AccountEditController', AccountEditController);
 
-    function AccountEditController($state, $http) {
+    function AccountEditController($state, AccountService) {
 
         var vm = this;
 
-        $http({
-            method: 'GET',
-            url: 'http://jsonplaceholder.typicode.com/posts',
-            headers: {
-                'Content-Type': undefined
-            },
-            data: {
-                test: 'test'
+        var randomString = function(length) {
+            var text = "";
+            var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+            for(var i = 0; i < length; i++) {
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
             }
-        })
-        .then(function successCallback(response) {
+            return text;
+        };
 
-            vm.friends = response.data;
-            console.log(response.data); // data – {string|Object} – The response body transformed with the transform functions.
-            console.log(response.status); // status – {number} – HTTP status code of the response.
-            console.log(response.headers); // headers – {function([headerName])} – Header getter function.
-            console.log(response.config); // config – {Object} – The configuration object that was used to generate the request.
-            console.log(response.statusText); // statusText – {string} – HTTP status text of the response.
-        }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
+        vm.input = {
+            summoner_name: 'fashionman69',
+            verification_code: randomString(10)
+        };
+
+        vm.verify = function() {
+
+            console.log(vm.input);
+            AccountService
+                .verifySummoner(vm.input)
+                .then(function successCallback(response) {
+                    console.log(response.data);
+                }, function errorCallback(response) {
+
+            });
+        }
 
     }
 

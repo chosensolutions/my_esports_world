@@ -12,12 +12,12 @@
         console.log('---------- APP INITIALIZED ----------');
         console.log('=====================================');
 
-        $http.get(API.url + 'users/get-auth-user')
-            .then(
-                function successCallback(response) {},
-                function errorCallback(response) {}
-            )
-            .then()
+
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+            //$('.content').hide();
+            toastr.clear();
+            //event.preventDefault();
+        });
     }
 
 })();

@@ -35,14 +35,14 @@
                 <li><a href="#/"> Notifications <i class="fa fa-bell"></i></a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="app/assets/images/hai.jpg" height="50" width="50"/> <span class="caret"></span>
+                        <img ng-src="{{authUser.profile_pic}}" height="50" width="50"/> <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#/profile/edit"> Profile </a></li>
                         <li><a href="#/account"> Account Settings </a></li>
                         <li><a href="#"> My Game Plays </a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#/logout" ng-click="vm.logout()"> Logout </a></li>
+                        <li><a href="" ng-click="vm.logout()"> Logout </a></li>
                     </ul>
                 </li>
             </ul>

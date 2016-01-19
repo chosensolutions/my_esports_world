@@ -25,7 +25,21 @@ events via email
 
 figure out all the api end points
 auth
-account
+
+
+account settings
+- wat does it look like
+- email settings
+- notification settings
+- change username (link)
+- change password
+- change email
+- reverify summoner name
+- connected accounts
+- phone number
+
+-> apply for the lol api
+
 profile
 
 want to have a deactivate account setting / soft delete account
@@ -38,3 +52,5 @@ pluralsight
 udemy,
 nettuts+
 lynda.com
+
+https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/RiotSchmick?api_key=3a0230a5-4e25-480d-bab5-e8154d3107f9

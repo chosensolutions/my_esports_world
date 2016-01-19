@@ -100,8 +100,10 @@ class AuthController extends Controller
      */
     public function getAuthUser()
     {
+        $user = Auth::user()->toArray();
+        $user['profile_pic'] = Auth::user()->profile->image_url;
         return $this->response(
-            $data = Auth::user(),
+            $data = $user,
             $message = 'Currently Authenticated User Information.',
             $code = 200
         );
