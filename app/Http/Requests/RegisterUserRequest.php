@@ -25,7 +25,7 @@ class RegisterUserRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'unique:users,email|max:255',
+            'email' => 'email|unique:users,email|max:255',
             'password' => 'max:255',
         ];
     }
@@ -39,6 +39,7 @@ class RegisterUserRequest extends Request
     {
         return [
             'email.required' => 'An email is required.',
+            //'email.email' => 'You must enter a valid email address bro'
             'email.unique' => 'The email is already taken.',
             'password.required'  => 'A password is required',
         ];
