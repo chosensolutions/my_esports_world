@@ -25,7 +25,7 @@ class RegisterUserRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'email|unique:users,email|max:255',
+            'email' => 'email|unique:users,email',
             'password' => 'max:255',
         ];
     }
