@@ -50,7 +50,11 @@
 
         function test()
         {
-            return $http.post('http://mew.musbe.ca/api/v1/test');
+            return $http({
+                method: 'POST',
+                url: 'http://localhost:8000/api/v1/test',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            });
         }
     }
 
