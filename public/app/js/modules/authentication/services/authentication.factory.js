@@ -52,7 +52,7 @@
         {
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8000/api/v1/test',
+                url: API.url + local_url + 'test',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             });
         }
