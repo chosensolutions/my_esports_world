@@ -1,6 +1,10 @@
-// Modules
+/******************** Modules ********************/
+
 // Auth
 @import 'sass/auth/_register.scss';
+
+// Account
+@import 'sass/account/_account.edit.scss';
 
 // Profile
 @import 'sass/profile/_profile.show.scss';

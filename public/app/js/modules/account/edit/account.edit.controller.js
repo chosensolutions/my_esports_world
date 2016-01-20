@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     'use strict';
 
@@ -10,10 +10,10 @@
 
         var vm = this;
 
-        var randomString = function(length) {
+        var randomString = function (length) {
             var text = "";
             var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
-            for(var i = 0; i < length; i++) {
+            for (var i = 0; i < length; i++) {
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
             }
             return text;
@@ -24,8 +24,7 @@
             verification_code: randomString(10)
         };
 
-        vm.verify = function() {
-
+        vm.verify = function () {
             console.log(vm.input);
             AccountService
                 .verifySummoner(vm.input)
@@ -33,8 +32,37 @@
                     console.log(response.data);
                 }, function errorCallback(response) {
 
-            });
-        }
+                });
+        };
+
+        vm.tabs = [
+            {
+                title: 'General',
+                url: 'app/js/modules/account/edit/tabs/one.tpl.html'
+            },
+            {
+                title: 'Verify Summoner',
+                url: 'app/js/modules/account/edit/tabs/two.tpl.html'
+            },
+            {
+                title: 'Connected Accounts',
+                url: 'app/js/modules/account/edit/tabs/three.tpl.html'
+            },
+            {
+                title: 'Notifications',
+                url: 'app/js/modules/account/edit/tabs/four.tpl.html'
+            }
+        ];
+
+        vm.currentTab = 'app/js/modules/account/edit/tabs/one.tpl.html';
+
+        vm.onClickTab = function (tab) {
+            vm.currentTab = tab.url;
+        };
+
+        vm.isActiveTab = function (tabUrl) {
+            return tabUrl == vm.currentTab;
+        };
 
     }
 

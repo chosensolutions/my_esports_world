@@ -12,7 +12,9 @@
         $stateProvider
             .state('auth.home', {
                 url: '/',
-                templateUrl: path + 'home.html'
+                templateUrl: path + 'home.html',
+                controller: 'PageController',
+                controllerAs: 'vm'
             })
             .state('about', {
                 url: '/about',

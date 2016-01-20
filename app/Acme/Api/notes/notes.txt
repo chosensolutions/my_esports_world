@@ -54,3 +54,19 @@ nettuts+
 lynda.com
 
 https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/RiotSchmick?api_key=3a0230a5-4e25-480d-bab5-e8154d3107f9
+
+useful plugins
+datatable
+typeahead / HIDESEEK
+Focuspoint / jQuery-Cropbox
+
+chosenjs
+
+fakeLoader.js
+noticiation -> http://lobianijs.com/site/lobibox
+
+radio and checkboxes http://www.jqueryrain.com/?2fooad1m
+
+http://getbootstrap.com/components/#list-group-badges -> for notifications
+
+$httpProvider.responseInterceptors.push(logsOutUserOn401);

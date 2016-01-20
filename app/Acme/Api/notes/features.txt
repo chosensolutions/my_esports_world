@@ -9,19 +9,30 @@ Modules
     Account / Settings
         - verify summoner name by change of rune pages
         - email settings
-        - connect/disconnect facebook, twitter
+        - connect/disconnect facebook, twitter, google accounts
         - username, email, password
         - notification settings
 
     Profile
         - search profiles/players
         - small sub modules
+        - view public profiles
+        - make profiles public/private
+        - edit profiles
 
-    Job
+    Teams / Jobs board
         - postings made by teams
 
-    Notification
+    Notification System
+        - notification when someone follows you
+        -
 
-    Message/chat system
+    Message / chat system
+        - send
+        - view my messages
+        - delete messages
 
     Follow System
+        - ability to follow / unfollow others
+        - ability to see followings / followers
+        - display -> follow these guys box

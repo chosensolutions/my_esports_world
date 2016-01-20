@@ -2,6 +2,10 @@
     <h1> Home Page </h1>
 </div>
 
+<pre>
+    {{ vm.input | json }}
+</pre>
+
 <form action="/api/v1/test" method="post">
     <fieldset>
         <legend>Personal information:</legend>
@@ -12,3 +16,18 @@
         <input type="submit" value="Submit">
     </fieldset>
 </form>
+
+<br>
+
+<div class="theShit">
+
+    <div id="remote">
+        <input class="typeahead" type="text" placeholder="Search player" autocomplete="off">
+    </div>
+
+    <br>
+    <input type="text" ng-model="vm.input.example2">
+</div>
+
+<br>
+<button ng-click="vm.submit()"> STUFF </button>

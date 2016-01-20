@@ -6,6 +6,7 @@ use App\Acme\Models\Profile;
 use Auth;
 use App\Acme\Modules\Profile\ProfileRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -68,5 +69,29 @@ class ProfileController extends Controller
             'update profile successful.',
             200
         );
+    }
+
+    /**
+     * http://localhost:8000/api/v1/search-profiles?query=a
+     */
+    protected function search()
+    {
+        $query = request('query');
+
+        $users = DB::select("
+          SELECT
+          users.id, profiles.first_name, profiles.last_name, profiles.description
+          FROM users
+          INNER JOIN profiles
+          ON users.id=profiles.user_id
+          INNER JOIN accounts
+          ON users.id=accounts.user_id
+          WHERE profiles.first_name LIKE '%$query%'
+          OR profiles.last_name LIKE '%$query%'
+          OR profiles.description LIKE '%$query%'
+          ORDER BY profiles.first_name ASC, profiles.last_name ASC
+          ");
+
+        return $users;
     }
 }

@@ -1,0 +1,47 @@
+.account-edit-container {
+
+  width: 80%;
+  margin: 0 auto;
+
+  .account-edit-title {
+    text-align: center;
+  }
+
+  #tabs {
+    width: 80%;
+    margin: 0 auto;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      li {
+        float: left;
+        margin: 3px;
+        padding: 5px;
+
+        background-color: #CCC;
+        color: #696969;
+
+        a {
+          text-decoration: none;
+        }
+
+      }
+
+    }
+
+    #mainView {
+      //border: 1px solid black;
+      clear: both;
+      padding: 10px;
+      border-top: solid black 1px;
+    }
+
+    .active {
+      background-color: #FFF;
+      color: #000;
+    }
+
+  }
+
+}

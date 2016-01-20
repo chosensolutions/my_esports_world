@@ -1,0 +1,74 @@
+<div id="viewOne">
+
+    <h1> General Information </h1>
+
+    <pre>
+        {{ vm.input | json }}
+    </pre>
+
+    <form>
+        <h3> Authentication </h3>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Change Email Email address</label>
+            <input type="text" ng-model="authUser.email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1"> Username (url link) </label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="bjergsen">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1"> Phone Number </label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="4165856969">
+        </div>
+
+        <button type="submit" class="btn btn-default"> Update </button>
+    </form>
+
+    <hr>
+
+    <form>
+        <h3> Password </h3>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Old Password </label>
+            <input type="password" ng-model="authUser.email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> New Password </label>
+            <input type="password" ng-model="authUser.email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1"> Confirm New Password </label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-default"> Change Password </button>
+    </form>
+
+    <hr>
+
+    <form>
+        <h3> Email Settings </h3>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> I would like to receive email from www.myesportsworld.com
+                </label>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> I would like to receive email when I get a message sent to me on www.myesportsworld.com
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-default"> Update </button>
+    </form>
+
+</div>

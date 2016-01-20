@@ -1,0 +1,40 @@
+<div id="viewTwo">
+
+    <h1> Verify Your Summoner </h1>
+
+    <pre>
+        {{ vm.input | json }}
+    </pre>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 1. Enter Your Summoner Name Below </label>
+            <input type="text" ng-model="vm.input.summoner_name" class="form-control" id="summonerName" placeholder="Bjergsen">
+        </div>
+
+        <div class="form-group">
+            <label for=""> 2. Go to league of legends Client and rename one of you rune pages to the verification code generated below. </label>
+        </div>
+
+        <div class="form-group">
+            <label for=""> 3. Remember to save your rune page. </label>
+        </div>
+
+        <div class="form-group">
+            <label for=""> 4. Click Verify below. </label>
+        </div>
+
+        <div class="form-group">
+            <label for=""> Verification Code: <b><i> {{ vm.input.verification_code }} </i></b></label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" ng-click="vm.verify()"> Verify My Summoner! </button>
+        </div>
+
+        <div class="form-group">
+            <img src="../app/assets/images/runepage.png"/>
+        </div>
+    </form>
+
+</div>
