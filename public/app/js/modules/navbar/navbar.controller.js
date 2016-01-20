@@ -10,6 +10,8 @@
 
         var vm = this;
 
+        vm.input = {};
+
         vm.logout = function()
         {
             AuthenticationService
@@ -61,7 +63,7 @@
                 vm.input.search = data;
             });
 
-        // on click / press enter, we do a search and call an api to redirec to a profile page
+        // on click / press enter, we do a search and call an api to redirect to a profile page
     }
 
 })();
