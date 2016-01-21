@@ -26,3 +26,22 @@ Route::group([
         require $partial->getPathname();
     }
 });
+
+use App\Acme\Models\Profile;
+Route::get('alg', function()
+{
+    $properties = [
+        "first_name" => 'a',
+        "last_name" => 'a',
+        "description" => 'a',
+        "nationality" => 'a',
+        'email' => '@'
+    ];
+    foreach($properties as $property => $value)
+    {
+        $profile = Profile::with(['user'])->Orwhere($property, 'LIKE', "%$value%");
+    }
+
+    return $profile->get();
+
+});

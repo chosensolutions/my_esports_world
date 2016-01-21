@@ -70,3 +70,20 @@ radio and checkboxes http://www.jqueryrain.com/?2fooad1m
 http://getbootstrap.com/components/#list-group-badges -> for notifications
 
 $httpProvider.responseInterceptors.push(logsOutUserOn401);
+
+
+Profile Page
+- show backend details onto the profile page
+-> show as auth user -> see an edit button -> go to edit mode
+-> show as public user
+-> url -> #/profiles/userID
+
+- finish styling up the profile page - go into detail
+- decide the main/secondary role box and if i should style it up
+- verify a summoner -> finish that functionality in the backend;
+  make sure it works with the frontend as well
+
+$digest
+
+admin role -> whats new in laravel 5
+navbar directive? -> controllerAs method?

@@ -15,7 +15,11 @@
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             //$('.content').hide();
             toastr.clear();
-            //event.preventDefault();
+            event.preventDefault();
+
+            console.log('Event: ', event);
+            console.log('toState: ', toState);
+            console.log('fromState: ', fromState);
         });
     }
 
