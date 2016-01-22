@@ -6,7 +6,7 @@
         .module('app')
         .run(appRun);
 
-    function appRun($rootScope, $browser, $location, $state, $http, API)
+    function appRun($rootScope, $location, $state, $http, API)
     {
         console.log('-------------------------------------');
         console.log('---------- APP INITIALIZED ----------');
@@ -14,8 +14,8 @@
 
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             //$('.content').hide();
-            toastr.clear();
-            event.preventDefault();
+            //toastr.clear();
+            //event.preventDefault();
 
             console.log('Event: ', event);
             console.log('toState: ', toState);

@@ -87,3 +87,17 @@ $digest
 
 admin role -> whats new in laravel 5
 navbar directive? -> controllerAs method?
+
+
+Bugs
+-------------------------------
+profile summoner name -> must resize if the summoner name is too long
+
+scss
+@extend
+
+dev mode
+------------------
+php artisan serve
+cd public -> gulp watch --dev
+bs.sh

@@ -31,9 +31,10 @@ body, html {
 
 // Others
 img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 580px) { // it is not greater than 580 width-of-screen <= 580
 
 }
