@@ -11,16 +11,24 @@
         var local_url = 'app/js/modules/profile/';
 
         $stateProvider
-            .state('profiles', {
+            .state('auth.profiles', {
+                url : '/profiles',
+                templateUrl: local_url + 'index/profile.index.html',
+                controller: 'ProfileIndexController',
+                controllerAs: 'vm',
+                resolve: {
+                    profilesData: function(ProfileService, $q) {
+                        return $q.resolve(ProfileService.getAll()).then(
+                            function (results) {
+                                return results.data;
+                            });
+                    }
+                }
+            })
+            .state('profile', {
                 url : '/profile/:id',
                 templateUrl: local_url + 'show/profile.show.html',
                 controller: 'ProfileShowController',
-                controllerAs: 'vm'
-            })
-            .state('auth.profile', {
-                url : '/profile',
-                templateUrl: local_url + 'show/profile.show.html',
-                controller: 'ProfileEditController',
                 controllerAs: 'vm'
             })
             .state('auth.profileEdit', {

@@ -1,1 +1,16 @@
 <h1> Profiles List </h1>
+
+<table class="table">
+    <thead>
+        <td> Image </td>
+        <td> Summoner Name </td>
+        <td> Name </td>
+        <td> Message </td>
+    </thead>
+    <tr ng-repeat="profile in vm.profiles">
+        <td><img ng-src="{{ profile.profile.image_url }}" height="50" width="50"></td>
+        <td><a ng-href="/#/profile/{{profile.id}}"> {{ profile.summoner.name }} </a></td>
+        <td> {{ profile.profile.first_name }} {{ profile.profile.last_name }} </td>
+        <td><button><i class="fa fa-envelope-o"></i></button></td>
+    </tr>
+</table>

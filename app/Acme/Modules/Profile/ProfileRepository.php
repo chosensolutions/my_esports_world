@@ -59,14 +59,7 @@ class ProfileRepository implements ProfileRepositoryInterface
      */
     public function getAll()
     {
-        return $this->profileModel
-                    ->with([
-                        'experiences',
-                        'awards',
-                        'educations',
-                        'languages'
-                    ])
-                    ->get();
+        return $this->userModel->with(['summoner', 'profile'])->skip(0)->take(10)->get();
     }
 
     /**

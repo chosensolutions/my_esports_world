@@ -11,6 +11,7 @@
         var local_url = 'profiles/';
 
         return {
+            getAll: getAllProfiles,
             getById: getProfileById
         };
 
@@ -24,6 +25,20 @@
                 }
             });
         }
+
+        function getAllProfiles()
+        {
+            return $http({
+                method: 'GET',
+                url: API.url + local_url,
+                headers: {
+                    'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            }).then(function(response) {
+                return response.data;
+            });
+        }
+
     }
 
 }());
