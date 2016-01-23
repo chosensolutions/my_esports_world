@@ -1,6 +1,7 @@
-PROBLEMS
+PROBLEMS / Bugs
 ------------------
 problem with POST redirect to an external page - allow access control origin CORS problem
-
--> cannot do facebook login
+-> cannot do facebook login or any oauth login for that matter
 -> need to find a way to be able to redirect to external website
+
+profile summoner name -> must resize if the summoner name is too long

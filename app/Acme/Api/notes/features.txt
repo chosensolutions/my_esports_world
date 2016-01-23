@@ -1,3 +1,5 @@
+MEW - Features List
+-------------------------------------
 Modules
     Authentication
         - regular(email), (phone number?), facebook, twitter, google
@@ -36,3 +38,8 @@ Modules
         - ability to follow / unfollow others
         - ability to see followings / followers
         - display -> follow these guys box
+
+Future Features
+----------------------------
+want to have a deactivate account setting / soft delete account
+admin roles? -> check out whats new in laravel 5.2 video on laracasts
