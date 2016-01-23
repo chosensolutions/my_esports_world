@@ -12,13 +12,15 @@
 
         $stateProvider
             .state('profiles', {
-                url : '/profiles',
-                templateUrl: local_url + 'index/profile.index.html'
+                url : '/profile/:id',
+                templateUrl: local_url + 'show/profile.show.html',
+                controller: 'ProfileShowController',
+                controllerAs: 'vm'
             })
             .state('auth.profile', {
                 url : '/profile',
                 templateUrl: local_url + 'show/profile.show.html',
-                controller: 'ProfileShowController',
+                controller: 'ProfileEditController',
                 controllerAs: 'vm'
             })
             .state('auth.profileEdit', {

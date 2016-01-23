@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Acme\Models\Account');
     }
+
+    public function summoner()
+    {
+        return $this->hasOne('App\Acme\Models\Summoner');
+    }
 }

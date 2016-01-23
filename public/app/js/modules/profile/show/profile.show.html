@@ -1,133 +1,230 @@
-<div class="profile-container">
+<div class="profile-edit-container">
 
-    <div id="box1">
-        <img src="app/assets/images/hai.jpg">
+    <div class="profile-left-box">
 
-        <p> Hai Lam, 22 </p>
-        <p> Michigan, USA <img src="app/assets/images/flags/flag_usa.png"> </p>
-
-        <p>
-            Connect with Hai
-        </p>
-
-        <div>
-            <a href=""><img src="app/assets/images/social/facebook.png"></a>
-            <a href=""><img src="app/assets/images/social/googleplus.png"></a>
-            <a href=""><img src="app/assets/images/social/skype.png"></a>
-            <a href=""><img src="app/assets/images/social/twitch.png"></a>
-            <a href=""><img src="app/assets/images/social/twitter.png"></a>
-            <a href=""><img src="app/assets/images/social/youtube.png"></a>
+        <div class="profile-jumbotron">
+            <img src="app/assets/images/hai.jpg" alt="pro player pic here" class="img-circle">
+            <div class="social-bar">
+                <a href="#/"><img src="app/assets/images/social/square/facebook.gif"></a>
+                <a href="#/"><img src="app/assets/images/social/square/twitter.jpg"></a>
+                <a href="#/"><img src="app/assets/images/social/square/twitch.jpg"></a>
+                <button><img src="app/assets/images/icons/mail_icon.svg"/> Send Message </button>
+            </div>
         </div>
-        <hr>
 
-        <button> Edit Profile </button>
-    </div>
+        <div class="profile-rank">
 
-
-    <div class="gameplay-videos">
-        <div id="box2">
-
-            <div class="small-box">
-                <div> Prefered Role(s) </div>
-                <h4> Mid, Support </h4>
+            <div class="name">
+                <div class="summoner-name"> {{ vm.summoner.name }} </div>
+                <div class="real-name"> {{ vm.profile.first_name }} {{ vm.profile.last_name }}  </div>
             </div>
 
-            <div class="small-box">
-                <div class="title"> Rank </div>
-                <h4> Platinum </h4>
+            <div class="profile-rank-solo">
+                <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_solo }}.png"/>
+                <div> {{ vm.summoner.current_season_rank_solo }} {{ vm.summoner.current_season_rank_solo_division }} </div>
+                <div> Ranked Solo </div>
             </div>
 
-            <div class="small-box">
-                <div> Current Status </div>
-                <h4> Free Agent </h4>
-            </div>
-
-            <div class="clear"></div>
-            <hr>
-            <img src="app/assets/images/zed.jpg">
-
-            <div>
-                <h2> About Hai </h2>
-                <p>
-                    I have been playing league since I was 8 years old. I have won several state competitions
-                    as well as international competitions. My contract has just ended and I am looking to join
-                    another team. I can communicate really effectively and I work really well with others.
-                    I always support my teamates whenever I can. My main character is Akali and I have been
-                    playing him every since I got started going competitive. I have come up with several combos
-                    with him that has been proven to be very effective in battle. I prefer to play mid lane
-                    but I am also very skilled at playing the others. However, I prefer top over jungle.
-                </p>
-            </div>
-            <hr>
-
-            <div>
-                <h2> Experience </h2>
-
-                <div>
-                    <div> Mid Laner </div>
-                    <div> Team Solo Mid </div>
-                    <div> Januray 2013 - present </div>
+            <div class="profile-rank-team">
+                <div class="profile-rank-team3">
+                    <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_team_3 }}.png"/>
+                    <div> {{ vm.summoner.current_season_rank_team_3 }} {{ vm.summoner.current_season_rank_team_3_division }} </div>
+                    <div> Team 3v3 </div>
+                </div>
+                <div class="profile-rank-team5">
+                    <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_team_5 }}.png"/>
+                    <div> {{ vm.summoner.current_season_rank_team_5 }} {{ vm.summoner.current_season_rank_team_5_division }} </div>
+                    <div> Team 5v5 </div>
                 </div>
             </div>
-            <hr>
 
-            <div>
-                <h2> Education </h2>
-                <ul>
-                    <li> Duel Academy High School </li>
-                    <li> University of Yami </li>
-                </ul>
+            <div class="profile-rank-stats">
+                <a ng-href="{{ vm.summoner.summoner_stats_url}}" target="_blank" title="{{ vm.summoner.summoner_stats_url }}">
+                    <button>
+                        <img src="app/assets/images/chart.png"/>
+                        Summoner Stats
+                    </button>
+                </a>
             </div>
-            <hr>
 
-            <div>
-                <h2> Language(s) </h2>
-                <ul>
-                    <li> English </li>
-                    <li> German </li>
-                    <li> Spanish </li>
-                </ul>
+            <hr/>
+
+            <div style="font-size: 12px; text-align: left">
+                <h5> Previous Season (5) Rankings </h5>
+                <p> Ranked 5v5 Solo: {{ vm.summoner.previous_season_rank_solo }} {{ vm.summoner.previous_season_rank_solo_division }} </p>
+                <p> Ranked 5v5 Team: {{ vm.summoner.previous_season_rank_team_5 }} {{ vm.summoner.previous_season_rank_team_5_division }} </p>
+                <p> Ranked 3v3 Team: {{ vm.summoner.previous_season_rank_team_3 }} {{ vm.summoner.previous_season_rank_team_3_division }} </p>
             </div>
-            <hr>
+
+            <hr/>
+
+        </div>
+
+        <div class="profile-info">
+
+            <div class="profile-info-box">
+                <h3> About </h3>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <td> Age </td>
+                        <td> Nationality </td>
+                        <td> Timezone </td>
+                        <td> Server </td>
+                        <td> Status </td>
+                        </tbody>
+                        <tr>
+                            <td> 10 </td>
+                            <td> United States </td>
+                            <td> Eastern </td>
+                            <td> NA </td>
+                            <td> Free Agent </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    I am a lvl 30 player with over 1100 wins in normal. I am the leader of a small clan of
+                    friends that play almost everyday. I have my rune pages and all the characters as most
+                    of us do wtf we want you get me? Also Im the best there is, the best there was, and the
+                    best there ever will be!!!! GET REKT!
+                </p>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Main Roles </h3>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Secondary Roles </h3>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Awards & Accomplishments </h3>
+
+                <div> NA LCS champion </div>
+                <div> September 2012 </div>
+                <p> I got 1st place baby </p>
+
+                <div> NA LCS champion </div>
+                <div> September 2012 </div>
+                <p> I got 1st place baby </p>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Experience </h3>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div> Team Solo Mid </div>
+                        <div> Mid Laner </div>
+                        <div> September 2013 - December 2015 </div>
+                        <p> This team is awesome! Reginald is a babe. </p>
+                    </div>
+
+                    <div class="col-md-2"><img src="app/assets/images/tsm.gif" height="70" width="50"/></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div> Counter Logic Gaming </div>
+                        <div> Mid Laner </div>
+                        <div> January 2012 - September 2013 </div>
+                        <p>
+                            I was the main guy before this team went to this,
+                            I dominated my lane, but my team mates just feed bro.
+                            GG Donezo Manifesto baby!
+                        </p>
+                    </div>
+
+                    <div class="col-md-2"><img src="app/assets/images/clg.png" height="70" width="50"/></div>
+                </div>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Languages </h3>
+
+                <div class="row">
+
+                    <!-- native or bilingual column -->
+                    <div class="col-sm-4" ng-if="vm.native_languages.length > 0">
+                        Native
+                        <ul>
+                            <li ng-repeat="language in vm.native_languages track by $index">
+                                <div> {{ language }} </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- professional column -->
+                    <div class="col-sm-4" ng-if="vm.professional_languages.length > 0">
+                        Professional
+                        <ul>
+                            <li ng-repeat="language in vm.professional_languages track by $index">
+                                <div> {{ language }} </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- limited column -->
+                    <div class="col-sm-4" ng-if="vm.limited_languages.length > 0">
+                        Limited
+                        <ul>
+                            <li ng-repeat="language in vm.limited_languages track by $index">
+                                <div> {{ language }} </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="profile-info-box">
+                <h3> Education </h3>
+                <div ng-repeat="education in vm.profile.educations">
+                    <div> {{ education.institution }} </div>
+                    <div> {{ education.degree }} </div>
+                    <div> {{ education.date_from }} - {{ education.date_to }} </div>
+                    <p> {{ education.description }} </p>
+                </div>
+            </div>
 
         </div>
     </div>
 
-    <div>
-        <div id="box3">
-            <h4> Champions </h4>
-
-            <div>
-                <img src="app/assets/images/champions/kennen.png">
-                <img src="app/assets/images/champions/orianna.png">
-                <img src="app/assets/images/champions/riven.png">
-            </div>
-
-            <hr>
-
-            <div>
-                <h4> Exceptional Skills </h4>
-
-                <ul>
-                    <li> Shotcalling </li>
-                    <li> Excellent Communciation </li>
-                    <li> Last hitting </li>
-                    <li> Orb Walkng </li>
-                </ul>
-            </div>
-
-            <hr>
-
-            <h4> Recent Replays </h4>
-
-            <img src="app/assets/images/replay1.png">
-
-            <br><br>
-            <img src="app/assets/images/replay2.jpg">
-
-            <br><br>
-            <img src="app/assets/images/replay3.jpg">
-        </div>
+    <div class="profile-right-box">
+        <h3> Gameplays </h3>
+        <ul>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+            <li>
+                <a href="#/profile/edit" class="thumbnail"><img src="../app/assets/images/replay1.png"/></a>
+                <p> Added: Dec 12th, 2015 </p>
+            </li>
+        </ul>
     </div>
 
 </div>

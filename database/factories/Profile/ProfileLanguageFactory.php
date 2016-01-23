@@ -2,8 +2,25 @@
 
 $factory->define(App\Acme\Models\ProfileLanguage::class, function (Faker\Generator $faker)
 {
+    $languages = [
+        'Chinese',
+        'Spanish',
+        'English',
+        'Hindi',
+        'Arabic3',
+        'Portuguese',
+        'Bengali',
+        'Russian',
+        'Japanese',
+        'Javanese',
+        'German',
+        'Korean',
+        'French',
+        'Vietnamese'
+    ];
+
     return [
-        'type' => 'english',
-        'fluency' => 'native'
+        'type' => $languages[rand(0, count($languages) - 1)],
+        'fluency' => ['native', 'professional', 'limited'][rand(0, 2)]
     ];
 });

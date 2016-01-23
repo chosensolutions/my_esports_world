@@ -23,6 +23,7 @@ class CreateProfileEducationsTable extends Migration
             $table->string('date_from');
             $table->string('date_to');
             $table->string('degree');
+            $table->text('description');
 
             $table->timestamps();
         });

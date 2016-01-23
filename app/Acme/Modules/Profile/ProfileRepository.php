@@ -5,6 +5,8 @@ namespace App\Acme\Modules\Profile;
 use App\Acme\Models\Profile;
 use App\Acme\Models\Account;
 use Auth;
+use App\Acme\Models\Summoner;
+use App\User;
 
 /**
  * Class ProfileRepository
@@ -23,14 +25,33 @@ class ProfileRepository implements ProfileRepositoryInterface
     private $accountModel;
 
     /**
-     * ProfileRepository constructor.
-     * @param $profileModel
-     * @param $accountModel
+     * @var Summoner
      */
-    public function __construct(Profile $profileModel, Account $accountModel)
+    private $summonerModel;
+
+    /**
+     * @var User
+     */
+    private $userModel;
+
+    /**
+     * ProfileRepository constructor.
+     * @param Profile $profileModel
+     * @param Account $accountModel
+     * @param Summoner $summonerModel
+     * @param User $userModel
+     */
+    public function __construct(
+        Profile $profileModel,
+        Account $accountModel,
+        Summoner $summonerModel,
+        User $userModel
+    )
     {
         $this->profileModel = $profileModel;
         $this->accountModel = $accountModel;
+        $this->summonerModel = $summonerModel;
+        $this->userModel = $userModel;
     }
 
     /**
@@ -54,14 +75,19 @@ class ProfileRepository implements ProfileRepositoryInterface
      */
     public function getById($id)
     {
-        return $this->profileModel
-                    ->with([
-                        'experiences',
-                        'awards',
-                        'educations',
-                        'languages'
-                    ])
-                    ->find($id);
+        $data = [
+            'profile' => $this->profileModel
+                ->with([
+                    'experiences',
+                    'awards',
+                    'educations',
+                    'languages',
+                    'user'
+                ])
+                ->find($id),
+            'summoner' => $this->userModel->find($this->profileModel->find($id)->user->id)->summoner
+        ];
+        return $data;
     }
 
     /**

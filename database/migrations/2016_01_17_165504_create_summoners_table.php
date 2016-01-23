@@ -19,23 +19,34 @@ class CreateSummonersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
+            $table->string('name');
+            $table->bigInteger('summoner_id');
+
             $rankings = [
-                'bronze',
-                'silver',
-                'gold',
-                'platinum',
-                'diamond',
-                'master',
-                'challenger'
+                'Unranked',
+                'Bronze',
+                'Silver',
+                'Gold',
+                'Platinum',
+                'Diamond',
+                'Master',
+                'Challenger'
             ];
+            $divisions = ['I', 'II', 'III', 'IV', 'V'];
 
             $table->enum('current_season_rank_solo', $rankings);
+            $table->enum('current_season_rank_solo_division', $divisions);
             $table->enum('current_season_rank_team_5', $rankings);
+            $table->enum('current_season_rank_team_5_division', $divisions);
             $table->enum('current_season_rank_team_3', $rankings);
+            $table->enum('current_season_rank_team_3_division', $divisions);
 
             $table->enum('previous_season_rank_solo', $rankings);
+            $table->enum('previous_season_rank_solo_division', $divisions);
             $table->enum('previous_season_rank_team_5', $rankings);
+            $table->enum('previous_season_rank_team_5_division', $divisions);
             $table->enum('previous_season_rank_team_3', $rankings);
+            $table->enum('previous_season_rank_team_3_division', $divisions);
 
             $table->string('summoner_stats_url');
 

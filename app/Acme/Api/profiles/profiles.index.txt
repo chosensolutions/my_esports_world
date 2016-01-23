@@ -1,14 +1,6 @@
 GET /profiles
 ===================================
 
-Input
------------------------------------
-{
-    type: string (normal, facebook, twitter, etc...)
-    email: string,
-    password: string
-}
-
 Output
 -----------------------------------
 {
