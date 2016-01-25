@@ -3,12 +3,12 @@
     <div class="profile-left-box">
 
         <div class="profile-jumbotron">
-            <img src="app/assets/images/hai.jpg" alt="pro player pic here" class="img-circle">
+            <img src="{{ vm.profile.image_url }}" alt="pro player pic here" class="img-circle">
             <div class="social-bar">
                 <a href="#/"><img src="app/assets/images/social/square/facebook.gif"></a>
                 <a href="#/"><img src="app/assets/images/social/square/twitter.jpg"></a>
                 <a href="#/"><img src="app/assets/images/social/square/twitch.jpg"></a>
-                <button><img src="app/assets/images/icons/mail_icon.svg"/> Send Message </button>
+                <a href="#/" class="message-background"><img src="app/assets/images/icons/mail_icon.svg"/></a>
             </div>
         </div>
 
@@ -67,78 +67,50 @@
 
                 <div class="table-responsive">
                     <table class="table">
-                        <tbody>
-                        <td> Age </td>
-                        <td> Nationality </td>
-                        <td> Timezone </td>
-                        <td> Server </td>
-                        <td> Status </td>
+                        <tbody class="type-2">
+                            <td> Age </td>
+                            <td> Nationality </td>
+                            <td> Timezone </td>
+                            <td> Server </td>
+                            <td> Status </td>
                         </tbody>
-                        <tr>
-                            <td> 10 </td>
-                            <td> United States </td>
+                        <tr class="type-1">
+                            <td> {{ 22 }} </td>
+                            <td> {{ vm.profile.nationality }} </td>
                             <td> Eastern </td>
                             <td> NA </td>
-                            <td> Free Agent </td>
+                            <td> {{ vm.profile.status }} </td>
                         </tr>
                     </table>
                 </div>
 
-                <p>
-                    I am a lvl 30 player with over 1100 wins in normal. I am the leader of a small clan of
-                    friends that play almost everyday. I have my rune pages and all the characters as most
-                    of us do wtf we want you get me? Also Im the best there is, the best there was, and the
-                    best there ever will be!!!! GET REKT!
-                </p>
+                <p> {{ vm.profile.description }} </p>
             </div>
 
             <div class="profile-info-box">
-                <h3> Main Roles </h3>
-            </div>
-
-            <div class="profile-info-box">
-                <h3> Secondary Roles </h3>
+                <h3> Roles </h3>
             </div>
 
             <div class="profile-info-box">
                 <h3> Awards & Accomplishments </h3>
-
-                <div> NA LCS champion </div>
-                <div> September 2012 </div>
-                <p> I got 1st place baby </p>
-
-                <div> NA LCS champion </div>
-                <div> September 2012 </div>
-                <p> I got 1st place baby </p>
+                <div ng-repeat="award in vm.profile.awards">
+                    <div class="type-1"> {{ award.name }} </div>
+                    <div class="type-2"> {{ award.date }} </div>
+                    <p> {{ award.description }} </p>
+                </div>
             </div>
 
             <div class="profile-info-box">
                 <h3> Experience </h3>
 
-                <div class="row">
-                    <div class="col-md-10">
-                        <div> Team Solo Mid </div>
-                        <div> Mid Laner </div>
-                        <div> September 2013 - December 2015 </div>
-                        <p> This team is awesome! Reginald is a babe. </p>
+                <div class="row" ng-repeat="experience in vm.profile.experiences">
+                    <div class="col-sm-10">
+                        <div class="type-1"> {{ experience.organization }} </div>
+                        <div class="type-2"> {{ experience.position }} </div>
+                        <div class="type-2"> {{ experience.date_from }} - {{ experience.date_to }} </div>
+                        <p> {{ experience.description }} </p>
                     </div>
-
-                    <div class="col-md-2"><img src="app/assets/images/tsm.gif" height="70" width="50"/></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-10">
-                        <div> Counter Logic Gaming </div>
-                        <div> Mid Laner </div>
-                        <div> January 2012 - September 2013 </div>
-                        <p>
-                            I was the main guy before this team went to this,
-                            I dominated my lane, but my team mates just feed bro.
-                            GG Donezo Manifesto baby!
-                        </p>
-                    </div>
-
-                    <div class="col-md-2"><img src="app/assets/images/clg.png" height="70" width="50"/></div>
+                    <div class="col-sm-2"><img src="app/assets/images/tsm.gif" height="70" width="50"/></div>
                 </div>
             </div>
 
@@ -149,30 +121,30 @@
 
                     <!-- native or bilingual column -->
                     <div class="col-sm-4" ng-if="vm.native_languages.length > 0">
-                        Native
+                        <div class="type-2"> Native </div>
                         <ul>
                             <li ng-repeat="language in vm.native_languages track by $index">
-                                <div> {{ language }} </div>
+                                <div class="type-1"> {{ language }} </div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- professional column -->
                     <div class="col-sm-4" ng-if="vm.professional_languages.length > 0">
-                        Professional
+                        <div class="type-2"> Professional </div>
                         <ul>
                             <li ng-repeat="language in vm.professional_languages track by $index">
-                                <div> {{ language }} </div>
+                                <div class="type-1"> {{ language }} </div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- limited column -->
                     <div class="col-sm-4" ng-if="vm.limited_languages.length > 0">
-                        Limited
+                        <div class="type-2"> Limited </div>
                         <ul>
                             <li ng-repeat="language in vm.limited_languages track by $index">
-                                <div> {{ language }} </div>
+                                <div class="type-1"> {{ language }} </div>
                             </li>
                         </ul>
                     </div>
@@ -181,11 +153,14 @@
             </div>
 
             <div class="profile-info-box">
-                <h3> Education </h3>
+                <div>
+                    <h3> Education </h3>
+                    <img src="" />
+                </div>
                 <div ng-repeat="education in vm.profile.educations">
-                    <div> {{ education.institution }} </div>
-                    <div> {{ education.degree }} </div>
-                    <div> {{ education.date_from }} - {{ education.date_to }} </div>
+                    <div class="type-1"> {{ education.institution }} </div>
+                    <div class="type-2"> {{ education.degree }} </div>
+                    <div class="type-2"> {{ education.date_from }} - {{ education.date_to }} </div>
                     <p> {{ education.description }} </p>
                 </div>
             </div>

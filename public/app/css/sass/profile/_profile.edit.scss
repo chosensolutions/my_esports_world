@@ -4,13 +4,19 @@
 }
 
 @mixin primary-sub-header {
-  font-size: 14px;
-  color: #464646;
+  font-size: 16px;
+  color: #313131;
+  font-weight: 600;
 }
 
 @mixin primary-text {
   font-size: 14px;
   color: #464646;
+}
+
+@mixin primary-footnote {
+  font-size: 11px;
+  color: #7f7f7f;
 }
 
 .profile-edit-container {
@@ -28,21 +34,29 @@
       > img {
         border: solid white 3px;
         position: absolute;
-        height: 150px;
-        width: 150px;
-        left: 3%;
+        height: 200px;
+        width: 200px;
         bottom: 10%;
+        left: 5%;
       }
 
       .social-bar {
         position: absolute;
         right: 0;
         bottom: 0;
-
-        img {
+        line-height: 45px;
+        a {
           height: 50px;
           width: 50px;
+          display: inline;
+          float: left;
         }
+
+        .message-background {
+          background-color: lightgrey;
+          padding: 0;
+        }
+
       }
     }
 
@@ -132,8 +146,29 @@
         min-height: 100px;
         box-shadow: 1px 1px 2px #888888;
         @include primary-text;
+
+        .type-1 {
+          @include primary-sub-header;
+        }
+
+        .type-2 {
+          @include primary-footnote;
+        }
       }
+
+      ul {
+        list-style-type:none;
+        margin: auto;
+        padding: 0;
+        overflow: hidden;
+        li {
+          display: inline-block;
+        }
+      }
+
     }
+
+
   }
 
   .profile-right-box {

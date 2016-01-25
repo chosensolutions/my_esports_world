@@ -8,6 +8,6 @@ $factory->define(App\Acme\Models\ProfileExperience::class, function (Faker\Gener
         'location' => $faker->streetName,
         'date_from' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_to' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'description' => $faker->firstName,
+        'description' => $faker->paragraph(10),
     ];
 });

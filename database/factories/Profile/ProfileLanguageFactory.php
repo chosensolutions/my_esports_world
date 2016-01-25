@@ -7,7 +7,7 @@ $factory->define(App\Acme\Models\ProfileLanguage::class, function (Faker\Generat
         'Spanish',
         'English',
         'Hindi',
-        'Arabic3',
+        'Arabic',
         'Portuguese',
         'Bengali',
         'Russian',

@@ -1,9 +1,13 @@
 TODO - Today
 ---------------------
-- show backend details onto the profile page
-- js - http call -> show on html
-- php - show call method
-- document api call
+Profile Page
+- make sure the auth route is secure
+- auth profile display -> show extra edit icons if you are the owner of the page
+
+- verify a summoner -> finish that functionality in the backend;
+  make sure it works with the frontend as well -> make sure the process works
+  , no need for it to be entirely finished
+- decide the main/secondary role box and if i should style it up
 
 TODO - All
 ---------------------
@@ -17,15 +21,6 @@ account settings
 - reverify summoner name
 - connected accounts
 - phone number
-
-Profile Page
--> show as auth user -> see an edit button -> go to edit mode
--> show as public user
--> url -> #/profiles/userID
-- finish styling up the profile page - go into detail
-- decide the main/secondary role box and if i should style it up
-- verify a summoner -> finish that functionality in the backend;
-  make sure it works with the frontend as well
 
 Navbar
 - directive?
