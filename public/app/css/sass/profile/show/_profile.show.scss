@@ -19,8 +19,8 @@
   color: #7f7f7f;
 }
 
-.profile-edit-container {
-  margin-top: -20px;
+.profile-show-container {
+  margin-top: -21px;
 
   .profile-left-box {
     width: 80%;
@@ -176,25 +176,20 @@
     float: left;
     padding: 0 10px;
     text-align: center;
-
     ul {
       list-style-type: none;
       padding: 0;
-
       li {
         a {
-
           &:hover {
             background-color: white;
           }
-
           img {
             height: 100px;
             width: 150px;
             margin: 10px;
           }
         }
-
         p {
           font-size: 12px;
         }
