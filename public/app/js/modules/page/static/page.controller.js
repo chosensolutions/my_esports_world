@@ -11,7 +11,7 @@
         var vm = this;
 
         vm.input = {
-
+            asdasda: 'asdasd'
         };
 
         vm.submit = function()

@@ -1,0 +1,18 @@
+// floats
+.clear-fix {
+  clear: both;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+// custom functions
+@mixin backAndColor($bc: pink, $fc: purple) {
+  background-color: $bc;
+  color: $fc;
+}

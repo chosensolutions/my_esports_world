@@ -1,0 +1,106 @@
+<div class="profile-info">
+
+    <div class="profile-info-box">
+        <h3> About </h3>
+
+        <div class="table-responsive">
+            <table class="table">
+                <tbody class="type-2">
+                <td> Age </td>
+                <td> Nationality </td>
+                <td> Timezone </td>
+                <td> Server </td>
+                <td> Status </td>
+                </tbody>
+                <tr class="type-1">
+                    <td> {{ 22 }} </td>
+                    <td> {{ vm.profile.nationality }} </td>
+                    <td> Eastern </td>
+                    <td> NA </td>
+                    <td> {{ vm.profile.status }} </td>
+                </tr>
+            </table>
+        </div>
+
+        <p> {{ vm.profile.description }} </p>
+    </div>
+
+    <div class="profile-info-box">
+        <h3> Roles </h3>
+    </div>
+
+    <div class="profile-info-box">
+        <h3> Awards & Accomplishments </h3>
+        <div ng-repeat="award in vm.profile.awards">
+            <div class="type-1"> {{ award.name }} </div>
+            <div class="type-2"> {{ award.date }} </div>
+            <p> {{ award.description }} </p>
+        </div>
+    </div>
+
+    <div class="profile-info-box">
+        <h3> Experience </h3>
+
+        <div class="row" ng-repeat="experience in vm.profile.experiences">
+            <div class="col-sm-10">
+                <div class="type-1"> {{ experience.organization }} </div>
+                <div class="type-2"> {{ experience.position }} </div>
+                <div class="type-2"> {{ experience.date_from }} - {{ experience.date_to }} </div>
+                <p> {{ experience.description }} </p>
+            </div>
+            <div class="col-sm-2"><img src="app/assets/images/tsm.gif" height="70" width="50"/></div>
+        </div>
+    </div>
+
+    <div class="profile-info-box">
+        <h3> Languages </h3>
+
+        <div class="row">
+
+            <!-- native or bilingual column -->
+            <div class="col-sm-4" ng-if="vm.native_languages.length > 0">
+                <div class="type-2"> Native </div>
+                <ul>
+                    <li ng-repeat="language in vm.native_languages track by $index">
+                        <div class="type-1"> {{ language }} </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- professional column -->
+            <div class="col-sm-4" ng-if="vm.professional_languages.length > 0">
+                <div class="type-2"> Professional </div>
+                <ul>
+                    <li ng-repeat="language in vm.professional_languages track by $index">
+                        <div class="type-1"> {{ language }} </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- limited column -->
+            <div class="col-sm-4" ng-if="vm.limited_languages.length > 0">
+                <div class="type-2"> Limited </div>
+                <ul>
+                    <li ng-repeat="language in vm.limited_languages track by $index">
+                        <div class="type-1"> {{ language }} </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="profile-info-box">
+        <div>
+            <h3> Education </h3>
+            <img src="" />
+        </div>
+        <div ng-repeat="education in vm.profile.educations">
+            <div class="type-1"> {{ education.institution }} </div>
+            <div class="type-2"> {{ education.degree }} </div>
+            <div class="type-2"> {{ education.date_from }} - {{ education.date_to }} </div>
+            <p> {{ education.description }} </p>
+        </div>
+    </div>
+
+</div>

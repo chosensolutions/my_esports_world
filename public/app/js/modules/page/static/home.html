@@ -6,21 +6,20 @@
     {{ vm.input | json }}
 </pre>
 
+<br><br>
+
 <form action="/api/v1/test" method="post">
-    <fieldset>
         <legend>Personal information:</legend>
         First name:<br>
         <input type="text" name="firstname" value="Mickey"><br>
         Last name:<br>
         <input type="text" name="lastname" value="Mouse"><br><br>
         <input type="submit" value="Submit">
-    </fieldset>
 </form>
 
-<br>
+<br><br>
 
 <div class="theShit">
-
     <div id="remote">
         <input class="typeahead" type="text" placeholder="Search player" autocomplete="off">
     </div>
@@ -29,5 +28,5 @@
     <input type="text" ng-model="vm.input.example2">
 </div>
 
-<br>
+<br><br>
 <button ng-click="vm.submit()"> STUFF </button>

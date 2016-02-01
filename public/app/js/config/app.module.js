@@ -5,6 +5,7 @@
     angular
         .module('app', [
             'ui.router',
+            'app.navbar',
             'app.auth',
             'app.account',
             'app.profile',

@@ -6,13 +6,13 @@
         .module('app.profile')
         .controller('ProfileShowController', ProfileShowController);
 
-    function ProfileShowController($state, $stateParams , ProfileService) {
+    function ProfileShowController($stateParams , ProfileService) {
 
         var vm = this;
 
-        console.log('---------------------------------');
-        console.log('---------- DEBUG - Profile Show -');
-        console.log('---------------------------------');
+        console.log('----------------------------------------');
+        console.log('---------- DEBUG - Profile Show --------');
+        console.log('----------------------------------------');
 
         ProfileService
             .getById($stateParams.id)
@@ -35,7 +35,7 @@
 
                 console.log(JSON.stringify(vm.summoner, null, '\t'));
             }, function() {
-
+                // the user id dne, redirect to a 404 page possibly?
             });
 
     }

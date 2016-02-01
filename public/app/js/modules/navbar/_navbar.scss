@@ -1,0 +1,59 @@
+header {
+  background-color: #000000;
+  border-bottom: solid deepskyblue 2px;
+  //margin-top: -10px;
+
+  nav {
+    height: $navbar-height;
+    width: $navbar-width;
+    margin: auto;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        float: left;
+        line-height: 50px;
+
+        // search box
+        .search-box {
+          display: block;
+          width: 350px;
+          height: 46px;
+          padding: 0 20px;
+        }
+
+        // the dropdown
+        &:nth-child(5) {
+          float: right;
+        }
+
+        > a {
+          padding: 10px;
+          color: #cb2e16;
+          text-decoration: none;
+
+          &:hover {
+            color: white;
+          }
+        }
+
+        &:hover {
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+// responsive part
+@media all and (max-width: 520px) /* and (min-width:200px)*/ { // when we have a width of 480px or smaller
+
+  /*
+  can use and, or , not
+  */
+  header {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,47 @@
+<div class="profile-rank">
+
+    <div class="profile-name">
+        <div class="summoner-name"> {{ vm.summoner.name }} </div>
+        <div class="real-name"> {{ vm.profile.first_name }} {{ vm.profile.last_name }}  </div>
+    </div>
+
+    <div class="profile-rank-solo">
+        <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_solo.toLowerCase() }}.png"/>
+        <div> {{ vm.summoner.current_season_rank_solo }} {{ vm.summoner.current_season_rank_solo_division }} </div>
+        <div> Ranked Solo </div>
+    </div>
+
+    <div class="profile-rank-team">
+        <div class="profile-rank-team3">
+            <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_team_3.toLowerCase() }}.png"/>
+            <div> {{ vm.summoner.current_season_rank_team_3 }} {{ vm.summoner.current_season_rank_team_3_division }} </div>
+            <div> Team 3v3 </div>
+        </div>
+        <div class="profile-rank-team5">
+            <img ng-src="app/assets/images/tier-icons/base_icons/{{ vm.summoner.current_season_rank_team_5.toLowerCase() }}.png"/>
+            <div> {{ vm.summoner.current_season_rank_team_5 }} {{ vm.summoner.current_season_rank_team_5_division }} </div>
+            <div> Team 5v5 </div>
+        </div>
+    </div>
+
+    <div class="profile-rank-stats">
+        <a ng-href="{{ vm.summoner.summoner_stats_url}}" target="_blank" title="{{ vm.summoner.summoner_stats_url }}">
+            <button>
+                <img src="app/assets/images/chart.png"/>
+                Summoner Stats
+            </button>
+        </a>
+    </div>
+
+    <hr/>
+
+    <div style="font-size: 12px; text-align: left; margin: 10px auto; width: 80%;">
+        <h5> Previous Season (5) Rankings </h5>
+        <p> Ranked 5v5 Solo: {{ vm.summoner.previous_season_rank_solo }} {{ vm.summoner.previous_season_rank_solo_division }} </p>
+        <p> Ranked 5v5 Team: {{ vm.summoner.previous_season_rank_team_5 }} {{ vm.summoner.previous_season_rank_team_5_division }} </p>
+        <p> Ranked 3v3 Team: {{ vm.summoner.previous_season_rank_team_3 }} {{ vm.summoner.previous_season_rank_team_3_division }} </p>
+    </div>
+
+    <hr/>
+
+</div>

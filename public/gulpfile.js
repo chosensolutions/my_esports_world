@@ -109,7 +109,7 @@
      */
     gulp.task('watch', function() {
         gulp.watch('app/js/**/*.js', ['js']);
-        gulp.watch('app/css/**/*.scss', ['css']);
+        gulp.watch('app/**/*.scss', ['css']);
     });
 
     /**

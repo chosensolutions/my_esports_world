@@ -1,5 +1,10 @@
 /******************** Modules ********************/
 
+// Config
+@import 'sass/utilities/_config.scss';
+@import 'sass/utilities/_utilities.scss';
+@import 'sass/utilities/_fonts.scss';
+
 // Auth
 @import 'sass/auth/_register.scss';
 
@@ -7,17 +12,15 @@
 @import 'sass/account/_account.edit.scss';
 
 // Profile
-@import 'sass/profile/_profile.show.scss';
-@import 'sass/profile/_profile.edit.scss';
+@import 'sass/profile/show/_profile.show.scss';
+@import 'sass/profile/show/_profile-info.show.scss';
+@import 'sass/profile/show/_profile-jumbotron.show.scss';
+@import 'sass/profile/show/_profile-rank.show.scss';
+@import 'sass/profile/show/_profile-video.show.scss';
 
 // Components
-@import 'sass/navbar/_navbar.scss';
+@import '../js/modules/navbar/_navbar.scss';
+@import '../js/modules/navbar/_navbar-dropdown.scss';
 @import 'sass/footer/_footer.scss';
-
-// Utilities
-@import 'sass/utilities/_core.scss';
-@import 'sass/utilities/_colors.scss';
-@import 'sass/utilities/_buttons.scss';
-@import 'sass/utilities/_fonts.scss';
 
 // vendor

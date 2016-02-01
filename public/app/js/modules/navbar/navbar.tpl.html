@@ -1,0 +1,39 @@
+<div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#/"> Home </a></li>
+                <li>
+                    <!--
+                    <form id="searchBox" class="navbar-form navbar-right">
+                        <input class="typeahead form-control" type="text" placeholder="Search player" autocomplete="off">
+                    </form>
+                    -->
+                    <input class="search-box" type="text" placeholder="Search for a player profile here...">
+                </li>
+                <li><a href="#/profiles"> Profiles </a></li>
+                <li><a href="#/profiles"> Teams </a></li>
+                <!--
+                <ul ng-if="!authUser">
+                    <li><a href="#/register"> Register </a></li>
+                    <li><a href="#/login"> Login </a></li>
+                </ul>-->
+                <li> <!-- ng-if="authUser" -->
+                    <div class="dropdown">
+                        <img class="dropbtn" src="app/assets/images/hai.jpg">
+                        <div class="dropdown-content">
+                            <a href="#/profile/1"> Profile </a>
+                            <a href="#/account"> Account </a>
+                            <a href="#/profiles"> Gameplays </a>
+                            <a href="" ng-click="logout()"> Logout </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--<div ng-transclude></div>-->
+</div>
+
+

@@ -10,3 +10,25 @@ $font-size: #333; // 10px, 10%, 10em
 $font-style: #333; // normal, italic, oblique
 $font-variant: #333; // normal, small-caps
 $font-weight: #333; // normal, bold
+
+
+@mixin primary-header {
+  font-size: 14px;
+  color: #464646;
+}
+
+@mixin primary-sub-header {
+  font-size: 16px;
+  color: #313131;
+  font-weight: 600;
+}
+
+@mixin primary-text {
+  font-size: 14px;
+  color: #464646;
+}
+
+@mixin primary-footnote {
+  font-size: 11px;
+  color: #7f7f7f;
+}

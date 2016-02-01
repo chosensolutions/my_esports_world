@@ -1,0 +1,32 @@
+.profile-info {
+  width: 75%;
+  float: left;
+
+  .profile-info-box {
+    margin: 0 0 20px 20px;
+    background-color: white;
+    padding: 20px;
+    min-height: 100px;
+    box-shadow: 1px 1px 2px #888888;
+    @include primary-text;
+
+    .type-1 {
+      @include primary-sub-header;
+    }
+
+    .type-2 {
+      @include primary-footnote;
+    }
+  }
+
+  ul {
+    list-style-type:none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    li {
+      display: inline-block;
+    }
+  }
+
+}
