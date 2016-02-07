@@ -21,6 +21,7 @@ class ProfileAuthTest extends TestCase
      */
     public function test_shows_the_current_auth_user_profile_account_info()
     {
+
         Auth::loginUsingId(1);
         $this->get('api/v1/profiles/auth')->seeJson([
             'code' => 200,

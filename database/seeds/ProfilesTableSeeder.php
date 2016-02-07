@@ -17,6 +17,7 @@ class ProfilesTableSeeder extends Seeder
 
         foreach($users as $user)
         {
+
             $profile = factory(App\Acme\Models\Profile::class)->create([
                 'user_id' => $user->id
             ]);
